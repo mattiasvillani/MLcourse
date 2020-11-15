@@ -2,7 +2,7 @@
 
 ### Machine Learning
 
-![](https://github.com/mattiasvillani/MLCourse/raw/master/Slides/Images/bigData.jpg "Machine Learning")
+![](https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg "Machine Learning")
 
 ---
 
