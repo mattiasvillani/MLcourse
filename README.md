@@ -19,7 +19,7 @@ The course gives a overview of machine learning with a statistical core.
 
 ### Lecturers
 
-[Mattias Villani](https://mattiasvillani.com), Lecturer \
+[Mattias Villani](https://mattiasvillani.com) \
 Professor, specializing in Bayesian machine Learning 
 
 [Jessica Franzen](https://www.su.se/profiles/jefr2943-1.184287), Unsupervised learning \
