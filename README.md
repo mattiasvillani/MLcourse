@@ -17,6 +17,19 @@ The course gives a overview of machine learning with a statistical core.
 
 ---
 
+### Lecturers
+
+[Mattias Villani](https://mattiasvillani.com), Lecturer \
+Professor, specializing in Bayesian machine Learning 
+
+[Jessica Franzen](https://www.su.se/profiles/jefr2943-1.184287), Unsupervised learning \
+Senior lecturer, specializing in clustering and mixture models
+
+[Ellinor Fackle Fornius](https://www.su.se/profiles/efack-1.182424), Active learning \
+Senior lecturer, specializing in experimental design
+
+---
+
 ### Course literature and Schedule
 
 The course will use the following book as the main course literature:
@@ -33,18 +46,6 @@ The course schedule on TimeEdit is here: [Schedule](TBA).
 * The three computer labs are central to the course. Expect to allocate substantial time for each lab. Many of the exam questions will be computer based, so working on the labs will also help you with the exam.
 * More info to come.
 
----
-
-### Lecturers
-
-[Mattias Villani](https://mattiasvillani.com), Lecturer \
-Professor, specializing in Bayesian machine Learning \
-
-[Jessica Franzen](https://www.su.se/profiles/jefr2943-1.184287), Unsupervised learning \
-Senior lecturer, specializing in clustering and mixture models\
-
-[Ellinor Fackle Fornius](https://www.su.se/profiles/efack-1.182424), Active learning \
-Senior lecturer, specializing in experimental design \
 
 ---
 ## Lectures
