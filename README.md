@@ -1,6 +1,6 @@
 <!-- font: frutiger -->
 
-## Machine Learning, 7.5 credits
+# Machine Learning (ST5401), 7.5 credits
 <p float="left">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg" width="160">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/girlComputerSmall.jpg" width="150">
@@ -8,20 +8,20 @@
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/doctorIpadSmall.jpg" width="167">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="178">
 </p>
----
-
-### Page is very much under construction. More material will be added until course starts. The course will be given over Zoom this year. The course will still be great!
-
-### Contents
-
-The course gives a overview of machine learning with a statistical core. It will be quite broad and cover:
-* Supervised learning
-* Unsupervised learning
-* Semi-supervised and active learning
 
 ---
 
-### Lecturers
+## Introduction and aims
+
+In this course you will learn how to formulate and organize solutions to practical machine learning problems, identify and estimate appropriate machine learning models for prediction and clustering, evaluate and select among different machine learning models and algorithms and implement machine learning models and algorithms in a programming language.
+
+The course gives you knowledge about machine learning that is used within marketing, finance, economics, textual analysis, digital humanities and social scienses.
+
+The course covers a number of machine learning methods with a focus on prediction. The course deals with supervised and unsupervised machine learning as well as semi-supervised and active learning. The course includes flexible regression and classification, regularization, methods for predictive model performance evaluation, Gaussian processes, clustering algorithms and mixture models.
+
+---
+
+## Lecturers
 
 <img src="Misc/villanipic.jpg" width="100">\
 [Mattias Villani](https://mattiasvillani.com) \
@@ -35,92 +35,104 @@ Experimental design, active learning and optimization methods
 
 ---
 
-### Course literature and Schedule
+## Course literature
 
 The course will use the following book as the main course literature:
 
-* TBD
+* Supervised Machine Learning by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf).
 * Additional course material linked from this page, such as articles and tutorial.
 
-The course schedule on TimeEdit is here: [Schedule](TBA).
-
 ---
 
-### Computer labs
+## Schedule
 
-* The three computer labs are central to the course. Expect to allocate substantial time for each lab. Many of the exam questions will be computer based, so working on the labs will also help you with the exam.
-* More info to come.
-
+The course schedule on TimeEdit is here: [Schedule]([TBA](https://cloud.timeedit.net/su/web/stud1/s.html?tab=8&object=cevt_39775&type=courseevent&h=t)).
 
 ---
-## Lectures
+## Lectures (preliminary)
 
-**Lecture 1 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 1 - Introduction, $k$-NN and decision trees**\
+Reading: SML 2 |  [Slides](TBA) \
 Code: 
 
-**Lecture 2 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 2 - Non-linear regression. Regularization.**\
+Reading: SML 3 |  [Slides](TBA) \
 Code: 
 
-**Lecture 3 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 3 - Non-linear classification. Regularization.**\
+Reading: SML 3 |  [Slides](TBA) \
+Code:
+
+**Lecture 4 - Evaluating predictive performance and hyperparameter learning.**\
+Reading: SML 4 |  [Slides](TBA) \
 Code: 
 
-**Lecture 4 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 5 - Learning and optimization**\
+Reading: SML 5 |  [Slides](TBA) \
 Code: 
 
-**Lecture 5 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 6 - Neural networks**\
+Reading: SML 6.1-6.2 |  [Slides](TBA) \
 Code:  
 
-**Lecture 6 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 7 - Convolutional neural networks**\
+Reading: SML 6.3-6.4 |  [Slides](TBA) \
 Code: 
 
-**Lecture 7 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 8 - Ensemble methods**\
+Reading: SML 7 |  [Slides](TBA) \
 Code: 
 
-**Lecture 8 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 9 - Kernels and Gaussian Processes**\
+Reading: 8.1-8.2, 9.1-9.4 |  [Slides](TBA) \
 Code: 
 
-**Lecture 9 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 10 - Unsupervised learning**\
+Reading: 11.1-11.3 |  [Slides](TBA) \
 Code: 
 
-**Lecture 10 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 11 - Semi-supervised learning**\
+Reading: 11.2 |  [Slides](TBA) \
 Code: 
 
-**Lecture 11 - TBD**\
-Reading: TBD |  [Slides] \
-Code: 
-
-**Lecture 12 - TBD**\
-Reading: TBD |  [Slides] \
+**Lecture 12 - Active learning**\
+Reading: TBD |  [Slides](TBA) \
 Code: 
 
 ---
 ## Computer labs
-### Assistant: [TBD](https://www.su.se/english/profiles/ooelr-1.342298)
-**Computer Lab 1** - TBD.\
-Lab: [Lab 1]() \
+
+* The three computer labs are central to the course. Expect to allocate substantial time for each lab. Many of the exam questions will be computer based, so working on the labs will also help you with the exam.
+
+* R will be used as the course's programming language.
+
+* The labs should be done in pairs of students.
+
+* Each lab report should be submitted as a PDF along with the .R file with code. Submission is done through Athena.
+
+* There is four hours of computer lab time allocated to each lab. The idea is that you: 
+  * should start working on the lab before the computer session
+  * so that you are in a position to ask questions at the session
+  * and then finish up the report after the lab session.
+
+
+**Computer Lab 1** - Regularized nonlinear regression and classification.\
+Lab: [Lab 1](TBA) \
 Submission: [Athena]().
 
-**Computer Lab 2** - TBD.\
+**Computer Lab 2** - Neural Networks.\
 Lab: [Lab 2]() \
 Submission: [Athena]().
 
-**Computer Lab 3** - TBD.\
+**Computer Lab 3** - Unsupervised and semisupervised learning.\
 Lab: [Lab 3]() \
 Submission: [Athena]().
 
+### Lab assistant: [TBD](https://www.su.se/english/profiles/ooelr-1.342298)
+
 ---
 
-#### Examination
+## Examination
 
 The course examination consists of:
 
@@ -130,8 +142,9 @@ The course examination consists of:
 
 ---
 
-#### R
+## R
 
+* R will be the main programming language in the course. Here is some useful links:
 * The main page with links to downloads for the [programming language R](https://www.r-project.org/)
 * [RStudio](https://rstudio.com/products/rstudio/) - a very nice developing environment for R.
 * Short introduction to R | A little [longer introduction](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) | John Cook's [intro to R for programmers](https://www.johndcook.com/blog/r_language_for_programmers/).
