@@ -1,29 +1,36 @@
 <!-- font: frutiger -->
 
-### Machine Learning
+## Machine Learning, 7.5 credits
 
-![](https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg "Machine Learning")
+<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg" width="150">
+<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="150">
+<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/girlComputerSmall.jpg" width="150">
+<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/mathSmall.jpg" width="150">
 
 ---
 
-## This page is very much under construction and more material will be added until course start by the end of Spring 2021.
+### Page is very much under construction. More material will be added until course starts. The course will be given over Zoom this year. The course will still be great!
 
 ### Contents
 
-The course gives a overview of machine learning with a statistical core. 
-* something, something
-* something more
-* and even more
+The course gives a overview of machine learning with a statistical core. It will be quite broad and cover:
+* Supervised learning
+* Unsupervised learning
+* Semi-supervised and active learning
 
 ---
 
 ### Lecturers
 
+<img src="Misc/villanipic.jpg" width="100">\
 [Mattias Villani](https://mattiasvillani.com) \
-Professor, specializing in Bayesian machine Learning 
+Professor of Statistics, Stockholm and Linköping University\
+Probabilistic machine learning and Bayesian methods
 
-[Frank Miller](http://www.adoptdesign.de/frankmillereu/), Active learning \
-Professor, specializing in experimental design and optimization methods
+<img src="Misc/FrankOct2010.jpg" width="100">\
+[Frank Miller](http://www.adoptdesign.de/frankmillereu/) \
+Professor of Statistics, Stockholm University \
+Experimental design, active learning and optimization methods
 
 ---
 
