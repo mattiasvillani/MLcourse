@@ -6,7 +6,7 @@
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/girlComputerSmall.jpg" width="150">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/mathSmall.jpg" width="150">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/doctorIpadSmall.jpg" width="167">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="167">
+<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="175">
 </p>
 ---
 
