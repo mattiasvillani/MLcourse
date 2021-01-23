@@ -2,8 +2,7 @@
 
 ## Machine Learning, 7.5 credits
 
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg" width="150">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="150">
+<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg" width="160">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/girlComputerSmall.jpg" width="150">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/mathSmall.jpg" width="150">
 
