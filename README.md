@@ -1,11 +1,11 @@
 <!-- font: frutiger -->
 
 ## Machine Learning, 7.5 credits
-
+<p float="left">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg" width="160">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/girlComputerSmall.jpg" width="150">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/mathSmall.jpg" width="150">
-
+</p>
 ---
 
 ### Page is very much under construction. More material will be added until course starts. The course will be given over Zoom this year. The course will still be great!
