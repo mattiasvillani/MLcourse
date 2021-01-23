@@ -22,11 +22,8 @@ The course gives a overview of machine learning with a statistical core.
 [Mattias Villani](https://mattiasvillani.com) \
 Professor, specializing in Bayesian machine Learning 
 
-[Jessica Franzen](https://www.su.se/profiles/jefr2943-1.184287), Unsupervised learning \
-Senior lecturer, specializing in clustering and mixture models
-
-[Ellinor Fackle Fornius](https://www.su.se/profiles/efack-1.182424), Active learning \
-Senior lecturer, specializing in experimental design
+[Frank Miller](http://www.adoptdesign.de/frankmillereu/), Active learning \
+Professor, specializing in experimental design and optimization methods
 
 ---
 
