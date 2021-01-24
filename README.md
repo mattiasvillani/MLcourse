@@ -51,7 +51,7 @@ The course schedule on TimeEdit is here: [Schedule]([TBA](https://cloud.timeedit
 ---
 ## Lectures (preliminary)
 
-**Lecture 1 - Introduction, $k$-NN and decision trees**\
+**Lecture 1 - Introduction, k-NN and decision trees**\
 Reading: SML 2 |  [Slides](TBA) \
 Code: 
 
@@ -75,20 +75,20 @@ Code:
 Reading: SML 6.1-6.2 |  [Slides](TBA) \
 Code:  
 
-**Lecture 7 - Convolutional neural networks**\
+**Lecture 7 - Image data and convolutional neural networks**\
 Reading: SML 6.3-6.4 |  [Slides](TBA) \
 Code: 
 
 **Lecture 8 - Ensemble methods**\
 Reading: SML 7 |  [Slides](TBA) \
-Code: 
+Code:  
 
-**Lecture 9 - Kernels and Gaussian Processes**\
-Reading: 8.1-8.2, 9.1-9.4 |  [Slides](TBA) \
-Code: 
-
-**Lecture 10 - Unsupervised learning**\
+**Lecture 9 - Clustering and mixture models for unsupervised learning**\
 Reading: 11.1-11.3 |  [Slides](TBA) \
+Code: 
+
+**Lecture 10 - Textual data and topic models**\
+Reading: TBD |  [Slides](TBA) \
 Code: 
 
 **Lecture 11 - Semi-supervised learning**\
