@@ -63,11 +63,11 @@ Code:
 Reading: SML 3 |  [Slides](TBA) \
 Code:
 
-**Lecture 4 - Evaluating predictive performance and hyperparameter learning.**\
+**Lecture 4 - Evaluating predictive performance and hyperparameter learning**\
 Reading: SML 4 |  [Slides](TBA) \
 Code: 
 
-**Lecture 5 - Learning and optimization**\
+**Lecture 5 - Learning from large-scale data**\
 Reading: SML 5 |  [Slides](TBA) \
 Code: 
 
