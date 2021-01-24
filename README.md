@@ -13,9 +13,9 @@
 
 ## Introduction and aims
 
-In this course you will learn how to formulate and organize solutions to practical machine learning problems, identify and estimate appropriate machine learning models for prediction and clustering, evaluate and select among different machine learning models and algorithms and implement machine learning models and algorithms in a programming language.
+In this course you will learn how to formulate and organize practical machine learning problems, identify and estimate appropriate machine learning models for prediction and clustering, evaluate and select among different machine learning models and algorithms and implement machine learning models and algorithms in a programming language.
 
-The course gives you knowledge about machine learning that is used within marketing, finance, economics, textual analysis, digital humanities and social scienses.
+The course gives you knowledge about machine learning that is used within marketing, finance, economics, textual analysis, digital humanities and social scienses. You will encounter many different forms of data, including images and text.
 
 The course covers a number of machine learning methods with a focus on prediction. The course deals with supervised and unsupervised machine learning as well as semi-supervised and active learning. The course includes flexible regression and classification, regularization, methods for predictive model performance evaluation, Gaussian processes, clustering algorithms and mixture models.
 
@@ -39,8 +39,8 @@ Experimental design, active learning and optimization methods
 
 The course will use the following book as the main course literature:
 
-* Supervised Machine Learning by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf).
-* Additional course material linked from this page, such as articles and tutorial.
+* **Supervised Machine Learning** by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf).
+* Additional course material linked from this page, such as articles and tutorials.
 
 ---
 
@@ -55,11 +55,11 @@ The course schedule on TimeEdit is here: [Schedule]([TBA](https://cloud.timeedit
 Reading: SML 2 |  [Slides](TBA) \
 Code: 
 
-**Lecture 2 - Non-linear regression. Regularization.**\
+**Lecture 2 - Regularized non-linear regression**\
 Reading: SML 3 |  [Slides](TBA) \
 Code: 
 
-**Lecture 3 - Non-linear classification. Regularization.**\
+**Lecture 3 - Regularized non-linear classification**\
 Reading: SML 3 |  [Slides](TBA) \
 Code:
 
