@@ -48,7 +48,7 @@ The course will use the following book as the main course literature:
 Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here is some material:
 * [Download R](https://www.r-project.org/)
 * [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
-* [https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf](Official introduction to R)
+* [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 * [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
 
 ## Schedule
