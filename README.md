@@ -39,7 +39,7 @@ Experimental design, active learning and optimization methods
 
 The course will use the following book as the main course literature:
 
-* **Supervised Machine Learning** by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf).
+* **Supervised Machine Learning** (SML) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf).
 * Additional course material linked from this page, such as articles and tutorials.
 
 ---
@@ -52,7 +52,7 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 ## Lectures (preliminary)
 
 **Lecture 1 - Introduction, k-NN and decision trees**\
-Reading: SML 2 |  [Slides](TBA) \
+Reading: SML 1-2 |  [Slides](TBA) \
 Code: 
 
 **Lecture 2 - Regularized non-linear regression**\
