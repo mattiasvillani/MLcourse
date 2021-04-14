@@ -39,10 +39,17 @@ Experimental design, active learning and optimization methods
 
 The course will use the following book as the main course literature:
 
-* **Supervised Machine Learning** by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf).
+* **Machine Learning - a first course for engineers and scientists** (MLES) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf). The previous title of the book was 'Supervised Machine Learning'.
 * Additional course material linked from this page, such as articles and tutorials.
-
 ---
+
+## Programming language
+
+Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here is some material:
+* [Download R](https://www.r-project.org/)
+* [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
+* [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+* [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
 
 ## Schedule
 
@@ -52,39 +59,39 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 ## Lectures (preliminary)
 
 **Lecture 1 - Introduction, k-NN and decision trees**\
-Reading: SML 2 |  [Slides](TBA) \
+Reading: MLES 1-2 |  [Slides](TBA) \
 Code: 
 
 **Lecture 2 - Regularized non-linear regression**\
-Reading: SML 3 |  [Slides](TBA) \
+Reading: MLES 3 |  [Slides](TBA) \
 Code: 
 
 **Lecture 3 - Regularized non-linear classification**\
-Reading: SML 3 |  [Slides](TBA) \
+Reading: MLES 3 |  [Slides](TBA) \
 Code:
 
 **Lecture 4 - Evaluating predictive performance and hyperparameter learning**\
-Reading: SML 4 |  [Slides](TBA) \
+Reading: MLES 4 |  [Slides](TBA) \
 Code: 
 
 **Lecture 5 - Learning from large-scale data**\
-Reading: SML 5 |  [Slides](TBA) \
+Reading: MLES 5 |  [Slides](TBA) \
 Code: 
 
 **Lecture 6 - Neural networks**\
-Reading: SML 6.1-6.2 |  [Slides](TBA) \
+Reading: MLES 6.1-6.2 |  [Slides](TBA) \
 Code:  
 
 **Lecture 7 - Image data and convolutional neural networks**\
-Reading: SML 6.3-6.4 |  [Slides](TBA) \
+Reading: MLES 6.3-6.4 |  [Slides](TBA) \
 Code: 
 
 **Lecture 8 - Ensemble methods**\
-Reading: SML 7 |  [Slides](TBA) \
+Reading: MLES 7 |  [Slides](TBA) \
 Code:  
 
 **Lecture 9 - Clustering and mixture models for unsupervised learning**\
-Reading: 11.1-11.3 |  [Slides](TBA) \
+Reading: MLES 11.1-11.3 |  [Slides](TBA) \
 Code: 
 
 **Lecture 10 - Textual data and topic models**\
@@ -92,7 +99,7 @@ Reading: TBD |  [Slides](TBA) \
 Code: 
 
 **Lecture 11 - Semi-supervised learning**\
-Reading: 11.2 |  [Slides](TBA) \
+Reading: MLES 11.2 |  [Slides](TBA) \
 Code: 
 
 **Lecture 12 - Active learning**\
