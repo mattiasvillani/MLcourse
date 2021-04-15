@@ -50,6 +50,7 @@ Programming and analyzing data in R will be big part of the course. The course [
 * [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
 * [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 * [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
+* [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html)
 
 ## Schedule
 
