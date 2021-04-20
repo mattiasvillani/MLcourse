@@ -33,6 +33,13 @@ Probabilistic machine learning and Bayesian methods
 Professor of Statistics, Stockholm University \
 Experimental design, active learning and optimization methods
 
+## Computer lab assistant
+
+<img src="Misc/karl.jpg" width="100">\
+[Karl Sigfrid](https://www.su.se/english/profiles/kasi3175-1.513541) \
+PhD student in Statistics, Stockholm University 
+
+
 ---
 
 ## Course literature
