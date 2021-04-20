@@ -43,13 +43,15 @@ The course will use the following book as the main course literature:
 * Additional course material linked from this page, such as articles and tutorials.
 ---
 
-## Programming language
+## The R programming language
 
-Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here is some material:
+Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here are some material:
 * [Download R](https://www.r-project.org/)
 * [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
 * [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 * [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+Here are some machine learning packages in R: 
 * [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
 * **Caret** - a meta package for predictive ML models in R: 
   * [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
