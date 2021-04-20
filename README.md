@@ -50,8 +50,10 @@ Programming and analyzing data in R will be big part of the course. The course [
 * [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
 * [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 * [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
-* [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html)
-* **Caret** - a meta package for working with predictive ML models in R: [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html) and [list of caret handled models](https://topepo.github.io/caret/available-models.html). 
+* [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
+* **Caret** - a meta package for predictive ML models in R: 
+  * [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
+  * list of [available models](https://topepo.github.io/caret/available-models.html). 
 
 ## Schedule
 
