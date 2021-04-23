@@ -75,17 +75,17 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 Reading: MLES 1-2 |  [Slides](TBA) \
 Code: 
 
-**Lecture 2 - Regularized non-linear regression**\
+**Lecture 2 - Regularized non-linear regression and classification**\
 Reading: MLES 3 |  [Slides](TBA) \
 Code: 
 
-**Lecture 3 - Regularized non-linear classification**\
-Reading: MLES 3 |  [Slides](TBA) \
-Code:
-
-**Lecture 4 - Evaluating predictive performance and hyperparameter learning**\
+**Lecture 3 - Evaluating predictive performance and hyperparameter learning**\
 Reading: MLES 4 |  [Slides](TBA) \
 Code: 
+
+**Lecture 4 - Ensemble methods**\
+Reading: MLES 7 |  [Slides](TBA) \
+Code:
 
 **Lecture 5 - Learning from large-scale data**\
 Reading: MLES 5 |  [Slides](TBA) \
@@ -99,16 +99,16 @@ Code:
 Reading: MLES 6.3-6.4 |  [Slides](TBA) \
 Code: 
 
-**Lecture 8 - Ensemble methods**\
-Reading: MLES 7 |  [Slides](TBA) \
+**Lecture 8 - Gaussian process regression and classification**\
+Reading: MLES 9 |  [Slides](TBA) \
 Code:  
 
 **Lecture 9 - Clustering and mixture models for unsupervised learning**\
-Reading: MLES 11.1-11.3 |  [Slides](TBA) \
+Reading: MLES 10.1-10.3 |  [Slides](TBA) \
 Code: 
 
 **Lecture 10 - Textual data and topic models**\
-Reading: TBD |  [Slides](TBA) \
+Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) | [Topic models intro](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) | [Slides](TBA) \
 Code: 
 
 **Lecture 11 - Semi-supervised learning**\
