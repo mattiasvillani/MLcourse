@@ -43,7 +43,7 @@ PhD student in Statistics, Stockholm University
 ---
 ## Course description
 
-The formal course description document with all the details about grading etc is [here](Misc/CourseDescriptionML.pdf)
+The formal course description document with all the details about grading etc is [here](Misc/CourseDescriptionML.pdf).
 
 ## Course literature
 
@@ -51,21 +51,7 @@ The course will use the following book as the main course literature:
 
 * **Machine Learning - a first course for engineers and scientists** (MLES) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf). The previous title of the book was 'Supervised Machine Learning'.
 * Additional course material linked from this page, such as articles and tutorials.
----
-
-## The R programming language
-
-Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here are some material:
-* [Download R](https://www.r-project.org/)
-* [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
-* [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
-* [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
-
-Here are some machine learning packages in R: 
-* [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
-* **Caret** - a meta package for predictive ML models in R: 
-  * [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
-  * list of [available models](https://topepo.github.io/caret/available-models.html). 
+--- 
 
 ## Schedule
 
@@ -151,7 +137,7 @@ Submission: [Athena]().
 Lab: [Lab 3]() \
 Submission: [Athena]().
 
-### Lab assistant: [TBD](https://www.su.se/english/profiles/ooelr-1.342298)
+### Lab assistant: [Karl Sigfrid](https://www.su.se/english/profiles/kasi3175-1.513541)
 
 ---
 
@@ -167,9 +153,15 @@ The course examination consists of:
 
 ## R
 
-* R will be the main programming language in the course. You probably want to install [R](https://www.r-project.org/) and the working environment [RStudio](https://rstudio.com/products/rstudio/).
-* The labs and exam will be done using **Jupyter notebooks**. Jupyter notebooks can be used for all the main data science languages (R, Python and Julia), but this course will use R. The easiest way to get started with Jupyter notebooks is through the free **Anaconda distribution** which you can download [here](https://www.anaconda.com/products/individual). Anaconda also gives you access to Python and its packages for Data science/machine learning. We will not use Python in this course, but it is something that you may want to look into at some point. The instructions for how to use Jupyter notebooks from Anaconda is [here](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/).
-* One of the prerequisites for this course is the course R programming 7.5 hp, or equivalent. So if you are rusty on R, or haven't studied it much before, we recommend to take some time before the course starts to refresh your memory. There is a lot of online material. The classic [Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) and John Cook's [intro to R for programmers](https://www.johndcook.com/blog/r_language_for_programmers/) are two good sources.
-
+* Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here are some material:
+  * [Download R](https://www.r-project.org/)
+  * [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
+  * [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+  * [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
+* The labs and exam will be done using **Jupyter notebooks**. Jupyter notebooks can be used for all the main data science languages (R, Python and Julia), but this course will use R. The easiest way to get started with Jupyter notebooks is through the free [Anaconda distribution for Data Science](https://www.anaconda.com/products/individual). The instructions for how to use Jupyter notebooks from Anaconda are [here](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/). Here is a [cheat sheet for Jupyter notebooks](https://www.anaconda.com/wp-content/uploads/2019/03/11-2018-JupyterLab-Notebook-Cheatsheet.pdf). Anaconda also gives you access to Python and its packages for Data science/machine learning. We will not use Python in this course, but Python is used a lot in ML. 
+* Here are some machine learning packages in R: 
+  * [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
+  * **Caret** - a meta package for predictive ML models in R. See the [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
+ and a list of [available models](https://topepo.github.io/caret/available-models.html) in Caret.
 
 ---
