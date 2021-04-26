@@ -41,6 +41,9 @@ PhD student in Statistics, Stockholm University
 
 
 ---
+## Course description
+
+The formal course description document with all the details about grading etc is [here](Misc/CourseDescriptionML.pdf)
 
 ## Course literature
 
@@ -124,7 +127,7 @@ Code:
 
 * The three computer labs are central to the course. Expect to allocate substantial time for each lab. Many of the exam questions will be computer based, so working on the labs will also help you with the exam.
 
-* R will be used as the course's programming language.
+* R will be used as the course's programming language, see below for more info.
 
 * The labs should be done in pairs of students.
 
@@ -164,10 +167,9 @@ The course examination consists of:
 
 ## R
 
-* R will be the main programming language in the course. Here is some useful links:
-* The main page with links to downloads for the [programming language R](https://www.r-project.org/)
-* [RStudio](https://rstudio.com/products/rstudio/) - a very nice developing environment for R.
-* Short introduction to R | A little [longer introduction](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) | John Cook's [intro to R for programmers](https://www.johndcook.com/blog/r_language_for_programmers/).
+* R will be the main programming language in the course. You probably want to install [R](https://www.r-project.org/) and the working environment [RStudio](https://rstudio.com/products/rstudio/).
+* The labs and exam will be done using **Jupyter notebooks**. Jupyter notebooks can be used for all the main data science languages (R, Python and Julia), but this course will use R. The easiest way to get started with Jupyter notebooks is through the free **Anaconda distribution** which you can download [here](https://www.anaconda.com/products/individual). Anaconda also gives you access to Python and its packages for Data science/machine learning. We will not use Python in this course, but it is something that you may want to look into at some point. The instructions for how to use Jupyter notebooks from Anaconda is [here](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/).
+* One of the prerequisites for this course is the course R programming 7.5 hp, or equivalent. So if you are rusty on R, or haven't studied it much before, we recommend to take some time before the course starts to refresh your memory. There is a lot of online material. The classic [Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) and John Cook's [intro to R for programmers](https://www.johndcook.com/blog/r_language_for_programmers/) are two good sources.
 
 
 ---
