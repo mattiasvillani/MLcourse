@@ -151,7 +151,7 @@ The course examination consists of:
 
 ---
 
-## R and Jupyter notebooks
+## R
 
 * Analyzing data in R will be big part of the course, so you need to know a little R programming. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412) or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here are some material:
   * [Download R](https://www.r-project.org/)
