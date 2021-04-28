@@ -151,14 +151,15 @@ The course examination consists of:
 
 ---
 
-## R
+## R and Jupyter notebooks
 
-* Programming and analyzing data in R will be big part of the course. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412)  or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here are some material:
+* Analyzing data in R will be big part of the course, so you need to know a little R programming. The course [R programming 7.5 credits](https://www.su.se/english/search-courses-and-programmes/st4101-1.483412) or equivalent course is a prerequisite for this course. If you feel a little rusty on R, you can find a lot of material for studying it online, including tutorials, videos and free books. Here are some material:
   * [Download R](https://www.r-project.org/)
   * [RStudio](https://www.rstudio.com/products/rstudio/) - probably the best software/editor for R.
   * [Official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
   * [R Cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
-* The labs and exam will be done using **Jupyter notebooks**. Jupyter notebooks can be used for all the main data science languages (R, Python and Julia), but this course will use R. The easiest way to get started with Jupyter notebooks is through the free [Anaconda distribution for Data Science](https://www.anaconda.com/products/individual). The instructions for how to use Jupyter notebooks from Anaconda are [here](https://docs.anaconda.com/anaconda/navigator/tutorials/r-lang/). Here is a [cheat sheet for Jupyter notebooks](https://www.anaconda.com/wp-content/uploads/2019/03/11-2018-JupyterLab-Notebook-Cheatsheet.pdf). Anaconda also gives you access to Python and its packages for Data science/machine learning. We will not use Python in this course, but Python is used a lot in ML. 
+  * The labs and exam will be done using [R notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) in RStudio. 
+ 
 * Here are some machine learning packages in R: 
   * [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
   * **Caret** - a meta package for predictive ML models in R. See the [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
