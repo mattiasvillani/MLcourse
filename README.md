@@ -126,16 +126,17 @@ Code:
 
 
 **Computer Lab 1** - Regularized nonlinear regression and classification.\
-Lab: [Lab 1](TBA) \
-Submission: [Athena]().
+Lab 1a - Regularized regression: [R notebook](/Labs/Lab1a.Rmd) | [pdf version](/Labs/Lab1a.pdf) [html version](/Labs/Lab1a.html) \
+Lab 1b - Regularized classification: [R notebook](/Labs/Lab1b.Rmd) | [pdf version](/Labs/Lab1b.pdf) [html version](/Labs/Lab1b.html) \
+Submission: Athena.
 
 **Computer Lab 2** - Neural Networks.\
 Lab: [Lab 2]() \
-Submission: [Athena]().
+Submission: Athena.
 
 **Computer Lab 3** - Unsupervised and semisupervised learning.\
 Lab: [Lab 3]() \
-Submission: [Athena]().
+Submission: Athena.
 
 ### Lab assistant: [Karl Sigfrid](https://www.su.se/english/profiles/kasi3175-1.513541)
 
