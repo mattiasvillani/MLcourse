@@ -55,14 +55,14 @@ The response is the last column `Sold` and we will use all the other features ex
 
 It is always useful to check if the dataset is imbalanced. There are clearly more sold items that unsold, but the data are not catastrophically imbalanced:
 
-```{r}
+```{r check-imbalance}
 message(paste("Percentage of auctions where the object was sold:", 100*sum(eBayData['Sold']=="sold")/1000))
 ```
 
 Split the data using the `createDataPartition` function in `caret` to get 75% of the data for training and 25% for testing. \
 The default method in `caret` is stratified sampling, keeping the same fraction of positive and negative observations in both training and test datasets.
 
-```{r}
+```{r training-test-split}
 set.seed(123)
 inTrain <- createDataPartition(
   y = eBayData$Sold,
@@ -84,7 +84,7 @@ Let's get started by with a logistic regression with the following steps:
 - predict the test data using the rule $\mathrm{Pr}(y=1|\mathbf{x})>0.5 \Rightarrow y=1$ 
 - compute the confusion matrix (using `caret`), and the usual measurements of predictive performance for binary data.
 
-```{r}
+```{r fit-glm}
 glmFit = glm(Sold ~ ., family = binomial, data = training)
 yProbs = predict(glmFit, newdata = testing, type = "response")
 threshold = 0.5 # Predict Sold if yProbs>threshold
@@ -104,7 +104,7 @@ confusionMatrix(yPreds, testing$Sold, positive = "sold")
 
 Let's use the `caret` package to fit a **elastic net** classifier where the two hyperparameters $\alpha$ and $\lambda$ are chosen by 10-fold cross-validation.
 
-```{r}
+```{r elastic-net-caret}
 cv10 <- trainControl(
   method = "cv", 
   number = 10, # number of folds
@@ -124,11 +124,11 @@ glmnetFit <- train(
 ```
 
 The `MLeval` package can be used to plot ROC curves from model fit with `caret`. By just supplying the fitted model object `glmnetFit` to the function we get the cross-validated results from the training data, i.e. this evaluation is not evaluating against the `testing` data. See below for how to evaluate on the testing data using the `MLeval` package.
-```{r}
+```{r ROC-glmnet}
 glmnetEval = evalm(glmnetFit, plots='r', rlinethick=0.8, fsize=8) # plots='r' gives ROC
 ```
 The optimal model returned in the caret object `glmnetFit` can be directly used for prediction of the test data. The `MLeval` package can again be used for the evaluation, this time on the `testing` data.
-```{r}
+```{r glmnet-mleval}
 yPreds = predict(glmnetFit, newdata = testing)
 yProbs = predict(glmnetFit, newdata = testing, type = "prob")
 confusionMatrix(yPreds, testing$Sold, positive = "sold")
