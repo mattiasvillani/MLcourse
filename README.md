@@ -126,8 +126,8 @@ Code:
 
 
 **Computer Lab 1** - Regularized nonlinear regression and classification.\
-Lab 1a - Regularized regression: [R notebook](/Labs/Lab1a.Rmd) | [pdf version](/Labs/Lab1a.pdf) [html version](/Labs/Lab1a.html) \
-Lab 1b - Regularized classification: [R notebook](/Labs/Lab1b.Rmd) | [pdf version](/Labs/Lab1b.pdf) [html version](/Labs/Lab1b.html) \
+Lab 1a - Regularized regression: [R notebook](/Labs/Lab1a.Rmd) | [pdf version](/Labs/Lab1a.pdf) | [html version](/Labs/Lab1a.html) \
+Lab 1b - Regularized classification: [R notebook](/Labs/Lab1b.Rmd) | [pdf version](/Labs/Lab1b.pdf) | [html version](/Labs/Lab1b.html) \
 Submission: Athena.
 
 **Computer Lab 2** - Neural Networks.\
