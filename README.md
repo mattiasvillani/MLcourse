@@ -55,7 +55,7 @@ The course will use the following book as the main course literature:
 
 ## Schedule
 
-The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/su/web/stud1/s.html?i=x7QeQ39x4nnyknbcQanQ6clvl1Z2ZZ0c02ndhcn_seXlYy601w570wgZuQnY).
+The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/su/web/stud1/s.html?i=x7QeQ39x4nnyknbcQanQ6clvl1Z2ZZ0c02ndhcn_seXlYy603w575wgZuQnY).
 
 ---
 ## Lectures (preliminary)
