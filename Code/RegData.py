@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns;sns.set();sns.set_style("darkgrid")
 import matplotlib.pylab as plt
-dataFolder = '/home/mv/Dropbox/Teaching/ML4Industry/Data/'
+
 sns.set_context('talk')
 np.random.seed(seed=123) # Set the seed for reproducibility
 
@@ -22,24 +22,14 @@ plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
 # %%
-# load data
-loadData = True
-if loadData:
-    from io import BytesIO
-    import requests
-    r = requests.get('https://github.com/STIMALiU/ml4industry/raw/master/Labs/DataLab1a.npz', stream = True)
-    data = np.load(BytesIO(r.raw.read()))
-    x = data['x']
-    y = data['y']
-else: # Simulate data
-    n = 200
-    sigmaEps = 0.2
-    w = np.array([0,1])
-    x = np.random.uniform(0,1,(n,1))
-    xBasis = x*np.sin(6*x)*np.exp(x)
-    y = w[0] + w[1]*xBasis + sigmaEps*np.random.standard_t(df=3, size=(n,1))
-    y[x[:,0]<0.3,0] = 1 + sigmaEps*np.random.standard_t(df=3, size=np.sum(x[:,0]<0.3))
-    np.savez(dataFolder+'DataLab1a', x = x, y = y) # Save the data to file
+# Simulate data
+n = 200
+sigmaEps = 0.2
+w = np.array([0,1])
+x = np.random.uniform(0,1,(n,1))
+xBasis = x*np.sin(6*x)*np.exp(x)
+y = w[0] + w[1]*xBasis + sigmaEps*np.random.standard_t(df=3, size=(n,1))
+y[x[:,0]<0.3,0] = 1 + sigmaEps*np.random.standard_t(df=3, size=np.sum(x[:,0]<0.3))
 
 # %%
 # Split the data into training and testing
@@ -418,7 +408,7 @@ plt.plot(treeDepths,RMSEtrain);
 plt.plot(treeDepths,RMSEtest);
 plt.title('RMSE - training vs test', fontsize = 12)
 plt.ylabel("RMSE", fontsize = 12);
-plt.xlabel("Tree depth", fontsize = 12);
+plt.xlabel("Max tree depth", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataXGBoost.pdf")
 # %%
