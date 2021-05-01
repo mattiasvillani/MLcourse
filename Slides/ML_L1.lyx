@@ -1,0 +1,3387 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamertemplate{headline}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include necessary packages here
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+
+\includegraphics[width=1.5cm]{/home/mv/Dropbox/IconsAndLogos/LogoBlueJustRing.jpg}\hspace*{2.5cm}~%
+\includegraphics[width=2cm]{/home/mv/Dropbox/IconsAndLogos/liulogo.png} \linebreak
+\hrulefill \break
+\tiny
+\includegraphics[width=0.33cm]{/home/mv/Dropbox/IconsAndLogos/web.png} \href{https://mattiasvillani.com}{mattiasvillani.com}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/twitter.jpg} \href{https://twitter.com/matvil}{@matvil}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/github.png} \href{https://github.com/mattiasvillani}{mattiasvillani}~
+}
+
+
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{red}{RGB}{255, 128, 0}
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+
+\usepackage{tcolorbox}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{wasysym}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\end_preamble
+\options xcolor=svgnames, handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\color orange
+Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\color orange
+Lecture 1 - Introduction to ML, 
+\begin_inset Formula $k$
+\end_inset
+
+-NN and Decision Trees
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Mattias Villani
+\series default
+ 
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Linköping and Stockholm University
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Course overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Course 
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "webpage"
+target "https://github.com/mattiasvillani/MLcourse"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+.
+ Course 
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "syllabus"
+target "https://sisu.it.su.se/pdf_creator/40476/60612/en"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Modes of teaching:
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lectures 1-10 (
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Mattias Villani"
+target "https://www.mattiasvillani.com/"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+)
+\end_layout
+
+\begin_layout Itemize
+Lectures 11-12 (
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Frank Miller"
+target "http://www.adoptdesign.de/frankmillereu/"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+)
+\end_layout
+
+\begin_layout Itemize
+Computer labs 1-3 (
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Karl Sigfrid"
+target "https://www.su.se/english/profiles/kasi3175-1.513541"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color red
+Modules
+\series default
+\color inherit
+:
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Supervised learning 
+\series default
+\color inherit
+with
+\series bold
+\color blue
+ regularized regression 
+\series default
+\color inherit
+and
+\series bold
+\color blue
+ classification.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Neural networks and deep learning
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Unsupervised
+\series default
+\color inherit
+, 
+\series bold
+\color blue
+semisupervised
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+active learning
+\series default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color red
+Examination
+\series default
+\color inherit
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Three computer lab reports, 3 credits (in pairs of students)
+\end_layout
+
+\begin_layout Itemize
+Exam (5+1 hours computer-based exam.
+ Take home this semester), 4.5 credits
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+What is Machine Learning? 
+\series default
+\size footnotesize
+\color blue
+
+\begin_inset Formula $\hspace{2cm}$
+\end_inset
+
+Wikipedia (Nov 2, 2019)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Machine learning
+\series default
+\color inherit
+ is the scientific study of 
+\color gray
+algorithms
+\color inherit
+ and 
+\color gray
+statistical models
+\color inherit
+ that computer systems use to perform a specific task 
+\color gray
+without using explicit instructions
+\color inherit
+, relying on 
+\color gray
+patterns
+\color inherit
+ and 
+\color gray
+inference
+\color inherit
+ instead.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+It is seen as a subfield of 
+\series bold
+\color blue
+artificial intelligence
+\series default
+\color inherit
+.
+ Machine learning algorithms build a mathematical model based on sample
+ data to make 
+\series bold
+\size default
+\color orange
+predictions
+\series default
+\size small
+\color inherit
+ or 
+\series bold
+\size default
+\color orange
+decisions
+\series default
+\size small
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Machine learning is closely related to 
+\series bold
+\color blue
+computational statistics
+\series default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\size small
+\color blue
+Data mining
+\series default
+\color inherit
+ is a field of study within machine learning, and focuses mainly on exploratory
+ data analysis through unsupervised learning.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Machine learning for business applications: 
+\series bold
+\color blue
+predictive analytics
+\series default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\size small
+\color blue
+Data science
+\series default
+\color inherit
+.
+ Data science is an interdisciplinary field that uses scientific methods,
+ processes, algorithms and systems to extract knowledge and insights from
+ structured and unstructured data.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+How to become viral on Twitter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/EmojiTalk/emojiTweetNov13.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/fire.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/fire.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+ Machine Learning vs Traditional Statistics 
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/fire.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/fire.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stats
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ML
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomspace="-0.45cm">
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter inference
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Sleeping Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prediction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Neutral Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Decision making
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Flushed Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interpreting models
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Eye Roll Emoji in PNG [Free Download IOS Emojis].png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interpreting decisions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Flushed Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Blow Kiss Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Checking model assumptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Oops Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Flexible models and regularization
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Fearful Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rigorous theory
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Tongue Out Emoji with Winking Eye.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Causality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Neutral Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Neutral Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Programming
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Disappointed but Relieved Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scalability, big data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/OMG Face Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Real-time/Online
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Oops Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Cowboy Emoji [Download IOS Emojis].png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data collection and experimental design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/IconsAndLogos/Oops Emoji.png
+	lyxscale 5
+	scale 1.9
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+ML applications
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finding and tracking objects in traffic (image data).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+centering     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+href{https://www.youtube.com/watch?v=HS1wV9NMLr8&ab_channel=NVIDIA}{
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=0.3
+\backslash
+textheight, keepaspectratio]{Images/youtubeSegment.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Finding bugs in computer code from bug reports (text data).
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/bugreport.jpg
+	lyxscale 30
+	scale 10
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/arrow.png
+	lyxscale 10
+	scale 5
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/ProbComp.jpg
+	lyxscale 20
+	scale 5
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Predicting pollution (spatiotemporal sensor data).
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/NO2LondonAt11.png
+	lyxscale 20
+	scale 12
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/NO2LondonAt17.png
+	lyxscale 20
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Predicting defaults on bank loans (standard tabular data).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+ML applications
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+Training data
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/ECG_all.png
+	lyxscale 20
+	scale 17
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Test data
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/EKGpred.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figures from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Supervised machine learning workflow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "/home/mv/Dropbox/Teaching/MLcourse/MLES/sml-course-book-master/tex-figures/intro/sml-process.tex"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Labeling distinctions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Availability of labels
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Supervised learning
+\series default
+\color inherit
+: labeled training data.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Unsupervised learning
+\series default
+\color inherit
+: unlabeled training data.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Semi-supervised learning
+\series default
+\color inherit
+: labels for a subset of training data
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Reinforcement learning
+\series default
+\color inherit
+: sequential learning with incremental rewards for good behavior.
+\series bold
+\color blue
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Types of labels
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Regression
+\series default
+\color inherit
+ - labels are real numbers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Classification
+\series default
+\color inherit
+ - labels are discrete
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/TrainingMnist1to6.png
+	lyxscale 10
+	scale 13
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/BikeScatter.pdf
+	lyxscale 40
+	scale 26
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Data distinctions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color orange
+Regression
+\color blue
+ 
+\series default
+\color inherit
+data
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Real valued
+\end_layout
+
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Proportions
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color orange
+Categorical
+\color blue
+ 
+\series default
+\color inherit
+data (binary, multi-class)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color orange
+Structured non-tabular data
+\series default
+\color inherit
+ common in ML applications:
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Images
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Text
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Sound
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Other
+\series bold
+\color blue
+ 
+\color orange
+dependence structures
+\series default
+\color inherit
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Time series 
+\series default
+\color inherit
+(sensor data over time)
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Longitudinal data
+\series default
+\color inherit
+ (one short time series for many objects)
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Spatial data 
+\series default
+\color inherit
+(sensors at different locations, images)
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Survival data 
+\series default
+\color inherit
+(lifetime of hard drives)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Why Statistics in ML?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Probability models and statistical inference is a 
+\series bold
+\color blue
+framework
+\series default
+\color inherit
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Principled 
+\series bold
+\color blue
+way to think
+\series default
+\color inherit
+ about any problem in ML.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Can be 
+\series bold
+\color blue
+evaluated
+\series default
+\color inherit
+ and critiqued.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Quantify uncertainties
+\series default
+\color inherit
+.
+ Crucial for 
+\series bold
+\color blue
+Decision making
+\series default
+\color inherit
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+As robotics is now moving into the open world, the issue of 
+\series bold
+\size small
+\color blue
+uncertainty
+\series default
+\size default
+\color inherit
+ has become a major stumbling block for the design of capable robot systems.
+ Managing uncertainty is possibly the most important step towards robust
+ real-world robot systems.
+\begin_inset Newline newline
+\end_inset
+
+
+\size tiny
+from the book Probabilistic Robotics by Thrun et al.
+
+\size default
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Linear/Nonlinear - Parametric/Nonparametric
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Regression
+\series default
+\color inherit
+: 
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Labels are continuous.
+ 
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Linear regression: 
+\begin_inset Formula $y=\mathbf{x}^{\top}\beta+\varepsilon,\:\:\varepsilon\sim N(0,\sigma^{2})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Classification
+\series default
+\color inherit
+: 
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Labels are binary or categorical.
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Logistic regression: 
+\begin_inset Formula $\mathrm{Pr}(y=1\vert\mathbf{x})=\frac{\exp(\mathbf{x}^{\top}\beta)}{1+\exp(\mathbf{x}^{\top}\beta)}.$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Linear regression and logistic regression are:
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Parametric
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Linear
+\series default
+\color inherit
+ (log-odds and decision boundaries given by 
+\begin_inset Formula $\mathbf{x}^{\top}\beta$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+ML
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Flexible
+\series default
+\color inherit
+, richly parametrized models
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Non-linear
+\series default
+\color inherit
+ models
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Non-parametric
+\series default
+\color inherit
+ models
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Formula $k$
+\end_inset
+
+-nearest neighbor models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Nonparametric
+\series default
+\color inherit
+ model for regression and classification.
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Aim: predict 
+\begin_inset Formula $y_{\star}$
+\end_inset
+
+ for new 
+\begin_inset Formula $\mathbf{x}_{\star}$
+\end_inset
+
+.
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color orange
+\begin_inset Formula $k$
+\end_inset
+
+-NN regression
+\series default
+\color inherit
+: predict by 
+\series bold
+\color blue
+average of 
+\begin_inset Formula $k$
+\end_inset
+
+ nearest neighbors
+\series default
+\color inherit
+ to 
+\begin_inset Formula $\mathbf{x}_{\star}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{y}(\mathbf{x}_{\star})=\frac{1}{k}\sum_{i\in\mathcal{N}_{\star}}y_{i}=\mathrm{Average}\left\{ y_{i}:i\in\mathcal{N}_{\star}\right\} 
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{N}_{\star}$
+\end_inset
+
+ is the set of 
+\begin_inset Formula $k$
+\end_inset
+
+ observations with smallest 
+\begin_inset Formula $\left\Vert \boldsymbol{x}_{i}-\boldsymbol{x}_{\star}\right\Vert _{2}$
+\end_inset
+
+.
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color orange
+\begin_inset Formula $k$
+\end_inset
+
+-NN classification
+\series default
+\color inherit
+: 
+\series bold
+\color blue
+majority vote
+\series default
+\color inherit
+ of 
+\begin_inset Formula $k$
+\end_inset
+
+ nearest neighbors.
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Any distance measure can be used instead of 
+\begin_inset Formula $\left\Vert \boldsymbol{x}_{i}-\boldsymbol{x}_{\star}\right\Vert _{2}$
+\end_inset
+
+.
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Input
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+data
+\series default
+\color inherit
+ (
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+) should be 
+\series bold
+\color blue
+normalized
+\series default
+\color inherit
+ (zero mean, unit variance, or scaled so 
+\begin_inset Formula $x\in[-1,1]$
+\end_inset
+
+).
+\series bold
+\color blue
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hyperparameter 
+\series default
+\color inherit
+
+\begin_inset Formula $k$
+\end_inset
+
+ selected from predictive performance.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Formula $k$
+\end_inset
+
+-nearest neighbor classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/knnSimpleExample.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Song classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/songClassificationData.png
+	lyxscale 20
+	scale 27
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Song classification with 
+\begin_inset Formula $k$
+\end_inset
+
+-NN
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/knnSongClassify.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Formula $k$
+\end_inset
+
+-nearest neighbor regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/RegData.pdf
+	lyxscale 70
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Formula $k$
+\end_inset
+
+-nearest neighbor regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/RegDatakNN.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Polynomial regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/RegDataPoly.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Regression trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Partition the feature space
+\series default
+\color inherit
+ into 
+\begin_inset Formula $L$
+\end_inset
+
+ 
+\series bold
+\color blue
+rectangles
+\series default
+\color inherit
+, 
+\begin_inset Formula $R_{1},...,R_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Predict with a model which is constant in each 
+\begin_inset Formula $R_{\ell}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{y}(\boldsymbol{x}_{\star})=\sum_{\ell=1}^{L}w_{\ell}\mathbb{I}\{\boldsymbol{x}_{\star}\in R_{\ell}\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Rectangle indicator functions
+\series default
+\color inherit
+:
+\begin_inset Formula 
+\[
+\mathbb{I}\{\boldsymbol{x}\in R_{\ell}\}=\begin{cases}
+1 & \text{ if }\boldsymbol{x}\in R_{\ell}\\
+0 & \text{ if }\boldsymbol{x}\notin R_{\ell}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Level
+\series default
+\color inherit
+ in rectangle 
+\begin_inset Formula $R_{\ell}$
+\end_inset
+
+ is 
+\begin_inset Formula $w_{\ell}$
+\end_inset
+
+ which can be estimated by 
+\begin_inset Formula 
+\[
+\hat{w}_{\ell}=\hat{y}_{\ell}=\mathrm{Average}\left\{ y_{i}:\mathbf{x}_{i}\in R_{\ell}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Regression trees
+\series default
+\color inherit
+ use 
+\series bold
+\color blue
+binary splits
+\series default
+\color inherit
+, one feature at the time.
+\end_layout
+
+\begin_layout Itemize
+Computationally efficient and nice interpretation.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Regression trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/Rectangles.png
+	lyxscale 30
+	scale 24
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/TreeLevels.png
+	lyxscale 30
+	scale 27
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/Tree.png
+	lyxscale 30
+	scale 24
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Hastie et al (2009).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Fitting regression trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Parameters
+\series default
+\color inherit
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+split variable
+\series default
+\color inherit
+ at each stage: 
+\begin_inset Formula $j_{1},j_{2},...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+splitting point
+\series default
+\color inherit
+ at each stage: 
+\begin_inset Formula $s_{1},s_{2},...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+level constants
+\series default
+\color inherit
+ 
+\begin_inset Formula $c_{1},c_{2},...$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A given split 
+\begin_inset Formula $(j,s)$
+\end_inset
+
+ defines two half-planes in 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+-space:
+\begin_inset Formula 
+\[
+R_{L}(j,s)=\left\{ \boldsymbol{x}\vert x_{j}\leq s\right\} \text{ and }R_{H}(j,s)=\left\{ \boldsymbol{x}\vert x_{j}>s\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Level constants
+\series default
+\color inherit
+.
+ For a given split 
+\begin_inset Formula $(j,s)$
+\end_inset
+
+, estimate
+\begin_inset Formula 
+\begin{align*}
+\hat{y}_{L}(j,s) & =\mathrm{Average}\left\{ y_{i}:\mathbf{x}_{i}\in R_{L}(j,s)\right\} \\
+\hat{y}_{H}(j,s) & =\mathrm{Average}\left\{ y_{i}:\mathbf{x}_{i}\in R_{H}(j,s)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Greedy for 
+\series bold
+\color blue
+split variable
+\series default
+\color inherit
+ 
+\begin_inset Formula $j$
+\end_inset
+
+ and 
+\series bold
+\color blue
+splitting point 
+\begin_inset Formula $s$
+\end_inset
+
+
+\series default
+\size footnotesize
+\color black
+
+\begin_inset Formula 
+\[
+\min_{j,s}\left[\min_{\hat{y}_{L}}\sum_{i:\boldsymbol{x}_{i}\in R_{L}(j,s)}(y_{i}-\hat{y}_{L}(j,s))^{2}+\min_{\hat{y}_{H}}\sum_{i:\boldsymbol{x}_{i}\in R_{H}(j,s)}(y_{i}-\hat{y}_{H}(j,s))^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Regression tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/RegDataRegTrees.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Cost-complexity pruning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+How big
+\series default
+\color inherit
+ tree?
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bias 
+\series default
+\color inherit
+(small tree) vs 
+\series bold
+\color blue
+Variance 
+\series default
+\color inherit
+(large tree)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Cost-complexity pruning
+\series default
+\color inherit
+:
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+grow a large tree (few observation at each leave)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+prune
+\series default
+\color inherit
+ the tree by collapsing non-terminal nodes to minimize
+\begin_inset Formula 
+\[
+\frac{1}{n}\sum_{i=1}^{n}L\left(\hat{y}(\boldsymbol{x}_{i}),y_{i}\right)+\eta\left|T\right|+\lambda\left\Vert \boldsymbol{w}\right\Vert _{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $L\left(\hat{y}(\boldsymbol{x}_{i}),y_{i}\right)$
+\end_inset
+
+ is a 
+\series bold
+\color blue
+loss function
+\series default
+\color inherit
+ (e.g.
+ squared error)
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|T\right|$
+\end_inset
+
+ is the 
+\series bold
+\color blue
+number of leaves
+\series default
+\color inherit
+ in the subtree 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda\left\Vert \boldsymbol{w}\right\Vert _{2}^{2}$
+\end_inset
+
+ is am L2-regularization term (more later!)
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hyperparameters 
+\begin_inset Formula $\eta$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ can be set with cross-validation.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Variable importance
+\series default
+\color inherit
+ for 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+: summing the improvement in fit at each node that is split by 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
