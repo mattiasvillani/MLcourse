@@ -1,14 +1,16 @@
 # %%
-# Imports
+# Trying out some ML models on simulated regression data
+# Author: Mattias Villani, https://mattiasvillani.com
+
+# %% Imports and settings
 import numpy as np
 import pandas as pd
 import seaborn as sns;sns.set();sns.set_style("darkgrid")
 import matplotlib.pylab as plt
-
 sns.set_context('talk')
 np.random.seed(seed=123) # Set the seed for reproducibility
 
-# %% Set plot defaults
+# Set plot defaults
 SMALL_SIZE = 8
 MEDIUM_SIZE = 10
 BIGGER_SIZE = 14
@@ -21,8 +23,7 @@ plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
-# %%
-# Simulate data
+# %% Simulate data
 n = 200
 sigmaEps = 0.2
 w = np.array([0,1])
@@ -31,8 +32,7 @@ xBasis = x*np.sin(6*x)*np.exp(x)
 y = w[0] + w[1]*xBasis + sigmaEps*np.random.standard_t(df=3, size=(n,1))
 y[x[:,0]<0.3,0] = 1 + sigmaEps*np.random.standard_t(df=3, size=np.sum(x[:,0]<0.3))
 
-# %%
-# Split the data into training and testing
+# %% Split the data into training and testing
 from sklearn.model_selection import train_test_split
 xTrain, xTest, yTrain, yTest = train_test_split(x, y, test_size = 0.5, random_state = 123)
 print('Number of obs for training:',len(yTrain))
@@ -47,8 +47,7 @@ plt.title('Data', fontsize=12)
 plt.legend(labels=['Training data','Test data'], loc = 'upper right', fontsize = 12);
 f.savefig("RegData.pdf")
 
-# %%
-# Fitting a linear model
+# %% Fitting a linear model
 from sklearn import linear_model # submodule with linear models
 regModel = linear_model.LinearRegression() # Instantiating the Linear regression object
 regModel.fit(X = xTrain, y = yTrain);
@@ -68,15 +67,12 @@ plt.plot(xGrid, yFit, 'C2');
 f.savefig("RegDataLinear.pdf")
 
 
-# %%
-# Fitting polynomial models
+# %% Fitting polynomial models
 from sklearn.preprocessing import PolynomialFeatures # Not construct polynomials
 from sklearn.metrics import mean_squared_error # Simple function that computes MSE
 
 regModel = linear_model.LinearRegression()
-
 f = plt.figure(figsize=(15,15))
-
 polyOrders = (1,2,3,5,7,10,15,20) # Orders of the fitted polynomials
 RMSEtrain = np.zeros(len(polyOrders))
 RMSEtest = np.zeros(len(polyOrders))
@@ -116,13 +112,10 @@ f.savefig("RegDataPoly.pdf")
 
 
 
-# %%
-# Ridge regression models with alpha = 1
+# %% Ridge regression models with alpha = 1
 alpha = 1
 regModel = linear_model.Ridge(alpha=alpha)
-
 f = plt.figure(figsize=(15,15))
-
 polyOrders = (1,2,3,5,7,10,15,20) # Orders of the polynomials
 RMSEtrain = np.zeros(len(polyOrders))
 RMSEtest = np.zeros(len(polyOrders))
@@ -158,13 +151,10 @@ plt.ylabel("RMSE", fontsize = 12);
 plt.xlabel("Polynomial order", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataRidgeAlpha1.pdf")
-# %%
-# Ridge regression with alpha determined by cross-validation
+# %% Ridge regression with alpha determined by cross-validation
 alphas = np.linspace(10**(-20),1,100)
 regModel = linear_model.RidgeCV(alphas = alphas, cv = 5)
-
 f = plt.figure(figsize=(15,15))
-
 polyOrders = (1,2,3,5,7,10,15,20) # Maximal order of polynomial
 RMSEtrain = np.zeros(len(polyOrders))
 RMSEtest = np.zeros(len(polyOrders))
@@ -202,12 +192,9 @@ plt.xlabel("Polynomial order", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataRidgeAlphaCV.pdf")
 
-# %%
-# Lasso regularized regression 
+# %% Lasso regularized regression 
 regModel = linear_model.LassoLars(alpha = 0.01) # Numerical more stable than linear_model.LassoCV
-
 f = plt.figure(figsize=(15,15))
-
 polyOrders = (1,2,3,5,7,10,15,20) # Maximal order of polynomial
 RMSEtrain = np.zeros(len(polyOrders))
 RMSEtest = np.zeros(len(polyOrders))
@@ -249,9 +236,7 @@ f.savefig("RegDataLassoAlpha001.pdf")
 
 # %% LASSO with alpha determined by 5-fold CV
 regModel = linear_model.LassoLarsCV(cv = 5) # Numerical more stable than linear_model.LassoCV
-
 f = plt.figure(figsize=(15,15))
-
 polyOrders = (1,2,3,5,7,10,15,20) # Maximal order of polynomial
 RMSEtrain = np.zeros(len(polyOrders))
 RMSEtest = np.zeros(len(polyOrders))
@@ -290,12 +275,9 @@ plt.xlabel("Polynomial order", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataLassoAlphaCV.pdf")
 
-# %%
-# Regression trees
+# %% Regression trees
 from sklearn.tree import DecisionTreeRegressor
-
 f = plt.figure(figsize=(15,15))
-
 treeDepths = (1,2,3,4,5,6,7,8)
 RMSEtrain = np.zeros(len(treeDepths))
 RMSEtest = np.zeros(len(treeDepths))
@@ -331,12 +313,9 @@ plt.xlabel("Max tree depth", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataRegTrees.pdf")
 
-# %% [markdown]
-# Random forest
+# %% Random forest
 from sklearn.ensemble import RandomForestRegressor
-
 f = plt.figure(figsize=(15,15))
-
 max_depths = (1,2,3,4,5,6,7,8)
 RMSEtrain = np.zeros(len(max_depths))
 RMSEtest = np.zeros(len(max_depths))
@@ -371,12 +350,9 @@ plt.ylabel("RMSE", fontsize = 12);
 plt.xlabel("Max tree depth", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataRandomForest.pdf")
-# %% 
-# XGBoost
+# %% XGBoost
 import xgboost as xgb
-
 f = plt.figure(figsize=(15,15))
-
 max_depths = (1,2,3,4,5,6,7,8)
 RMSEtrain = np.zeros(len(max_depths))
 RMSEtest = np.zeros(len(max_depths))
@@ -411,14 +387,10 @@ plt.ylabel("RMSE", fontsize = 12);
 plt.xlabel("Max tree depth", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDataXGBoost.pdf")
-# %%
 
-# %%
-# k-NN
+# %%k-NN
 from sklearn.neighbors import KNeighborsRegressor
-
 f = plt.figure(figsize=(15,15))
-
 kGrid = (1,2,3,4,5,6,7,8)
 RMSEtrain = np.zeros(len(kGrid))
 RMSEtest = np.zeros(len(kGrid))
@@ -453,4 +425,3 @@ plt.ylabel("RMSE", fontsize = 12);
 plt.xlabel("k", fontsize = 12);
 plt.legend(labels=['RMSE training', 'RMSE test'], loc = 'best', fontsize = 12);
 f.savefig("RegDatakNN.pdf")
-# %%
