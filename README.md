@@ -61,8 +61,8 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 ## Lectures (preliminary)
 
 **Lecture 1 - Introduction, k-NN and decision trees**\
-Reading: MLES 1-2 |  [Slides](TBA) \
-Code: 
+Reading: MLES 1-2 |  [Slides](/Slides/ML_L1.pdf) \
+Extras: [Python code for nonlinear regression](/Code/RegData.py)
 
 **Lecture 2 - Regularized non-linear regression and classification**\
 Reading: MLES 3 |  [Slides](TBA) \
