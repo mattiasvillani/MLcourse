@@ -24,9 +24,9 @@ Loading some packages first. Do `install.packages()` for each package the first 
 
 ```{r loading-packages}
 suppressMessages(library(dplyr)) # Package for data transformations and tables
-library("RColorBrewer") # for pretty colors
 library(caret)  # Fitting ML models with CV and more
 library(MLeval) # for plotting ROC curves and more
+library("RColorBrewer") # for pretty colors
 colors = brewer.pal(12, "Paired")[c(1,2,7,8,3,4,5,6,9,10)];
 options(repr.plot.width = 12, repr.plot.height = 12, repr.plot.res = 100) # plot size
 set.seed(12332)         # set the seed for reproducability

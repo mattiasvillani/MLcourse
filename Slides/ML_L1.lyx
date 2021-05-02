@@ -3263,7 +3263,7 @@ Cost-complexity pruning
 
 \begin_deeper
 \begin_layout Itemize
-grow a large tree (few observation at each leave)
+grow a large tree (few observation at each leaf)
 \begin_inset VSpace medskip
 \end_inset
 
@@ -3332,7 +3332,7 @@ number of leaves
 \begin_inset Formula $\lambda\left\Vert \boldsymbol{w}\right\Vert _{2}^{2}$
 \end_inset
 
- is am L2-regularization term (more later!)
+ is a L2-regularization term (more later!)
 \begin_inset VSpace smallskip
 \end_inset
 

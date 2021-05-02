@@ -62,11 +62,11 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 
 **Lecture 1 - Introduction, k-NN and decision trees**\
 Reading: MLES 1-2 |  [Slides](/Slides/ML_L1.pdf) \
-Extras: [Python code for nonlinear regression](/Code/RegData.py)
+Extras: [Python Jupyter notebook for linear regression](/Code/LinReg.ipynb) | [Python code for nonlinear regression](/Code/RegData.py)
 
 **Lecture 2 - Regularized non-linear regression and classification**\
-Reading: MLES 3 |  [Slides](TBA) \
-Code: 
+Reading: MLES 3 |  [Slides](/Slides/ML_L2.pdf) \
+Code: Spline regression: [Notebook](/Code/SplinesR.Rmd) [pdf](/Code/SplinesR.pdf) [html](/Code/SplinesR.html) | [Spline package demo](/Code/LidarSplines.R)
 
 **Lecture 3 - Evaluating predictive performance and hyperparameter learning**\
 Reading: MLES 4 |  [Slides](TBA) \
