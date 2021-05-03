@@ -1,0 +1,1047 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamertemplate{headline}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include necessary packages here
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+
+\includegraphics[width=1.5cm]{/home/mv/Dropbox/IconsAndLogos/LogoBlueJustRing.jpg}\hspace*{2.5cm}~%
+\includegraphics[width=2cm]{/home/mv/Dropbox/IconsAndLogos/liulogo.png} \linebreak
+\hrulefill \break
+\tiny
+\includegraphics[width=0.33cm]{/home/mv/Dropbox/IconsAndLogos/web.png} \href{https://mattiasvillani.com}{mattiasvillani.com}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/twitter.jpg} \href{https://twitter.com/matvil}{@matvil}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/github.png} \href{https://github.com/mattiasvillani}{mattiasvillani}~
+}
+
+\definecolor{lg}{gray}{0.96}
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{red}{RGB}{255, 128, 0}
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+
+\usepackage{tcolorbox}
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{wasysym}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\end_preamble
+\options xcolor=svgnames, handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\color orange
+Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\color orange
+Lecture 2 - Bonus on Entropy
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Mattias Villani
+\series default
+ 
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Linköping and Stockholm University
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Binary representation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bit
+\series default
+\color inherit
+ = 0-1, True-False, On-Off (binary digit).
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Representing four different outcomes in two bits:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Option A: 00
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Option B: 01
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Option C: 10
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Option D: 11
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+General: 
+\begin_inset Formula $n$
+\end_inset
+
+ bits can encode 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ different outcomes.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Quotes erd
+\end_inset
+
+Entropy by the lake
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/EntropyByTheLake.png
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Entropy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Entropy
+\series default
+\color inherit
+ = The 
+\series bold
+\color blue
+smallest number of bits
+\series default
+\color inherit
+ needed to encode a message using an 
+\series bold
+\color blue
+optimal coding scheme
+\series default
+\color inherit
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Measure of information
+\series default
+\color inherit
+.
+ 
+\series bold
+\color blue
+Measure of unorder
+\series default
+\color inherit
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Entropy of a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ with discrete support 
+\begin_inset Formula $\mathcal{X}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+H(X)=-\sum_{x\in\mathcal{X}}p(x)\cdot\log_{2}p(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If all 8 fishermen are equally skilled: 
+\begin_inset Formula $p(x)=\frac{1}{8}$
+\end_inset
+
+ and 
+\size footnotesize
+
+\begin_inset Formula 
+\[
+H(X)=-\left(\frac{1}{8}\log_{2}\frac{1}{8}+...+\frac{1}{8}\log_{2}\frac{1}{8}\right)=-\left(\log_{2}1-\log_{2}8\right)=3\mbox{ bits}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Uniform distribution has largest entropy.
+ Least informative.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Entropy and Huffman coding
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Entropy of a random variable:
+\begin_inset Formula 
+\[
+H(X)=-\sum_{x\in\mathcal{X}}p(x)\cdot\log_{2}p(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If the fishermen are not equally skilled and 
+\begin_inset Formula 
+\[
+\begin{array}{ccccccccc}
+x: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+p(x): & \frac{1}{2} & \frac{1}{4} & \frac{1}{8} & \frac{1}{16} & \frac{1}{64} & \frac{1}{64} & \frac{1}{64} & \frac{1}{64}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Entropy:
+\begin_inset Formula 
+\[
+H(X)=-\left(\frac{1}{2}\log_{2}\frac{1}{2}+...+\frac{1}{64}\log_{2}\frac{1}{64}\right)=2\text{ bits}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The optimal scheme sends only two bits 
+\emph on
+on average
+\emph default
+ (
+\series bold
+\color blue
+Huffman coding
+\series default
+\color inherit
+).
+\begin_inset Formula 
+\[
+\begin{array}{ccccccccc}
+x: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\text{Code}: & 0 & 10 & 110 & 1110 & 111100 & 111101 & 111110 & 111111
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Entropy as expected surprise
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The entropy can be written
+\begin_inset Formula 
+\[
+H(X)=\sum p(x)\cdot\log_{2}\frac{1}{p(x)}=\mathrm{E}\left(\log_{2}\frac{1}{p(x)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{p(x)}$
+\end_inset
+
+ is a measure how 
+\emph on
+surprising
+\emph default
+ the outcome 
+\begin_inset Formula $x$
+\end_inset
+
+ is.
+\end_layout
+
+\begin_layout Itemize
+Entropy is the 
+\series bold
+\color blue
+expected surprise
+\series default
+\color inherit
+ when values are drawn from 
+\begin_inset Formula $p(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Entropy is a 
+\series bold
+\color blue
+measure of uncertainty
+\series default
+\color inherit
+ in a distribution.
+\end_layout
+
+\begin_layout Itemize
+Entropy of a continuous variable
+\begin_inset Formula 
+\[
+H(X)=-\int p(x)\cdot\log_{2}p(x)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X\sim N(\mu,\sigma^{2})$
+\end_inset
+
+ 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $H(X)=\frac{1}{2}\ln\left(2\pi e\sigma^{2}\right)$
+\end_inset
+
+ [Entropy defined using natural logs].
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Joint and conditional entropy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Joint entropy
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\cdot\log_{2}p(x,y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Conditional entropy of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given 
+\begin_inset Formula $X=x$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+H(Y|X=x)=-\sum_{y\in\mathcal{Y}}p(y|x)\cdot\log_{2}p(y|x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Conditional entropy
+\series default
+\color inherit
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+H(Y|X)=\sum_{x\in\mathcal{X}}p(x)\cdot H(Y|X=x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Chain rule for entropy [corresponds to 
+\begin_inset Formula $p(X,Y)=p(X)\cdot p(Y|X)$
+\end_inset
+
+]
+\begin_inset Formula 
+\[
+H(X,Y)=H(X)+H(Y|X)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Mutual information
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Mutual information
+\series default
+\color inherit
+ (reduction in entropy of 
+\begin_inset Formula $X$
+\end_inset
+
+ from knowing 
+\begin_inset Formula $Y$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+I(X;Y)=H(X)-H(X|Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Kullback-Leibler divergence between distributions (
+\series bold
+\color blue
+relative entropy
+\series default
+\color inherit
+)
+\begin_inset Formula 
+\[
+D\left(p||q\right)=\sum_{x\in\mathcal{X}}p(x)\cdot\log\frac{p(x)}{q(x)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Alternative formulation of mutual information:
+\begin_inset Formula 
+\[
+I(X;Y)=\sum_{x,y}p(x,y)\cdot\log\frac{p(x,y)}{p(x)\cdot p(y)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $I(X;Y)$
+\end_inset
+
+ measures how far a joint distribution is from independence:
+\begin_inset Formula 
+\[
+I(X;Y)=D\left[p(x,y)||p(x)\cdot p(y)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating models using entropy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Cross-entropy 
+\series default
+\color inherit
+of a distribution 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ wrt distribution 
+\begin_inset Formula $p(x)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+H(p,q)=-\sum_{x\in\mathcal{X}}p(x)\cdot\log q(x)=\mathrm{E}_{p}\left[\log\frac{1}{q(x)}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Expected surprise from 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ when data comes from 
+\begin_inset Formula $p(x)$
+\end_inset
+
+.´
+\end_layout
+
+\begin_layout Itemize
+Low 
+\begin_inset Formula $H(p,q)$
+\end_inset
+
+ means good 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The cross-entropy 
+\begin_inset Formula $\geq$
+\end_inset
+
+ entropy since
+\begin_inset Formula 
+\[
+H(p,q)=H(p)+D\left(p||q\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Maximum likelihood estimator
+\series default
+\color inherit
+ minimizes cross entropy:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $q(x)$
+\end_inset
+
+ is the probability model with parameters 
+\begin_inset Formula $\boldsymbol{\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is the empirical distribution of the sample 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(x)=\sum_{i=1}^{n}\delta_{x_{i}}(x)
+\]
+
+\end_inset
+
+Dirac's point mass: 
+\begin_inset Formula $\delta_{x_{i}}(x)=1$
+\end_inset
+
+ 
+\begin_inset Formula $\text{ if }x=x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta_{x_{i}}(x)=0$
+\end_inset
+
+ otherwise.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

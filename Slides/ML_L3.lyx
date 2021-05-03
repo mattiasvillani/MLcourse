@@ -1,0 +1,4101 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamertemplate{headline}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include necessary packages here
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+
+\includegraphics[width=1.5cm]{/home/mv/Dropbox/IconsAndLogos/LogoBlueJustRing.jpg}\hspace*{2.5cm}~%
+\includegraphics[width=2cm]{/home/mv/Dropbox/IconsAndLogos/liulogo.png} \linebreak
+\hrulefill \break
+\tiny
+\includegraphics[width=0.33cm]{/home/mv/Dropbox/IconsAndLogos/web.png} \href{https://mattiasvillani.com}{mattiasvillani.com}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/twitter.jpg} \href{https://twitter.com/matvil}{@matvil}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/github.png} \href{https://github.com/mattiasvillani}{mattiasvillani}~
+}
+
+\definecolor{lg}{gray}{0.96}
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{red}{RGB}{255, 128, 0}
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+
+\usepackage{tcolorbox}
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{wasysym}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\end_preamble
+\options xcolor=svgnames, handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\color orange
+Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\color orange
+Lecture 3 - Evaluating predictive performance and hyperparameter learning
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Mattias Villani
+\series default
+ 
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Linköping and Stockholm University
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Loss functions
+\series default
+\color inherit
+ and evaluation metrics
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Evaluating a classifier
+\series default
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Estimating generalization
+\series default
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Generalization gap
+\series default
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bias-variance trade-off
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss functions and cost functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Parametric model 
+\begin_inset Formula $y\vert\boldsymbol{x}\sim f_{\boldsymbol{\theta}}(y\vert\boldsymbol{x})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Learn the parameters by minimizing a cost function
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\theta}}=\arg\underset{\boldsymbol{\theta}}{\min}\underset{\text{cost function}J(\boldsymbol{\theta})}{\underbrace{\frac{1}{n}\sum_{i=1}^{n}\overset{\text{loss function}}{\overbrace{L\left(\hat{y}(\boldsymbol{x}_{i};\boldsymbol{\theta}),y_{i}\right)}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Squared error
+\series default
+\color inherit
+ for regression: 
+\begin_inset Formula 
+\[
+L\left(\hat{y}(\boldsymbol{x}_{i};\boldsymbol{\theta}),y_{i}\right)=\left(\hat{y}(\boldsymbol{x}_{i};\boldsymbol{\theta})-y_{i}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Squared error loss = negative Gaussian log-likelihood
+\begin_inset Formula 
+\[
+\log p(y_{i}\vert\boldsymbol{x}_{i},\boldsymbol{\beta})=-\frac{1}{2}\log(2\pi\sigma^{2})-\frac{1}{2\sigma^{2}}\left(y_{i}-\mathbf{x}_{i}^{\top}\boldsymbol{\beta}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss functions and cost functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Learn the parameters by minimizing a cost function
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\theta}}=\arg\underset{\boldsymbol{\theta}}{\min}\underset{\text{cost function}J(\boldsymbol{\theta})}{\underbrace{\frac{1}{n}\sum_{i=1}^{n}\overset{\text{loss function}}{\overbrace{L\left(\hat{y}(\boldsymbol{x}_{i};\boldsymbol{\theta}),y_{i}\right)}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Cross-entropy
+\series default
+\color inherit
+ for binary classification 
+\begin_inset Formula $y\in\{0,1\}$
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset Formula 
+\[
+L\left(\hat{y}(\boldsymbol{x}_{i};\boldsymbol{\theta}),y_{i}\right)=-y_{i}\log\mathrm{Pr}(y_{i}=1\vert\boldsymbol{x}_{i},\theta)-(1-y_{i})\log\mathrm{Pr}(y_{i}=0\vert\boldsymbol{x}_{i},\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cross-entropy loss = negative Bernoulli log-likelihood
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\mathrm{Pr}(Y_{i}=y_{i}\vert\boldsymbol{x}_{i},\boldsymbol{\beta})=\mathrm{Pr}(y_{i}=1\vert\boldsymbol{x}_{i},\boldsymbol{\beta})^{y_{i}}\mathrm{Pr}(y_{i}=0\vert\mathbf{x}_{i},\boldsymbol{\beta})^{1-y_{i}}
+\]
+
+\end_inset
+
+
+\size default
+where for logistic regression 
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\mathrm{Pr}(y_{i}=1\vert\boldsymbol{x}_{i},\boldsymbol{\beta})=\frac{\exp(\mathbf{x}_{i}^{T}\boldsymbol{\beta})}{1+\exp(\mathbf{x}_{i}^{T}\boldsymbol{\beta})}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+See Bonus slides for a little more on (cross-)entropy.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - confusion matrix
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Confusion
+\series default
+\color inherit
+ matrix:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Truth
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Decision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size footnotesize
+tp = true positive, fp = false positive
+\begin_inset Newline newline
+\end_inset
+
+fn = false negative, tn = true negative.
+\end_layout
+
+\begin_layout Itemize
+Example:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Truth
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fraud
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No Fraud
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Decision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fraud
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $208$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No Fraud
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $160$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - Accuracy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Accuracy
+\series default
+\color inherit
+ is the proportion of correctly classified items
+\begin_inset Formula 
+\[
+\text{Accuracy}=\frac{tp+tn}{tp+tn+fn+fp}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Truth
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Decision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\series bold
+\size default
+\color red
+tp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\size default
+fp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\size default
+fn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\series bold
+\size default
+\color red
+tn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note: evaluation criteria (e.g.
+ accuracy) need not be the same as the training loss function (e.g.
+ cross-entropy).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - Precision
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Precision
+\series default
+\color inherit
+ is the proportion of truly positive items among those signaled as positive:
+ 
+\begin_inset Formula 
+\[
+\text{Precision = }\frac{tp}{tp+fp}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Truth
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Decision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\series bold
+\size default
+\color red
+tp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\size default
+fp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+High precision:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+trustworthy positives
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+people pointed out as fraudulent are almost always frauds.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - Recall
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Recall
+\series default
+\color inherit
+ is the proportion of signaled positive items among those that are truly
+ positive: 
+\begin_inset Formula 
+\[
+\text{Recall =}\frac{tp}{tp+fn}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Truth
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Decision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\series bold
+\size default
+\color red
+tp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\size default
+fn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+High recall: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+will find the positive items.
+\end_layout
+
+\begin_layout Itemize
+frauds will be caught.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall is also called 
+\series bold
+\color blue
+True Positive Rate
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+TPR
+\series default
+\color inherit
+) or 
+\series bold
+\color blue
+sensitivity
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+There is a trade-off between Precision and Recall.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - False Positive Rate
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+False Positive Rate
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+FPR
+\series default
+\color inherit
+) is the proportion of signaled positive items among those that are truly
+ negative:
+\begin_inset Formula 
+\[
+\text{FPR}=\frac{fp}{fp+tn}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Truth
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Decision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\series bold
+\size default
+\color red
+fp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negative
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\size scriptsize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{lg}
+\end_layout
+
+\end_inset
+
+
+\family default
+\size default
+tn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Low FPR:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+will very rarely signal a positive for a negative item.
+ 
+\end_layout
+
+\begin_layout Itemize
+people will not be falsely accused of fraud.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - ROC curve
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Precision and recall depends on the 
+\series bold
+\color blue
+decision threshold.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathrm{Pr}(\mbox{Spam}\vert\text{text in an email})=0.9$
+\end_inset
+
+.
+ Do we send it to the spam-box? 
+\series bold
+\color blue
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Is 
+\begin_inset Formula $\mathrm{Pr}(\mbox{Fraud}\vert\text{features})>0.5$
+\end_inset
+
+ a good 
+\series bold
+\color blue
+decision threshold
+\series default
+\color inherit
+?
+\series bold
+\color blue
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Optimal decisions
+\series default
+\color inherit
+ depend on the consequences.
+ 
+\series bold
+\color blue
+
+\begin_inset Newline newline
+\end_inset
+
+Decision theory
+\series default
+\color inherit
+.
+\series bold
+\color blue
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+ROC-curve
+\series default
+\color inherit
+: Receiver Operating Characteristic.
+\series bold
+\color blue
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ROC: Plots the true positive rate (TPR) against the false positive rate
+ (FPR) 
+\series bold
+at various thresholds
+\series default
+.
+\series bold
+\color blue
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+AUC
+\series default
+\color inherit
+ = Area Under Curve.
+ Area under the ROC curve.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Evaluating a classifier - ROC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/Receiver_Operating_Characteristic.png
+	lyxscale 30
+	scale 37
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny From Wikipedia.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+ROC - Sonar data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sonar data
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Binary response (metal/rock) 
+\end_layout
+
+\begin_layout Itemize
+61 covariates (energy within a frequency band from sound impulse).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/ROC_Sonar.pdf
+	lyxscale 25
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Predicting firm bankruptcy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Comparing test AUC for
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+logistic reg (LR) 
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+logistic reg with additive splines 
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+neural networks (NN) with 2-5 layers, each with 100 nodes.
+\end_layout
+
+\end_deeper
+\begin_layout Quotation
+\align center
+\begin_inset Graphics
+	filename Images/BankRuptOutSampleNN100.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+epochs is number of iterations of the stochastic gradient decent optimization
+ for the neural network, see Lecture 5.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Error function and generalization performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Error function 
+\series default
+\color inherit
+compares prediction 
+\begin_inset Formula $\hat{y}(\mathbf{x}_{\star})$
+\end_inset
+
+ to actual 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Squared error
+\series default
+\color inherit
+ for regression:
+\begin_inset Formula 
+\[
+E(\hat{y},y)=(\hat{y}-y)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Misclassification
+\series default
+\color inherit
+ for classification:
+\begin_inset Formula 
+\[
+E(\hat{y},y)=\mathbb{I}\left\{ \hat{y}\neq y\right\} =\begin{cases}
+0 & \text{ if }\hat{y}=y\\
+1 & \text{ if }\hat{y}\neq y
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Loss function 
+\begin_inset Formula $L(\hat{y},y)$
+\end_inset
+
+ need not be the same as error function 
+\begin_inset Formula $E(\hat{y},y)$
+\end_inset
+
+ used for performance evaluation.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+-NN does not have an explicit loss function.
+\end_layout
+
+\begin_layout Itemize
+Misclassification rate is discontinuous in 
+\begin_inset Formula $\boldsymbol{\theta}$
+\end_inset
+
+.
+ Hard to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For all data: 
+\series bold
+\color blue
+mean squared error
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+misclassification rate
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Generalization performance
+\series default
+\color inherit
+: method's average performance on data drawn from a distribution 
+\begin_inset Formula $p(\boldsymbol{x},y)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Generalization and Training-Test splits
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How estimate generalization performance? Training-Test split.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Partition the data in two parts: 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Training data
+\series default
+\color inherit
+ 
+\begin_inset Formula $\mathcal{T}=\{y_{i},\boldsymbol{x}_{i}\}_{i=1}^{n}$
+\end_inset
+
+ to estimate parameters.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Test data
+\series default
+\color inherit
+ (hold-out) to estimate generalization.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/testtrainingsplit.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to make the split:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Randomly
+\end_layout
+
+\begin_layout Itemize
+Systematic (time series: most recent data in test set).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\family typewriter
+Caret
+\family default
+ package in R.
+ 
+\begin_inset Formula $75$
+\end_inset
+
+% training, 
+\begin_inset Formula $25$
+\end_inset
+
+% test:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/caredatasplit.png
+	lyxscale 50
+	scale 17
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Generalization and Training-Test splits
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Training data
+\series default
+\color inherit
+ 
+\begin_inset Formula $\mathcal{T}=\{y_{i},\boldsymbol{x}_{i}\}_{i=1}^{n}$
+\end_inset
+
+ gives estimated/trained model for prediction: 
+\begin_inset Formula $\hat{y}(\mathbf{x}_{\star};\mathcal{T})$
+\end_inset
+
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Expected new data error
+\series default
+\size footnotesize
+\color black
+
+\begin_inset Formula 
+\[
+E_{\mathrm{new}}\equiv\mathbb{E}_{\star}\left[E\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T}),y_{\star}\right)\right]=\int E\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T}),y_{\star}\right)p(\mathbf{x}_{\star},y_{\star})d\mathbf{x}_{\star}dy_{\star}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $E\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T}),y_{\star}\right)$
+\end_inset
+
+ is the error from predicting 
+\begin_inset Formula $y_{\star}$
+\end_inset
+
+ with a model trained on a 
+\series bold
+fixed training data
+\series default
+ 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbb{E}_{\star}$
+\end_inset
+
+ is the expectation 
+\series bold
+with respect to all possible test data
+\series default
+ from 
+\begin_inset Formula $(\mathbf{x}_{\star},y_{\star})\sim p(\boldsymbol{x},y)$
+\end_inset
+
+.:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+ measures how a trained model 
+\series bold
+\color blue
+generalizes
+\series default
+\color inherit
+ to new data from 
+\begin_inset Formula $p(\boldsymbol{x},y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Goal of ML: minimize 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+ is unknown!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Training error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The training error is computed from 
+\begin_inset Formula $\mathcal{T}=\{y_{i},\boldsymbol{x}_{i}\}_{i=1}^{n}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+E_{\mathrm{train}}\equiv\frac{1}{n}\sum_{i=1}^{n}E\left(\hat{y}(\mathbf{x}_{i};\mathcal{T}),y_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Typically 
+\begin_inset Formula $E_{\mathrm{train}}<E_{\mathrm{new}}$
+\end_inset
+
+, due to 
+\series bold
+\color blue
+overfitting
+\series default
+\color inherit
+ the training data.
+\end_layout
+
+\begin_layout Itemize
+Error on 
+\series bold
+\color blue
+hold-out validation data
+\series default
+\color inherit
+ 
+\begin_inset Formula $\{y_{j}^{'},\boldsymbol{x}_{j}^{'}\}_{j=1}^{n_{v}}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+E_{\mathrm{hold-out}}\equiv\frac{1}{n_{v}}\sum_{j=1}^{n_{v}}E\left(\hat{y}(\mathbf{x}_{j}^{'};\mathcal{T}),y_{j}^{'}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $(y_{i}^{'},\boldsymbol{x}_{i}^{'})\sim p(\boldsymbol{x},y)$
+\end_inset
+
+, 
+\begin_inset Formula $E_{\mathrm{hold-out}}$
+\end_inset
+
+ is an unbiased estimate of 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Problem: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+small variance of 
+\begin_inset Formula $E_{\mathrm{hold-out}}$
+\end_inset
+
+ requires large 
+\begin_inset Formula $n_{v}$
+\end_inset
+
+ ...
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+but large 
+\begin_inset Formula $n_{v}$
+\end_inset
+
+ means less training data ...
+\end_layout
+
+\begin_layout Itemize
+less training data means larger 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+.
+ 
+\series bold
+\size larger
+\color orange
+
+\begin_inset Formula $\frownie$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+k-fold cross-validation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Split the data in 
+\begin_inset Formula $k$
+\end_inset
+
+ folds or batches: 
+\begin_inset Formula $B_{1},\ldots,B_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+For each batch 
+\begin_inset Formula $\ell=1,2,\ldots,k$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+train the model on 
+\begin_inset Formula $B_{-\ell}\equiv\left\{ B_{1},\ldots,B_{\ell-1},B_{\ell+1},\ldots,B_{k}\right\} $
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+predict the data in 
+\begin_inset Formula $B_{\ell}$
+\end_inset
+
+ and compute error function 
+\begin_inset Formula $E_{\mathrm{hold-out}}^{(\ell)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Compute the estimate crossvalidation estimate of 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+
+\size small
+
+\begin_inset Formula 
+\[
+E_{\mathrm{hold-out}}=\frac{1}{k}\sum_{\ell=1}^{k}E_{\mathrm{hold-out}}^{(\ell)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/crossvalidation.png
+	lyxscale 30
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{hold-out}}^{(\ell)}$
+\end_inset
+
+ unbiased for 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathcal{T}=B_{-\ell}$
+\end_inset
+
+ for each 
+\begin_inset Formula $\ell$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{hold-out}}$
+\end_inset
+
+ (slightly) biased for 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathcal{T}=\{\text{all data}\}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+k-fold cross-validation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Leave-one-out
+\series default
+\color inherit
+ cross-validation: 
+\begin_inset Formula $k=n$
+\end_inset
+
+.
+ Requires 
+\begin_inset Formula $n$
+\end_inset
+
+ re-fits.
+\end_layout
+
+\begin_layout Itemize
+Cross-validation is often used to estimate hyperparameters:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+number of neighbors, 
+\begin_inset Formula $k$
+\end_inset
+
+, in 
+\begin_inset Formula $k$
+\end_inset
+
+-NN
+\end_layout
+
+\begin_layout Itemize
+tree depth in regression trees
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+-NN: 
+\begin_inset Formula $\hat{k}_{\mathrm{cv}}=\arg\underset{k}{\min}\:E_{\mathrm{hold-out}}(k)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{hold-out}}(\hat{k}_{\mathrm{cv}})$
+\end_inset
+
+ typically underestimates 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Solution: set aside clean test data to estimate 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/grid_search_cross_validation.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Cross-validation learning of Lasso shrinkage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/LassoCV.pdf
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Generalization gap
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+ depends on a specific 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
+ Better notation: 
+\begin_inset Formula $E_{\mathrm{new}}(\mathcal{T})$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Training-averaged generalization error
+\series default
+\color inherit
+:
+\begin_inset Formula 
+\[
+\bar{E}_{\mathrm{new}}\equiv\mathbb{E}_{\mathcal{T}}\left[E_{\mathrm{new}}(\mathcal{T})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\bar{E}_{\mathrm{new}}$
+\end_inset
+
+ is average 
+\begin_inset Formula $\text{E_{\mathrm{new}}}$
+\end_inset
+
+ over all possible training data of size 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Training-averaged training error:
+\begin_inset Formula 
+\[
+\bar{E}_{\mathrm{train}}\equiv\mathbb{E}_{\mathcal{T}}\left[E_{\mathrm{train}}(\mathcal{T})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Generalization gap
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\text{generalization gap}=\bar{E}_{\mathrm{new}}-\bar{E}_{\mathrm{train}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Training error-generalization gap decomposition
+\begin_inset Formula 
+\[
+\bar{E}_{\mathrm{new}}=\bar{E}_{\mathrm{train}}+\text{generalization gap}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Generalization gap
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/OverfittingWithComplexity.png
+	lyxscale 40
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SimplexComplexError.png
+	lyxscale 40
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{hold-out}}\approx E_{\mathrm{train}}$
+\end_inset
+
+.
+ Possibly underfitting.
+ Increase complexity.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{\mathrm{train}}\approx0$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{\mathrm{hold-out}}$
+\end_inset
+
+ sizeable.
+ Possibly overfitting.
+ Decrease complexity.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Generalization gap - five models example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/TrainingandGenError5models.png
+	lyxscale 40
+	scale 32
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias and Variance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+True relationship
+\begin_inset Formula 
+\[
+y=f_{0}(\boldsymbol{x})+\varepsilon,\quad\mathbb{V}(\varepsilon)=\sigma^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Estimated model 
+\begin_inset Formula $\hat{y}(\boldsymbol{x};\mathcal{T})$
+\end_inset
+
+ (linear regression 
+\begin_inset Formula $\hat{y}(\boldsymbol{x};\mathcal{T})=\boldsymbol{x}^{T}\hat{\boldsymbol{\boldsymbol{\beta}}}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Average trained model
+\begin_inset Formula 
+\[
+\bar{f}(\mathbf{x})\equiv\mathbb{E}_{\mathcal{T}}\left[\hat{y}(\boldsymbol{x};\mathcal{T})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bias
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\mathrm{Bias}\left(\hat{y}(\boldsymbol{x};\mathcal{T})\right)=\bar{f}(\mathbf{x})-f_{0}(\boldsymbol{x})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Variance
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\mathrm{\mathbb{V}}_{\mathcal{T}}\left[\hat{y}(\boldsymbol{x};\mathcal{T})\right]=\mathbb{E}_{\mathcal{T}}\left[\left(\hat{y}(\boldsymbol{x};\mathcal{T})-\bar{f}(\mathbf{x})\right)^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Mean Squared Error
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+MSE
+\series default
+\color inherit
+)
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\mathrm{MSE}\left(\hat{y}(\boldsymbol{x};\mathcal{T})\right)=\mathbb{E}_{\mathcal{T}}\left[\left(\hat{y}(\boldsymbol{x};\mathcal{T})-f_{0}(\boldsymbol{x})\right)^{2}\right]=\mathrm{\mathbb{V}}_{\mathcal{T}}\left[\hat{y}(\boldsymbol{x};\mathcal{T})\right]+\mathrm{Bias}\left(\hat{y}(\boldsymbol{x};\mathcal{T})\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-Variance trade-off polynomials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/polyRepeatDataPlusMean.pdf
+	lyxscale 30
+	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-Variance trade-off polynomials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/polyRepeatBiasVariance.pdf
+	lyxscale 30
+	scale 23
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-Variance trade-off
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bias-variance decomposition of
+\begin_inset Formula 
+\[
+E_{\mathrm{new}}\equiv\mathbb{E}_{\mathcal{T}}\left[\mathbb{E}_{\star}\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T})-y_{\star}\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Change order of the expectations and insert true model:
+\size scriptsize
+
+\begin_inset Formula 
+\[
+\bar{E}_{\mathrm{new}}=\mathbb{E}_{\mathcal{T}}\left[\mathbb{E}_{\star}\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T})-y_{\star}\right)^{2}\right]=\mathbb{E}_{\star}\left[\mathbb{E}_{\mathcal{T}}\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T})-f_{0}(\boldsymbol{x}_{\star})-\varepsilon\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Add and subtract 
+\begin_inset Formula $\bar{f}(\mathbf{x})$
+\end_inset
+
+ and expand the square to get ...
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bias-variance decomposition
+\series default
+\size scriptsize
+\color inherit
+
+\begin_inset Formula 
+\[
+\bar{E}_{\mathrm{new}}=\underset{\mathrm{Bias}²}{\underbrace{\mathbb{E}_{\star}\left[\left(\bar{f}(\mathbf{x}_{\star})-f_{0}(\mathbf{x}_{\star})\right)^{2}\right]}\;}+\;\underset{\text{Variance}}{\underbrace{\mathbb{E}_{\star}\left[\mathbb{E}_{\mathcal{T}}\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T})-\bar{f}(\mathbf{x}_{\star})\right)^{2}\right]}}+\underset{\text{Irreducible error}}{\underbrace{\underset{}{\sigma^{2}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-Variance trade-off
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/BiasVarianceDecomposition.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/BiasVarianceSimpleComplex.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-variance - five models example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/BiasVarianceFiveModels.png
+	lyxscale 40
+	scale 32
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-variance - five models example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/FitBiasVarianceFiveModels.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bias-Variance trade-off classification
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/LogRegkNNClassification.png
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bootstrap sample no 1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification1.png
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bootstrap sample no 2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification2.png
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bootstrap sample no 3
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification3.png
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bootstrap sample no 4
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification4.png
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bootstrap sample no 5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification5.png
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
