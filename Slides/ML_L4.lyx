@@ -1,0 +1,1107 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamertemplate{headline}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include necessary packages here
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+
+\includegraphics[width=1.5cm]{/home/mv/Dropbox/IconsAndLogos/LogoBlueJustRing.jpg}\hspace*{2.5cm}~%
+\includegraphics[width=2cm]{/home/mv/Dropbox/IconsAndLogos/liulogo.png} \linebreak
+\hrulefill \break
+\tiny
+\includegraphics[width=0.33cm]{/home/mv/Dropbox/IconsAndLogos/web.png} \href{https://mattiasvillani.com}{mattiasvillani.com}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/twitter.jpg} \href{https://twitter.com/matvil}{@matvil}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/github.png} \href{https://github.com/mattiasvillani}{mattiasvillani}~
+}
+
+
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{red}{RGB}{255, 128, 0}
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+
+\usepackage{tcolorbox}
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{wasysym}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\end_preamble
+\options xcolor=svgnames, handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\color orange
+Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\color orange
+Lecture 4 - Ensemble methods
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Mattias Villani
+\series default
+ 
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Linköping and Stockholm University
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Ensembles
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bagging
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Random forest
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Boosting
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+XGboost
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Tree ensemble
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regression trees suffer from large variance.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Tree ensembles
+\series default
+\color inherit
+ combine many trees additively
+\begin_inset Formula 
+\[
+\hat{f}(\boldsymbol{x})=\sum_{k=1}^{K}\hat{f}_{k}(\boldsymbol{x}),\:\hat{f}_{k}\in\mathcal{F}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is the collection of all trees.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bagging
+\series default
+\color inherit
+: learn trees 
+\begin_inset Formula $\hat{f}_{k}(\boldsymbol{x})$
+\end_inset
+
+ on separate bootstrap samples.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Boosting
+\series default
+\color inherit
+: learn trees 
+\begin_inset Formula $\hat{f}_{k}(\boldsymbol{x})$
+\end_inset
+
+ sequentially by fitting to amplified residuals.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ensemble members need not be trees, any model works.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit a 
+\series bold
+\color blue
+low bias/high variance base model
+\series default
+\color inherit
+ to 
+\begin_inset Formula $B$
+\end_inset
+
+ boostrap replicate datasets.
+\end_layout
+
+\begin_layout Itemize
+Average the predictions over all bootstrap samples.
+ 
+\series bold
+\color blue
+
+\begin_inset Newline newline
+\end_inset
+
+Bootstrap aggregation
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Regression
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})=\frac{1}{B}\sum_{b=1}^{B}\tilde{y}^{(b)}(\mathbf{x}_{\star})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Classification
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\boldsymbol{g}_{\mathrm{bag}}(\mathbf{x}_{\star})=\frac{1}{B}\sum_{b=1}^{B}\tilde{\boldsymbol{g}}^{(b)}(\mathbf{x}_{\star}),
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\tilde{\boldsymbol{g}}^{(b)}(\mathbf{x}_{\star})$
+\end_inset
+
+ is a vector of class probabilities in bootstrap sample 
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+When classifier only returns predictions: majority vote.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bagging trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/baggingTrees.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bagging reduces variance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $\mathbb{E}_{\mathrm{boot}}\left(\tilde{y}^{(b)}(\mathbf{x}_{\star})\right)=\bar{f}(\mathbf{x}_{\star})$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{V}_{\mathrm{boot}}\left(\tilde{y}^{(b)}(\mathbf{x}_{\star})\right)=\sigma^{2}(\mathbf{x}_{\star})$
+\end_inset
+
+ for all 
+\begin_inset Formula $b=1,\ldots,B$
+\end_inset
+
+ (approx true).
+\end_layout
+
+\begin_layout Itemize
+Then
+\begin_inset Formula 
+\begin{align*}
+\mathbb{E}_{\mathrm{boot}}\left(\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})\right) & =\bar{f}(\mathbf{x}_{\star})\\
+\mathbb{V}_{\mathrm{boot}}\left(\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})\right) & =\frac{1-\rho}{B}\sigma^{2}(\mathbf{x}_{\star})+\rho\sigma^{2}(\mathbf{x}_{\star}),
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the average correlation of 
+\begin_inset Formula $\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})$
+\end_inset
+
+ over the bootstrap replicates.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bias
+\series default
+\color inherit
+ remains approx unchanged by bootstrap aggregation.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Variance
+\series default
+\color inherit
+ of the prediction reduced by bootstrap aggregation.
+\end_layout
+
+\begin_layout Itemize
+The base model is fitted in isolatation on each bootstrap sample, so no
+ risk of overfitting solely from using a large 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Out-of-bag estimation
+\series default
+\color inherit
+ of 
+\begin_inset Formula $E_{\mathrm{new}}$
+\end_inset
+
+ [Section 7.1 in MLES book].
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Random forest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Random forest
+\series default
+\color inherit
+ is a tree ensemble with trees grown by 
+\series bold
+\color blue
+bagging
+\series default
+\color inherit
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bagging observations
+\series default
+\color inherit
+:
+\series bold
+\color blue
+ 
+\series default
+\color inherit
+tree grown on subsets of observations sampled with replacement.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bagging features
+\series default
+\color inherit
+: random choice of allowed splitting variables at each tree node.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bagging features 
+\series bold
+\color blue
+de-correlates the prediction
+\series default
+\color inherit
+ for different bootstrap samples.
+ 
+\series bold
+\size larger
+\color orange
+
+\begin_inset Formula $\smiley$
+\end_inset
+
+
+\series default
+\size default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bagging features inflates the variance of the prediction for individual
+ trees.
+ 
+\series bold
+\size larger
+\color orange
+
+\begin_inset Formula $\frownie$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Random forest for song classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/RandomForestSongClassify.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/TreeFullyGrownSongClassify.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/TreeMaxDepth4SongClassify.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Boosted tree ensembles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Boosting
+\series default
+\color inherit
+: iterative fitting.
+ 
+\series bold
+\color blue
+Poorly predicted observations
+\series default
+\color inherit
+ at previous iteration are 
+\series bold
+\color blue
+upweighted 
+\series default
+\color inherit
+(
+\series bold
+\color blue
+boosted
+\series default
+\color inherit
+)
+\color blue
+.
+\end_layout
+
+\begin_layout Itemize
+Boosting aims at 
+\series bold
+\color blue
+reducing bias from weak learners
+\series default
+\color inherit
+ (shallow trees).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Boosted tree ensembles
+\series default
+\color inherit
+: add tree that fits boosted errors.
+\end_layout
+
+\begin_layout Itemize
+Boosting 
+\begin_inset Formula $\approx$
+\end_inset
+
+ Greedy forward selection (with special loss).
+\end_layout
+
+\begin_layout Itemize
+Bagging learns independently.
+ Boosting learns sequentially.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/algoForwardTrees.png
+	lyxscale 40
+	scale 28
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+XGBoost - Extreme Gradient Boosting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color blue
+B
+\color inherit
+oosted tree ensemble with smooth penalty 
+\begin_inset Formula $\eta\left|T\right|+\lambda\left\Vert \boldsymbol{w}\right\Vert _{2}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Gradient boosting
+\series default
+\color inherit
+: approximate objective at iteration 
+\begin_inset Formula $t$
+\end_inset
+
+
+\size small
+
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}L\left(y_{i},\hat{y}_{i}^{(t-1)}+f_{t}(\boldsymbol{x}_{i})\right)\approx\sum_{i=1}^{n}L\left(y_{i},\hat{y}_{i}^{(t-1)}\right)+g_{i}f_{t}(\boldsymbol{x}_{i})+\frac{1}{2}h_{i}f_{t}^{2}(\boldsymbol{x}_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{y}_{i}^{(t-1)}$
+\end_inset
+
+ the fit from ensemble at previous iteration
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g_{i}=\frac{\partial L(y_{i},\hat{y})}{\partial\hat{y}}\left|_{\hat{y}=\hat{y}_{i}^{(t-1)}}\right.$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{i}=\frac{\partial^{2}L(y_{i},\hat{y})}{\partial^{2}\hat{y}}\left|_{\hat{y}=\hat{y}_{i}^{(t-1)}}\right.$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Tree structure: 
+\begin_inset Formula $q(\boldsymbol{x}):\mathbb{R}^{p}\rightarrow T$
+\end_inset
+
+, splits and splitting points.
+ 
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $f_{t}(\boldsymbol{x}_{i})=w_{\ell}$
+\end_inset
+
+ for all 
+\begin_inset Formula $\boldsymbol{x}_{i}\in R_{\ell}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Given a tree structure 
+\begin_inset Formula $q(\boldsymbol{x})$
+\end_inset
+
+ solve for 
+\begin_inset Formula $w_{\ell}$
+\end_inset
+
+ to get the objective
+\begin_inset Formula 
+\[
+\tilde{\mathcal{L}}^{(t)}(q)=-\frac{1}{2}\sum_{\ell=1}^{\left|T\right|}\frac{(\sum_{i\in I_{\ell}}g_{i})^{2}}{\sum_{i\in I_{\ell}}h_{i}+\lambda}+\eta\left|T\right|,\;\text{where }I_{\ell}=\left\{ i\vert q(\boldsymbol{x}_{i})=\ell\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\mathcal{L}}^{(t)}(q)$
+\end_inset
+
+ can be optimized w.r.t.
+ tree structure 
+\begin_inset Formula $q_{t}(\boldsymbol{x})$
+\end_inset
+
+ in a greedy fashion, starting with a single leave and adding splits.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Boosting for song classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/adaboostGradBoostSongClassify.png
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
