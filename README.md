@@ -73,8 +73,7 @@ Reading: MLES 4 |  [Slides](/Slides/ML_L3.pdf) \
 Bonus: [Some slides about entropy](/Slides/Entropy.pdf)
 
 **Lecture 4 - Ensemble methods**\
-Reading: MLES 7 |  [Slides](TBA) \
-Code:
+Reading: MLES 7 |  [Slides](/Slides/ML_L4.pdf) \
 
 **Lecture 5 - Learning from large-scale data**\
 Reading: MLES 5 |  [Slides](TBA) \
