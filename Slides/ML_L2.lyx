@@ -2083,7 +2083,7 @@ Predicting firm bankruptcy
 \begin_deeper
 \begin_layout Itemize
 Data from 
-\begin_inset Formula $\sim250,000$
+\begin_inset Formula $\approx250,000$
 \end_inset
 
  Swedish corporations.
@@ -2524,9 +2524,9 @@ Classifying handwritten digits
 \begin_layout Quotation
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/DigitClassProbs.png
+	filename Images/MNISTprobs.pdf
 	lyxscale 30
-	scale 40
+	scale 25
 
 \end_inset
 
