@@ -566,11 +566,11 @@ Bagging reduces variance
 \begin_deeper
 \begin_layout Itemize
 Assume 
-\begin_inset Formula $\mathbb{E}_{\mathrm{boot}}\left(\tilde{y}^{(b)}(\mathbf{x}_{\star})\right)=\bar{f}(\mathbf{x}_{\star})$
+\begin_inset Formula $\mathbb{E}(\tilde{y}^{(b)}(\mathbf{x}_{\star}))=\bar{f}(\mathbf{x}_{\star})$
 \end_inset
 
  and 
-\begin_inset Formula $\mathbb{V}_{\mathrm{boot}}\left(\tilde{y}^{(b)}(\mathbf{x}_{\star})\right)=\sigma^{2}(\mathbf{x}_{\star})$
+\begin_inset Formula $\mathbb{V}(\tilde{y}^{(b)}(\mathbf{x}_{\star}))=\sigma^{2}(\mathbf{x}_{\star})$
 \end_inset
 
  for all 
@@ -584,8 +584,8 @@ Assume
 Then
 \begin_inset Formula 
 \begin{align*}
-\mathbb{E}_{\mathrm{boot}}\left(\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})\right) & =\bar{f}(\mathbf{x}_{\star})\\
-\mathbb{V}_{\mathrm{boot}}\left(\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})\right) & =\frac{1-\rho}{B}\sigma^{2}(\mathbf{x}_{\star})+\rho\sigma^{2}(\mathbf{x}_{\star}),
+\mathbb{E}\left(\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})\right) & =\bar{f}(\mathbf{x}_{\star})\\
+\mathbb{V}\left(\hat{y}_{\mathrm{bag}}(\mathbf{x}_{\star})\right) & =\frac{1-\rho}{B}\sigma^{2}(\mathbf{x}_{\star})+\rho\sigma^{2}(\mathbf{x}_{\star}),
 \end{align*}
 
 \end_inset
@@ -702,7 +702,7 @@ Bagging observations
  
 \series default
 \color inherit
-tree grown on subsets of observations sampled with replacement.
+trees grown on bootstrap samples.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -878,13 +878,14 @@ boosted
 \end_layout
 
 \begin_layout Itemize
-Boosting aims at 
+Boosting 
 \series bold
 \color blue
-reducing bias from weak learners
+reduces bias of weak learners
 \series default
 \color inherit
- (shallow trees).
+ (e.g.
+ shallow trees).
 \end_layout
 
 \begin_layout Itemize
@@ -949,11 +950,7 @@ XGBoost - Extreme Gradient Boosting
 
 \begin_deeper
 \begin_layout Itemize
-
-\color blue
-B
-\color inherit
-oosted tree ensemble with smooth penalty 
+Boosted tree ensemble with smooth penalty 
 \begin_inset Formula $\eta\left|T\right|+\lambda\left\Vert \boldsymbol{w}\right\Vert _{2}^{2}$
 \end_inset
 

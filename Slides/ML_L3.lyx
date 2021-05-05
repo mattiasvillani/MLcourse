@@ -3136,15 +3136,11 @@ E_{\mathrm{new}}\equiv\mathbb{E}_{\star}\left[E\left(\hat{y}(\mathbf{x}_{\star};
 \begin_inset Formula $E\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T}),y_{\star}\right)$
 \end_inset
 
- is the error from predicting 
-\begin_inset Formula $y_{\star}$
-\end_inset
-
- with a model trained on a 
+ is prediction error when training on 
 \series bold
-fixed training data
+fixed 
 \series default
- 
+
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
@@ -3159,15 +3155,15 @@ fixed training data
 \begin_inset Formula $\mathbb{E}_{\star}$
 \end_inset
 
- is the expectation 
+ is the expectation wrt
 \series bold
-with respect to all possible test data
+ test data
 \series default
  from 
 \begin_inset Formula $(\mathbf{x}_{\star},y_{\star})\sim p(\boldsymbol{x},y)$
 \end_inset
 
-.:
+.
 \begin_inset VSpace medskip
 \end_inset
 
@@ -3413,16 +3409,20 @@ predict the data in
 \end_inset
 
 
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Compute the estimate crossvalidation estimate of 
+Compute the crossvalidation estimate of 
 \begin_inset Formula $E_{\mathrm{new}}$
 \end_inset
 
 
-\size small
+\size footnotesize
 
 \begin_inset Formula 
 \[
@@ -3439,7 +3439,7 @@ E_{\mathrm{hold-out}}=\frac{1}{k}\sum_{\ell=1}^{k}E_{\mathrm{hold-out}}^{(\ell)}
 \begin_inset Graphics
 	filename Images/crossvalidation.png
 	lyxscale 30
-	scale 12
+	scale 9
 
 \end_inset
 
@@ -3480,31 +3480,6 @@ E_{\mathrm{hold-out}}=\frac{1}{k}\sum_{\ell=1}^{k}E_{\mathrm{hold-out}}^{(\ell)}
 .
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-
-\series bold
-\color orange
-k-fold cross-validation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
 
 \series bold
@@ -3524,8 +3499,39 @@ Leave-one-out
  re-fits.
 \end_layout
 
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Cross-validation for hyperparameter learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
-Cross-validation is often used to estimate hyperparameters:
+Cross-validation is often used to 
+\series bold
+\color blue
+estimate hyperparameters
+\series default
+\color inherit
+:
 \end_layout
 
 \begin_deeper
@@ -3565,11 +3571,25 @@ tree depth in regression trees
 \begin_inset Formula $E_{\mathrm{new}}$
 \end_inset
 
+, because we are optimizing over 
+\begin_inset Formula $k$
+\end_inset
+
+ when finding 
+\begin_inset Formula $\hat{k}_{\mathrm{cv}}$
+\end_inset
+
 .
 \end_layout
 
 \begin_layout Itemize
-Solution: set aside clean test data to estimate 
+Solution: 
+\series bold
+\color blue
+set aside clean test data
+\series default
+\color inherit
+ to estimate 
 \begin_inset Formula $E_{\mathrm{new}}$
 \end_inset
 
@@ -3582,7 +3602,7 @@ Solution: set aside clean test data to estimate
 \begin_inset Graphics
 	filename ../../ML4Industry/Slides/images/grid_search_cross_validation.png
 	lyxscale 30
-	scale 15
+	scale 18
 
 \end_inset
 
@@ -3615,17 +3635,51 @@ Cross-validation learning of Lasso shrinkage
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+One-standard deviation rule 
+\series default
+\color inherit
+for CV-estimation: the least complex model within one-standard error of
+ the best model is chosen.
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/LassoCV.pdf
-	lyxscale 60
-	scale 60
+	filename Images/RidgeOneStdRule.png
+	lyxscale 25
+	scale 15
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename Images/Lasso1stdRule.png
+	lyxscale 25
+	scale 17
 
 \end_inset
 
 
 \begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Hastie et al (2009).}
+\end_layout
+
 \end_inset
 
 
@@ -3801,15 +3855,15 @@ Generalization gap
 \end_layout
 
 \begin_layout Itemize
+If 
 \begin_inset Formula $E_{\mathrm{hold-out}}\approx E_{\mathrm{train}}$
 \end_inset
 
-.
- Possibly underfitting.
- Increase complexity.
+: Underfitting? Try increasing complexity.
 \end_layout
 
 \begin_layout Itemize
+If 
 \begin_inset Formula $E_{\mathrm{train}}\approx0$
 \end_inset
 
@@ -3817,9 +3871,7 @@ Generalization gap
 \begin_inset Formula $E_{\mathrm{hold-out}}$
 \end_inset
 
- sizeable.
- Possibly overfitting.
- Decrease complexity.
+ sizeable: Overfitting? Try decreasing complexity.
 \end_layout
 
 \end_deeper
@@ -4113,7 +4165,7 @@ Change order of the expectations and insert true model:
 
 \begin_layout Itemize
 Add and subtract 
-\begin_inset Formula $\bar{f}(\mathbf{x})$
+\begin_inset Formula $\bar{f}(\mathbf{x}_{\star})$
 \end_inset
 
  and expand the square to get ...
