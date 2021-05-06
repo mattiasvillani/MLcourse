@@ -113,7 +113,8 @@ Code everything from scratch on this problem, no `lm()`  or anything. You **can*
 
 #### Problem 2 - Spline regression with L2 regularization
 
-Use the package `glmnet` to fit a spline regression with equally spaced knots for `hour` between 0.05 and 0.95. Use L2-regularization and find the optimal $\lambda$ by $10$-fold cross-validation on the training data using the one-standard deviation rule (lambda.1se). Use the `splines` package in R to create natural cubic splines basis functions with 10 degrees of freedom, i.e. use the `ns()` function with df=10 as input argument. Compute the RMSE in training (Feb-March) and test (April-May).
+Use the package `glmnet` to fit a spline regression. Use L2-regularization and find the optimal $\lambda$ by $10$-fold cross-validation on the training data using the one-standard deviation rule (lambda.1se). Use the `splines` package in R to create natural cubic splines basis functions with 10 degrees of freedom, i.e. use the `ns()` function with df=10 as input argument. Note that `glmnet` does not allow R model formulas as inputs and also wants matrices as inputs rather than dataframes. 
+Compute the RMSE in training (Feb-March) and test (April-May).
 
 #### Problem 3 - Spline regression with L1 regularization
 Repeat Problem 2, this time using L1 regularization.
