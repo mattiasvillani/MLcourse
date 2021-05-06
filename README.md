@@ -60,6 +60,8 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 ---
 ## Lectures (preliminary)
 
+Material under **Bonus** are not required course material, but hopefully of interest to the curious student.
+
 **Lecture 1 - Introduction, k-NN and decision trees**\
 Reading: MLES 1-2 |  [Slides](/Slides/ML_L1.pdf) \
 Bonus: [Python Jupyter notebook for linear regression](/Code/LinReg.ipynb) | [Python code for nonlinear regression](/Code/RegData.py)
@@ -81,11 +83,11 @@ Code:
 
 **Lecture 6 - Neural networks**\
 Reading: MLES 6.1-6.2 |  [Slides](TBA) \
-Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) | [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R)
+Code: [Neural net MNIST in keras](/Code/kerasMNIST.R)
 
 **Lecture 7 - Image data and convolutional neural networks**\
 Reading: MLES 6.3-6.4 |  [Slides](TBA) \
-Code: 
+Code: [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R)
 
 **Lecture 8 - Gaussian process regression and classification**\
 Reading: MLES 9 |  [Slides](TBA) \
