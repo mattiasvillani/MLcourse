@@ -15,7 +15,7 @@
 
 In this course you will learn how to formulate and organize practical machine learning problems, identify and estimate appropriate machine learning models for prediction and clustering, evaluate and select among different machine learning models and algorithms and implement machine learning models and algorithms in a programming language.
 
-The course gives you knowledge about machine learning that is used within marketing, finance, economics, textual analysis, digital humanities and social scienses. You will encounter many different forms of data, including images and text.
+The course gives you knowledge about machine learning that is used within marketing, finance, economics, textual analysis, digital humanities and social sciences. You will encounter many different forms of data, including images and text.
 
 The course covers a number of machine learning methods with a focus on prediction. The course deals with supervised and unsupervised machine learning as well as semi-supervised and active learning. The course includes flexible regression and classification, regularization, methods for predictive model performance evaluation, Gaussian processes, clustering algorithms and mixture models.
 
