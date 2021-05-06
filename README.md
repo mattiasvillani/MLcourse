@@ -73,7 +73,7 @@ Reading: MLES 4 |  [Slides](/Slides/ML_L3.pdf) \
 Bonus: [Some slides about entropy](/Slides/Entropy.pdf)
 
 **Lecture 4 - Ensemble methods**\
-Reading: MLES 7 |  [Slides](/Slides/ML_L4.pdf) \
+Reading: MLES 7 |  [Slides](/Slides/ML_L4.pdf) 
 
 **Lecture 5 - Learning from large-scale data**\
 Reading: MLES 5 |  [Slides](TBA) \
@@ -81,7 +81,7 @@ Code:
 
 **Lecture 6 - Neural networks**\
 Reading: MLES 6.1-6.2 |  [Slides](TBA) \
-Code:  
+Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) | [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R)
 
 **Lecture 7 - Image data and convolutional neural networks**\
 Reading: MLES 6.3-6.4 |  [Slides](TBA) \
@@ -162,7 +162,8 @@ The course examination consists of:
  
 * Here are some machine learning packages in R: 
   * [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
-  * **Caret** - a meta package for predictive ML models in R. See the [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
+  * **caret** - a meta package for predictive ML models in R. See the [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
  and a list of [available models](https://topepo.github.io/caret/available-models.html) in Caret.
+ * **keras** - a package that brings Tensorflow for deep learning to R. Here is the [quick start to keras](https://tensorflow.rstudio.com/tutorials/beginners/).
 
 ---
