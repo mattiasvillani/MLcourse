@@ -164,6 +164,6 @@ The course examination consists of:
   * [Machine learning R packages](https://cran.r-project.org/web/views/MachineLearning.html) on CRAN.
   * **caret** - a meta package for predictive ML models in R. See the [Caret package vignette](https://cran.r-project.org/web/packages/caret/vignettes/caret.html)
  and a list of [available models](https://topepo.github.io/caret/available-models.html) in Caret.
- * **keras** - a package that brings Tensorflow for deep learning to R. Here is the [quick start to keras](https://tensorflow.rstudio.com/tutorials/beginners/).
+   * **keras** - a package that brings Tensorflow for deep learning to R. Here is the [quick start to keras](https://tensorflow.rstudio.com/tutorials/beginners/).
 
 ---
