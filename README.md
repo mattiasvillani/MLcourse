@@ -60,7 +60,9 @@ The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/s
 ---
 ## Lectures (preliminary)
 
-Material under **Bonus** are not required course material, but hopefully of interest to the curious student.
+
+Material under **Extra** are extra material that will help you understand the course content. \
+Material under **Bonus** are not required course material, but may be of interest to the curious student.
 
 **Lecture 1 - Introduction, k-NN and decision trees**\
 Reading: MLES 1-2 |  [Slides](/Slides/ML_L1.pdf) \
@@ -75,15 +77,16 @@ Reading: MLES 4 |  [Slides](/Slides/ML_L3.pdf) \
 Bonus: [Some slides about entropy](/Slides/Entropy.pdf)
 
 **Lecture 4 - Ensemble methods**\
-Reading: MLES 7 |  [Slides](/Slides/ML_L4.pdf) 
+Reading: MLES 7 |  [Slides](/Slides/ML_L4.pdf) \
+Extra: [Gradient boosting visualized](http://arogozhnikov.github.io/2016/06/24/gradient_boosting_explained.html) | [Gradient boosting playground](http://arogozhnikov.github.io/2016/07/05/gradient_boosting_playground.html) 
 
 **Lecture 5 - Learning from large-scale data**\
-Reading: MLES 5 |  [Slides](TBA) \
-Code: 
+Reading: MLES 5 |  [Slides](/Slides/ML_L5.pdf) \
 
 **Lecture 6 - Neural networks**\
 Reading: MLES 6.1-6.2 |  [Slides](TBA) \
-Code: [Neural net MNIST in keras](/Code/kerasMNIST.R)
+Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) \
+Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on learning a neural network](https://youtu.be/IHZwWFHWa-w)
 
 **Lecture 7 - Image data and convolutional neural networks**\
 Reading: MLES 6.3-6.4 |  [Slides](TBA) \

@@ -1,0 +1,2171 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamertemplate{headline}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include necessary packages here
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+
+\includegraphics[width=1.5cm]{/home/mv/Dropbox/IconsAndLogos/LogoBlueJustRing.jpg}\hspace*{2.5cm}~%
+\includegraphics[width=2cm]{/home/mv/Dropbox/IconsAndLogos/liulogo.png} \linebreak
+\hrulefill \break
+\tiny
+\includegraphics[width=0.33cm]{/home/mv/Dropbox/IconsAndLogos/web.png} \href{https://mattiasvillani.com}{mattiasvillani.com}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/twitter.jpg} \href{https://twitter.com/matvil}{@matvil}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/github.png} \href{https://github.com/mattiasvillani}{mattiasvillani}~
+}
+
+
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{red}{RGB}{255, 128, 0}
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+
+\usepackage{tcolorbox}
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{wasysym}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\end_preamble
+\options xcolor=svgnames, handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\color orange
+Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\color orange
+Lecture 5 - Learning from large-scale data
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Mattias Villani
+\series default
+ 
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Linköping and Stockholm University
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+More on loss functions
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Optimization algorithms for large data
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss minimization as a proxy for generalization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Parametric model 
+\begin_inset Formula $y\vert\boldsymbol{x}\sim f_{\boldsymbol{\theta}}(y\vert\boldsymbol{x})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Learn the parameters by minimizing a cost function
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\theta}}=\arg\underset{\boldsymbol{\theta}}{\min}\underset{\text{cost function}J(\boldsymbol{\theta})}{\underbrace{J(\boldsymbol{\theta})\equiv\frac{1}{n}\sum_{i=1}^{n}\overset{\text{loss function}}{\overbrace{L\left(\hat{y}(\boldsymbol{x}_{i};\boldsymbol{\theta}),y_{i}\right)}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ML: 
+\series bold
+\color blue
+cost function
+\series default
+\color inherit
+ 
+\begin_inset Formula $J(\boldsymbol{\theta})$
+\end_inset
+
+ can be considered as a 
+\series bold
+\color blue
+proxy for
+\series default
+\color inherit
+ the real objective of interest, the 
+\series bold
+\color blue
+expected new data error
+\series default
+\color inherit
+:
+\begin_inset Formula 
+\[
+E_{\mathrm{new}}\equiv\mathbb{E}_{\star}\left[E\left(\hat{y}(\mathbf{x}_{\star};\mathcal{T}),y_{\star}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Early stopping
+\series default
+\color inherit
+ of iterative optimization:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+when numerical accuracy is on par with statistical accuracy
+\end_layout
+
+\begin_layout Itemize
+to avoid overfitting (implicit regularization)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss functions for regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Squared error loss
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y,\hat{y})=(\hat{y}-y)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Absolute error loss
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y,\hat{y})=\left|\hat{y}-y\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Huber loss
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y,\hat{y})=\begin{cases}
+\frac{1}{2}(\hat{y}-y)^{2} & \text{ if \left|\hat{y}-y\right|<1}\\
+\left|\hat{y}-y\right|-\frac{1}{2} & \text{ otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+\begin_inset Formula $\epsilon$
+\end_inset
+
+-insensitive loss
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y,\hat{y})=\begin{cases}
+0 & \text{ if \ensuremath{\left|\hat{y}-y\right|}<\ensuremath{\epsilon}}\\
+\left|\hat{y}-y\right|-\epsilon & \text{ otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss functions for regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/lossFunctionsRegression.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss functions for classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Misclassification loss
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y,\hat{y})=\mathbb{I}\left\{ \hat{y}\neq y\right\} =\begin{cases}
+0 & \text{ if }\hat{y}=y\\
+1 & \text{ if }\hat{y}\neq y
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+doesn't care if a decision boundary is near a point or not.
+ 
+\end_layout
+
+\begin_layout Itemize
+Gradient zero everywhere.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Better to use the probability in the loss: 
+\begin_inset Formula $\mathrm{Pr}(y=1\vert\mathbf{x})=g(\mathbf{x})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Cross-entropy loss
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y,g(\mathbf{x}))=\begin{cases}
+\log g(\mathbf{x}) & \text{ if }y=1\\
+\log(1-g(\mathbf{x})) & \text{ if }y=-1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cross-entropy loss = Bernoulli distribution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+The margin for a classifier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Class prediction by thresholding a function at zero:
+\size small
+
+\begin_inset Formula 
+\[
+\hat{y}(\mathbf{x})=\mathrm{sign}(f(\mathbf{x}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: logistic regression with 
+\begin_inset Formula $f(\mathbf{x})=\mathbf{x}^{\top}\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+margin for a classifier
+\series default
+\color inherit
+ at 
+\begin_inset Formula $(\mathbf{x},y)$
+\end_inset
+
+ is
+\size small
+
+\begin_inset Formula 
+\[
+\mathrm{margin}\equiv y\cdot f(\mathbf{x})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Correct classification if and only if 
+\begin_inset Formula $f(\mathbf{x})$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ have same sign.
+\end_layout
+
+\begin_layout Itemize
+Misclassification loss in terms of margin
+\size small
+\emph on
+
+\begin_inset Formula 
+\[
+L(y\cdot f(\mathbf{x}))=\begin{cases}
+1 & \text{ if }y\cdot f(\mathbf{x})<0\\
+0 & \text{ if }y\cdot f(\mathbf{x})>0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The larger the margin, the more certain is the classfier.
+\end_layout
+
+\begin_layout Itemize
+Log-likelihood for logistic regression (see eq.
+ 3.34 in MLES):
+\size small
+
+\begin_inset Formula 
+\[
+L(y\cdot f(\mathbf{x}))=\log\left(1+\exp(-y\cdot f(\mathbf{x}))\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Exponential loss
+\series default
+\size small
+\color inherit
+
+\begin_inset Formula 
+\[
+L(y\cdot f(\mathbf{x}))=\exp(-y\cdot f(\mathbf{x})).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Loss functions for classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/lossFunctionsClassification.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Log-likelihood as cost function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Negative 
+\series bold
+\color blue
+log-likelihood as cost function
+\series default
+\size small
+\color inherit
+
+\begin_inset Formula 
+\[
+J(\boldsymbol{\theta})=-\frac{1}{n}\sum_{i=1}^{n}\log p(y_{i}\vert\boldsymbol{x}_{i};\boldsymbol{\theta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Classification: cross-entropy.
+\end_layout
+
+\begin_layout Itemize
+Gaussian 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ squared loss.
+ Laplace 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ absolute loss.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Advantages of the log-likelihood as loss function
+\series default
+\color inherit
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ML estimator has good (asymptotic) properties.
+\end_layout
+
+\begin_layout Itemize
+loss function comes from thinking about properties of the data: skewness,
+ heavy-tails, truncation etc.
+ We can 
+\series bold
+\color blue
+assess model fit
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+natural extension to more complex problems:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+censoring
+\end_layout
+
+\begin_layout Itemize
+missing data
+\end_layout
+
+\begin_layout Itemize
+dependent observations: 
+\begin_inset Formula $J(\boldsymbol{\theta})=-\log p(y_{1:n}\vert\boldsymbol{x}_{1:n};\boldsymbol{\theta})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+log prior for regularization in a Bayesian approach.
+\end_layout
+
+\begin_layout Itemize
+log-likelihood is a 
+\series bold
+\color blue
+strictly proper
+\series default
+\color inherit
+ loss function.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Regularization revisited
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note: MLES the loglikelihood is multiplied by the factor 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+J(\boldsymbol{\theta})=-{\color{orange}\frac{1}{n}}\sum_{i=1}^{n}\log p(y_{i}\vert\boldsymbol{x}_{i};\boldsymbol{\theta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This changes the interpretation of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ in L2-regularization and the Ridge estimator
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\beta}}=(\boldsymbol{X}^{\top}\boldsymbol{X}+{\color{orange}n}\lambda I)^{-1}\boldsymbol{X}^{\top}\boldsymbol{y}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+General explicit regularization
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\theta}}=\mathrm{arg}\underset{\boldsymbol{\theta}}{\mathrm{min}}\;J(\boldsymbol{\theta};\boldsymbol{X},\boldsymbol{y})+\lambda\cdot R(\boldsymbol{\theta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Implicit regularization:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Early stopping in iterative optimization methods
+\end_layout
+
+\begin_layout Itemize
+Dropout in neural networks.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Parameter optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Optimization problems in ML:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Parameter learning
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\theta}}=\mathrm{arg}\underset{\boldsymbol{\theta}}{\mathrm{min}}\;J(\boldsymbol{\theta};\boldsymbol{X},\boldsymbol{y})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\theta}}=\mathrm{arg}\underset{\boldsymbol{\theta}}{\mathrm{min}}\;J(\boldsymbol{\theta};\boldsymbol{X},\boldsymbol{y})+\lambda\cdot R(\boldsymbol{\theta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hyperparameter learning
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\hat{\boldsymbol{\lambda}}=\mathrm{arg}\underset{\boldsymbol{\lambda}}{\mathrm{min}}\;E_{\mathrm{hold-out}}(\boldsymbol{\lambda})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Non-convexity
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+local minima
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/optimizationBowls.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Parameter optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/optimizationBowls.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/optimizationContours.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Coordinate descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Optimize 
+\begin_inset Formula $J(\theta_{1},\theta_{2},\ldots,\theta_{p})$
+\end_inset
+
+ one coordinate 
+\begin_inset Formula $\theta_{j}$
+\end_inset
+
+ at the time.
+ 
+\end_layout
+
+\begin_layout Itemize
+L1 regularization for squared error loss: coordinate descent guaranteed
+ to reach global minimum.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/coordinateDescent.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Gradient descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Idea: move in the direction of steepest descent, i.e.
+ opposite direction of the 
+\series bold
+\color blue
+gradient
+\series default
+\size tiny
+\color inherit
+
+\begin_inset Formula 
+\[
+\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})=\left(\frac{\partial}{\partial\theta_{1}}J(\boldsymbol{\theta}),\ldots,\frac{\partial}{\partial\theta_{p}}J(\boldsymbol{\theta})\right)^{\top}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example logistic regression
+\size tiny
+
+\begin_inset Formula 
+\[
+\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})=-\frac{1}{n}\sum_{i=1}^{n}\left(\frac{1}{1+e^{y_{i}\mathbf{x}_{i}^{\top}\beta}}\right)y_{i}\boldsymbol{x}_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/gradientDescentAlgo.png
+	lyxscale 40
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/gradientDescentLearningRate.png
+	lyxscale 40
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Gradient descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Convex
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Nonconvex - good 
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Nonconvex - bad 
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/gradDescentConvex.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/gradDescentNonConvexGoodLearnRate.png
+	lyxscale 40
+	scale 17.2
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/gradDescentNonConvexBadLearnRate.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Newton's method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gradient descent from first-order Taylor approximation of 
+\begin_inset Formula $J(\boldsymbol{\theta})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Newton's method
+\series default
+\color inherit
+ from second-order Taylor approx of 
+\begin_inset Formula $J(\boldsymbol{\theta})$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+J(\boldsymbol{\theta}+\mathbf{v})\approx\underset{s(\boldsymbol{\theta},\boldsymbol{v})}{\underbrace{J(\boldsymbol{\theta})+\boldsymbol{v}^{\top}\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})+\frac{1}{2}\boldsymbol{v}^{\top}\nabla_{\boldsymbol{\theta}}^{2}J(\boldsymbol{\theta})\boldsymbol{v}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The approx 
+\begin_inset Formula $s(\boldsymbol{\theta},\boldsymbol{v})$
+\end_inset
+
+ has minimum (solve 
+\begin_inset Formula $\nabla_{\boldsymbol{v}}s(\boldsymbol{\theta},\boldsymbol{v})=0$
+\end_inset
+
+ for 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+\boldsymbol{v}=-\left(\nabla_{\boldsymbol{\theta}}^{2}J(\boldsymbol{\theta})\right)^{-1}\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})
+\]
+
+\end_inset
+
+suggesting the iterative update
+\begin_inset Formula 
+\[
+\boldsymbol{\theta}^{(t+1)}=\boldsymbol{\theta}^{(t)}-\left(\nabla_{\boldsymbol{\theta}}^{2}J(\boldsymbol{\theta}^{(t)})\right)^{-1}\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta}^{(t)})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/Newton.png
+	lyxscale 40
+	scale 11
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Newton's method with trust regions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Newton's method can be unstable.
+ Hessian not always positive definite.
+ Divergence.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Newton with trust regions
+\series default
+\color inherit
+: don't allow large updates:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/NewtonTrustRegionsAlgo.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/NewtonTrustRegions.png
+	lyxscale 40
+	scale 16
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Early stopping to avoid overfitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Song classification problem with multi-class logistic regression
+\end_layout
+
+\begin_layout Itemize
+20 degree polynomial with interactions.
+ Overfitting!
+\end_layout
+
+\begin_layout Itemize
+Monitor optimization progress on hold-out data.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/LogisticRegEarlyStoppingHoldOut.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/LogisticRegEarlyStoppingDecisionBoundary.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Stochastic gradient descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Large (independent) data
+\series default
+\color inherit
+: 
+\size small
+gradient is a large sum.
+ Costly!
+\begin_inset Formula 
+\[
+\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})=-\frac{1}{n}\sum_{i=1}^{n}\nabla_{\boldsymbol{\theta}}L(\boldsymbol{x}_{i},y_{i};\boldsymbol{\theta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stochastic gradient descent
+\series default
+\color inherit
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+each iteration computes the gradient 
+\begin_inset Formula $\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})$
+\end_inset
+
+ on a random 
+\series bold
+\color blue
+mini-batch
+\series default
+\color inherit
+ of 
+\begin_inset Formula $n_{b}\ll n$
+\end_inset
+
+ observations.
+\end_layout
+
+\begin_layout Itemize
+each mini-batch gradient is an 
+\series bold
+\color blue
+unbiased estimator
+\series default
+\color inherit
+ of 
+\begin_inset Formula $\nabla_{\boldsymbol{\theta}}J(\boldsymbol{\theta})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+mini-batch gradient descent.
+ Learning rate 
+\begin_inset Formula $\gamma_{t}$
+\end_inset
+
+ in iteration 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Epoch
+\series default
+\color inherit
+: a complete sweep through all data.
+ 
+\begin_inset Formula $n/n_{b}$
+\end_inset
+
+ iterations.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Robbins-Monro 
+\series bold
+\color blue
+conditions for convergence
+\series default
+\color inherit
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\sum_{t=0}^{\infty}\gamma_{t}<\infty$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+[step length must vanish eventually ...]
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sum_{t=0}^{\infty}\gamma_{t}^{2}=\infty$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+[...
+ but not too fast]
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Itemize
+Fulfilled by 
+\begin_inset Formula $\gamma_{t}=\frac{1}{t^{\alpha}}$
+\end_inset
+
+ for 
+\begin_inset Formula $\alpha\in(0.5,1]$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However, often use lower cap: 
+\begin_inset Formula $\gamma_{t}\rightarrow\gamma_{\mathrm{\min}}>0$
+\end_inset
+
+, e.g.
+\begin_inset Formula 
+\[
+\gamma_{t}=\gamma_{\mathrm{min}}+(\gamma_{\mathrm{max}}-\gamma_{\mathrm{min}})e^{-\frac{t}{\tau}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Stochastic gradient descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SGDAlgo.png
+	lyxscale 40
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Stochastic gradient descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/sgd.png
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/sgdNonconvex.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Stochastic second order gradient methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Stochastic 
+\series bold
+\color blue
+Quasi-Newton
+\series default
+\color inherit
+ methods.
+ Use past gradients to approximate Hessian info:
+\begin_inset Formula 
+\[
+\text{learning rate:}\qquad\gamma_{t}=\gamma(\nabla J_{t},\nabla J_{t-1},\ldots,\nabla J_{0})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\text{search directions:}\qquad d_{t}=d(\nabla J_{t},\nabla J_{t-1},\ldots,\nabla J_{0})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Adaptive Stochastic Gradient Descent
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\boldsymbol{\theta}^{(t+1)}=\theta^{(t)}-\gamma_{t}d_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+ADAM
+\series default
+\color inherit
+ optimizer is based on exponential decay
+\size footnotesize
+
+\begin_inset Formula 
+\[
+d_{t}=(1-\beta_{1})\sum_{i=1}^{t}\beta_{1}^{t-i}\nabla J_{i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\gamma_{t}=\frac{\eta}{\sqrt{t}}\left((1-\beta_{2})\mathrm{diag}\left(\sum_{i=1}^{t}\beta_{2}^{t-i}\left\Vert \nabla J_{i}\right\Vert ^{2}\right)\right)^{1/2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{2}$
+\end_inset
+
+ close to one is a common choice.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Hyperparameter learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Minimizing 
+\begin_inset Formula $E_{\mathrm{hold-out}}(\boldsymbol{\lambda})$
+\end_inset
+
+ by grid search.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/GridSearchAlgo.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/GridSearch.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian optimization
+\series default
+\color inherit
+ based on Gaussian processes (Lecture 8) when objective is costly and 
+\begin_inset Formula $\boldsymbol{\lambda}$
+\end_inset
+
+ low-dim.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
