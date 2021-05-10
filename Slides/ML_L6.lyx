@@ -1,0 +1,1565 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamertemplate{headline}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include necessary packages here
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+
+\includegraphics[width=1.5cm]{/home/mv/Dropbox/IconsAndLogos/LogoBlueJustRing.jpg}\hspace*{2.5cm}~%
+\includegraphics[width=2cm]{/home/mv/Dropbox/IconsAndLogos/liulogo.png} \linebreak
+\hrulefill \break
+\tiny
+\includegraphics[width=0.33cm]{/home/mv/Dropbox/IconsAndLogos/web.png} \href{https://mattiasvillani.com}{mattiasvillani.com}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/twitter.jpg} \href{https://twitter.com/matvil}{@matvil}\hspace*{1cm}~
+\includegraphics[width=0.3cm]{/home/mv/Dropbox/IconsAndLogos/github.png} \href{https://github.com/mattiasvillani}{mattiasvillani}~
+}
+
+
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{red}{RGB}{255, 128, 0}
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+
+\usepackage{tcolorbox}
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{wasysym}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\end_preamble
+\options xcolor=svgnames, handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\color orange
+Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\color orange
+Lecture 6 - Neural networks
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Mattias Villani
+\series default
+ 
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Linköping and Stockholm University
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Neural networks
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+That
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Deep neural networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Nonlinear generalized linear model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+y\vert x_{1},\ldots,x_{p},\boldsymbol{\beta}\sim\mathrm{ExpFamily}(\lambda)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+g(\lambda)=f_{\boldsymbol{\beta}}(x_{1},\ldots,x_{p})
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f_{\boldsymbol{\beta}}(x_{1},\ldots,x_{p})$
+\end_inset
+
+ can be linear or non-linear (spline or tree).
+ 
+\end_layout
+
+\begin_layout Itemize
+Here: 
+\begin_inset Formula $f_{\boldsymbol{\beta}}(x_{1},\ldots,x_{p})$
+\end_inset
+
+ is a 
+\series bold
+\color blue
+neural network
+\series default
+\color inherit
+ with 
+\series bold
+\color blue
+hidden nodes
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Richly parametrized models
+\series default
+\color inherit
+ that 
+\series bold
+\color blue
+learn the features
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+(Huge) subculture in ML: frameworks and work pipelines.
+\end_layout
+
+\begin_layout Itemize
+Their recent 
+\series bold
+\color blue
+success
+\series default
+\color inherit
+ comes from:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+massive datasets
+\end_layout
+
+\begin_layout Itemize
+advances in parallel computing (graphic cards)
+\end_layout
+
+\begin_layout Itemize
+deep networks
+\end_layout
+
+\begin_layout Itemize
+better optimization algorithms (SGD etc)
+\end_layout
+
+\begin_layout Itemize
+automatic differentiation.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Neural network models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear regression
+\begin_inset Formula 
+\[
+\hat{y}=W_{1}x_{1}+\ldots+W_{p}x_{p}+b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $W_{j}$
+\end_inset
+
+ are the 
+\series bold
+\color blue
+weights
+\series default
+\color inherit
+ (regression coefficients)
+\end_layout
+
+\begin_layout Itemize
+b is the 
+\series bold
+\color blue
+bias
+\series default
+\color inherit
+ (intercept).
+ Very confusing terminology!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Activation function
+\series default
+\color inherit
+ 
+\begin_inset Formula $h:\mathbb{R}\rightarrow\mathbb{R}$
+\end_inset
+
+ transforms to nonlinear
+\begin_inset Formula 
+\[
+\hat{y}=h(W_{1}x_{1}+\ldots+W_{p}x_{p}+b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/linearModel.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/LinearPlusActivation.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Activation functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Logistic
+\series default
+\color inherit
+ function (sigmoid)
+\begin_inset Formula 
+\[
+h(z)=\frac{1}{1+e^{-z}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rectified linear (
+\series bold
+\color blue
+ReLU
+\series default
+\color inherit
+) 
+\begin_inset Formula 
+\[
+h(z)=\max(0,z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Tanh
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+h(z)=\max(0,z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/ActivationFunctions.pdf
+	lyxscale 40
+	scale 18
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/activation_functions_study.png
+	lyxscale 40
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Two-layer neural network
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Add a layer of hidden units 
+\begin_inset Formula $q$
+\end_inset
+
+ between input 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ and output 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\begin{align*}
+q_{1} & =h\left(W_{11}^{(1)}x_{1}+\ldots+W_{1p}^{(1)}x_{p}+b_{1}^{(1)}\right)\\
+q_{2} & =h\left(W_{21}^{(1)}x_{1}+\ldots+W_{2p}^{(1)}x_{p}+b_{2}^{(1)}\right)\\
+ & \vdots\\
+q_{U} & =h\left(W_{U1}^{(1)}x_{1}+\ldots+W_{Up}^{(1)}x_{p}+b_{U}^{(1)}\right)\\
+\hat{y} & =W_{1}^{(2)}q_{1}+\ldots+W_{U}^{(2)}q_{U}+b^{(2)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/TwoLayerNN.png
+	lyxscale 30
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Two-layer neural network - vector form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vector form
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\begin{align*}
+\boldsymbol{q} & =h\left(\boldsymbol{W}^{(1)}\boldsymbol{x}+\boldsymbol{b}^{(1)}\right)\\
+\hat{y} & =\boldsymbol{W}^{(2)}\boldsymbol{q}+b^{(2)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/TwoLayerNN.png
+	lyxscale 30
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hidden units
+\series default
+\color inherit
+:
+\series bold
+ 
+\begin_inset Formula $\boldsymbol{q}=(q_{1},\ldots,q_{U})^{\top}$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Parameters
+\series default
+\color inherit
+: 
+\begin_inset Formula $\boldsymbol{\theta}=\left(\mathrm{vec}(\boldsymbol{W}^{(1)})^{\top},\boldsymbol{b}^{(1)\top},\mathrm{vec}(\boldsymbol{W}^{(2)})^{\top},b^{(2)}\right)^{T}.$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Deep neural network with 
+\begin_inset Formula $L$
+\end_inset
+
+ layers for regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\begin{align*}
+\boldsymbol{q}^{(1)} & =h_{1}\left(\boldsymbol{W}^{(1)}\boldsymbol{x}+\boldsymbol{b}^{(1)}\right)\\
+\boldsymbol{q}^{(2)} & =h_{2}\left(\boldsymbol{W}^{(2)}\boldsymbol{q}^{(1)}+\boldsymbol{b}^{(2)}\right)\\
+ & \vdots\\
+\boldsymbol{q}^{(L-1)} & =h_{L-1}\left(\boldsymbol{W}^{(L-1)}\boldsymbol{q}^{(L-2)}+\boldsymbol{b}^{(L-1)}\right)\\
+\hat{y} & =\boldsymbol{W}^{(L)}\boldsymbol{q}^{(L-1)}+b^{(L)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/DeepNeuralNet.png
+	lyxscale 30
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hidden units
+\series default
+\color inherit
+:
+\series bold
+ 
+\begin_inset Formula $\boldsymbol{q}^{(l)}$
+\end_inset
+
+
+\series default
+ is a 
+\begin_inset Formula $U_{l}$
+\end_inset
+
+ dimensional vector.´
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Parameters
+\series default
+\color inherit
+:
+\size scriptsize
+ 
+\begin_inset Formula $\boldsymbol{\theta}=\left(\mathrm{vec}(\boldsymbol{W}^{(1)})^{\top},\boldsymbol{b}^{(1)\top},\ldots,\mathrm{vec}(\boldsymbol{W}^{(L)})^{\top},b^{(L)}\right)^{T}.$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Deep neural network for classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deep neural network for 
+\series bold
+\color blue
+multi-class classification
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\begin{align*}
+\boldsymbol{q}^{(1)} & =h_{1}\left(\boldsymbol{W}^{(1)}\boldsymbol{x}+\boldsymbol{b}^{(1)}\right)\\
+\boldsymbol{q}^{(2)} & =h_{2}\left(\boldsymbol{W}^{(2)}\boldsymbol{q}^{(1)}+\boldsymbol{b}^{(2)}\right)\\
+ & \vdots\\
+\boldsymbol{q}^{(L-1)} & =h_{L-1}\left(\boldsymbol{W}^{(L-1)}\boldsymbol{q}^{(L-2)}+\boldsymbol{b}^{(L-1)}\right)\\
+\boldsymbol{z} & =\boldsymbol{W}^{(L)}\boldsymbol{q}^{(L-1)}+\boldsymbol{b}^{(L)}\\
+\boldsymbol{g} & =\mathrm{softmax}(\boldsymbol{z})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Softmax function
+\series default
+\color inherit
+ turns 
+\begin_inset Formula $\boldsymbol{z}\in\mathbb{R}^{M}$
+\end_inset
+
+ into a probability distribution
+\begin_inset Formula 
+\[
+\mathrm{softmax}(\boldsymbol{z})=\left(\frac{e^{z_{1}}}{\sum_{j=1}^{M}e^{z_{j}}},\ldots,\frac{e^{z_{M}}}{\sum_{j=1}^{M}e^{z_{j}}}\right)^{\top}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Deep learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deep neural networks are typically learned by 
+\series bold
+\color blue
+optimization
+\series default
+\color inherit
+ methods.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Challenge 1 - 
+\series bold
+\color blue
+
+\begin_inset Formula $n$
+\end_inset
+
+ is large
+\series default
+\color inherit
+.
+ 
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solution: stochastic gradient descent.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Challenge 2 - 
+\series bold
+\color blue
+
+\begin_inset Formula $\mathrm{dim}(\boldsymbol{\theta})$
+\end_inset
+
+ is large
+\series default
+\color inherit
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solution: back-propagation and automatic differentiation.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Challenge 3 - nonlinear with 
+\series bold
+\color blue
+many local minima
+\series default
+\color inherit
+ in objective.
+\begin_inset VSpace smallskip
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solution: stochastic gradient descent to escape local minima and automatic
+ differentiation.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Backpropagation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Computionally fast way to compute for 
+\begin_inset Formula $l=1,\ldots,L$
+\end_inset
+
+: 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size footnotesize
+\begin_inset Formula $\nabla_{\boldsymbol{W}^{(l)}}J(\boldsymbol{W},\boldsymbol{b})$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size footnotesize
+\begin_inset Formula $\nabla_{\boldsymbol{b}^{(l)}}J(\boldsymbol{W},\boldsymbol{b})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+\color blue
+\begin_inset Formula 
+\begin{align*}
+\text{Backpropagation} & =\text{Chain rule derivative}+\text{computational graph }
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Backprop
+\series default
+\color inherit
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+forward pass from 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ to 
+\begin_inset Formula $J(\boldsymbol{W},\boldsymbol{b})$
+\end_inset
+
+ via all hidden 
+\begin_inset Formula $\boldsymbol{z}^{(l)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{q}^{(l)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+backward pass from 
+\begin_inset Formula $J(\boldsymbol{W},\boldsymbol{b})$
+\end_inset
+
+ to 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ to compute all derivatives.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/BackPropCompGraph.png
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Backpropagation for a 3-layer network
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Objective function
+\end_layout
+
+\begin_layout Standard
+
+\size tiny
+\begin_inset Formula 
+\begin{flalign*}
+\boldsymbol{q}^{(1)} & =h_{1}\left(\underset{\boldsymbol{z}^{(1)}}{\underbrace{\boldsymbol{W}^{(1)}\boldsymbol{x}+\boldsymbol{b}^{(1)}}}\right)\\
+\boldsymbol{q}^{(2)} & =h_{2}\left(\underset{\boldsymbol{z}^{(2)}}{\underbrace{\boldsymbol{W}^{(2)}\boldsymbol{q}^{(1)}+\boldsymbol{b}^{(2)}}}\right)\\
+\hat{y} & =\underset{\boldsymbol{z}^{(3)}}{\underbrace{\boldsymbol{W}^{(3)}\boldsymbol{q}^{(2)}+\boldsymbol{b}^{(3)}}}\\
+J(\boldsymbol{\theta}) & =(\hat{y}-y)^{2}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size footnotesize
+Some derivatives
+\size scriptsize
+
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial J(\boldsymbol{\theta})}{\partial b^{(1)}} & =\frac{\partial J(\boldsymbol{\theta})}{\partial\hat{y}}\frac{\partial\hat{y}}{\partial\boldsymbol{z}^{(3)}}\frac{\partial\boldsymbol{z}^{(3)}}{\partial\boldsymbol{q}^{(2)}}\frac{\partial\boldsymbol{q}^{(2)}}{\partial\boldsymbol{z}^{(2)}}\frac{\partial\boldsymbol{z}^{(2)}}{\partial\boldsymbol{q}^{(1)}}\frac{\partial\boldsymbol{q}^{(1)}}{\partial\boldsymbol{z}^{(1)}}\frac{\partial\boldsymbol{z}^{(1)}}{\partial\boldsymbol{b}^{(1)}}\\
+ & =2(\hat{y}-y)\cdot1\cdot\boldsymbol{W}^{(3)}h^{'}(\boldsymbol{z}^{(2)})\boldsymbol{W}^{(2)}h^{'}(\boldsymbol{z}^{(1)})\cdot1
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial J(\boldsymbol{\theta})}{\partial\boldsymbol{W}^{(2)}} & =\frac{\partial J(\boldsymbol{\theta})}{\partial\hat{y}}\frac{\partial\hat{y}}{\partial\boldsymbol{z}^{(3)}}\frac{\partial\boldsymbol{z}^{(3)}}{\partial\boldsymbol{q}^{(2)}}\frac{\partial\boldsymbol{q}^{(2)}}{\partial\boldsymbol{z}^{(2)}}\frac{\partial\boldsymbol{z}^{(2)}}{\partial\boldsymbol{W}^{(2)}}\\
+ & =2(\hat{y}-y)\cdot1\cdot\boldsymbol{W}^{(3)}h^{'}(\boldsymbol{z}^{(2)})\boldsymbol{q}^{(1)}
+\end{align*}
+
+\end_inset
+
+
+\size footnotesize
+ ´
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Demo of deep learning in R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MNIST dataset - the 
+\begin_inset Quotes eld
+\end_inset
+
+hello world
+\begin_inset Quotes erd
+\end_inset
+
+ of machine learning.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The code is posted under this lecture.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Experiment yourself with the code.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Watch the video by the excellent Youtuber 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+3{
+\backslash
+color{blue}Blue}1{
+\backslash
+color{brown}Brown}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+centering     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+href{https://youtu.be/aircAruvnKk}{
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=0.3
+\backslash
+textheight, keepaspectratio]{Images/3blue1brownCaption.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+How 
+\begin_inset Formula $28\times28$
+\end_inset
+
+ images propagates through the net
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/MNIST3blue1brown.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny From video by 3{
+\backslash
+color{blue}Blue}1{
+\backslash
+color{brown}Brown}: 
+\backslash
+url{https://youtu.be/aircAruvnKk}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+How a neural net learns the right features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/MNIST3blue1brown2.png
+	lyxscale 20
+	scale 12
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny From video by 3{
+\backslash
+color{blue}Blue}1{
+\backslash
+color{brown}Brown}: 
+\backslash
+url{https://youtu.be/aircAruvnKk}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+How a neural net represents a edge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/MNIST3blue1brown1.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny From video by 3{
+\backslash
+color{blue}Blue}1{
+\backslash
+color{brown}Brown}: 
+\backslash
+url{https://youtu.be/aircAruvnKk}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

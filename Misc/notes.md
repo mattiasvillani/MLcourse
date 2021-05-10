@@ -1,0 +1,2 @@
+- The package **glmnetUtils** makes it possible to use R formula and dataframe syntax in glmnet. Also cross-validating alpha.
+- caret package does data splitting and more of the pipeline for predictive modeling

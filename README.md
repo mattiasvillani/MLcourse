@@ -81,10 +81,10 @@ Reading: MLES 7 |  [Slides](/Slides/ML_L4.pdf) \
 Extra: [Gradient boosting visualized](http://arogozhnikov.github.io/2016/06/24/gradient_boosting_explained.html) | [Gradient boosting playground](http://arogozhnikov.github.io/2016/07/05/gradient_boosting_playground.html) 
 
 **Lecture 5 - Learning from large-scale data**\
-Reading: MLES 5 |  [Slides](/Slides/ML_L5.pdf) \
+Reading: MLES 5 |  [Slides](/Slides/ML_L5.pdf) 
 
 **Lecture 6 - Neural networks**\
-Reading: MLES 6.1-6.2 |  [Slides](TBA) \
+Reading: MLES 6.1-6.2 |  [Slides](/Slides/ML_L6.pdf) \
 Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) \
 Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on learning a neural network](https://youtu.be/IHZwWFHWa-w)
 
