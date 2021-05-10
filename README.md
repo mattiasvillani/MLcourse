@@ -83,7 +83,7 @@ Extra: [Gradient boosting visualized](http://arogozhnikov.github.io/2016/06/24/g
 **Lecture 5 - Learning from large-scale data**\
 Reading: MLES 5 |  [Slides](/Slides/ML_L5.pdf) 
 
-**Lecture 6 - Neural networks**\
+**Lecture 6 - Neural networks and Deep learning**\
 Reading: MLES 6.1-6.2 |  [Slides](/Slides/ML_L6.pdf) \
 Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) \
 Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on learning a neural network](https://youtu.be/IHZwWFHWa-w)
