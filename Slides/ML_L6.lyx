@@ -158,7 +158,7 @@ Machine Learning
 \begin_layout Subtitle
 
 \color orange
-Lecture 6 - Neural networks
+Lecture 6 - Neural networks and Deep learning
 \end_layout
 
 \begin_layout Author
@@ -256,7 +256,7 @@ Neural networks
 
 \series bold
 \color blue
-That
+Deep learning
 \series default
 \color inherit
 
@@ -834,7 +834,7 @@ Hidden units
 \begin_inset Formula $U_{l}$
 \end_inset
 
- dimensional vector.´
+ dimensional vector.
 \end_layout
 
 \begin_layout Itemize
