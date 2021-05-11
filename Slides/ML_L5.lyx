@@ -1798,7 +1798,7 @@ conditions for convergence
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $\sum_{t=0}^{\infty}\gamma_{t}<\infty$
+\begin_inset Formula $\sum_{t=0}^{\infty}\gamma_{t}=\infty$
 \end_inset
 
  
@@ -1814,7 +1814,7 @@ conditions for convergence
 \uwave off
 \noun off
 \color none
-[step length must vanish eventually ...]
+[step length shouldn't vanish too fast]
 \family default
 \series default
 \shape default
@@ -1831,7 +1831,7 @@ conditions for convergence
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\sum_{t=0}^{\infty}\gamma_{t}^{2}=\infty$
+\begin_inset Formula $\sum_{t=0}^{\infty}\gamma_{t}^{2}<\infty$
 \end_inset
 
  
@@ -1848,7 +1848,7 @@ conditions for convergence
 \noun off
 \color none
 [...
- but not too fast]
+ but also not too slow]
 \family default
 \series default
 \shape default
