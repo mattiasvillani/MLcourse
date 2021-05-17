@@ -111,7 +111,7 @@ Code up the above filter matrices yourself, but you can use the `convolution2D` 
 #### Problem 4 - Fit convolutional neural networks to CIFAR
 
 In this problem you will work with the CIFAR10 data, a dataset with 28x28 RGB color images
-from 10 labelled classes. The following code loads the data, scales it and plots one of
+from 10 labeled classes. The following code loads the data, scales it and plots one of
 the images.
 
 ```{r load-cifar10-data}

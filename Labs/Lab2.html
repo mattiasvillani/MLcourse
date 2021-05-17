@@ -1669,7 +1669,7 @@ y_train &lt;- to_categorical(y_train, 10) # 60000-by-10 matrix, each row is one-
 y_testOrig &lt;- y_test # Keep the original 0-9 coded test labels.
 y_test &lt;- to_categorical(y_test, 10)</code></pre>
 <p>Use the <code>keras</code> package to fit a simple (linear) logistic regression to the training data. Use the cross entropy loss, the <code>rmsprop</code> optimizer, 30 epochs, batchsize 128, and monitor performance using accuracy on 20% of the data used for validation in the fitting. Is the model underfitting or overfitting?</p>
-<p>Make predictions on the test data and use the <code>MLeval</code> package to compute the confusion matrix and the accuracy on the test data. Which pair of digits does the model most often confuse with each other in the prediction?</p>
+<p>Make predictions on the test data and compute the test accuracy. Use the <code>MLeval</code> package to compute the confusion matrix for the test data. Which digits is most frequently wrongly predicted to be a 2?</p>
 </div>
 <div id="problem-2---fit-models-with-hidden-layers-to-mnist" class="section level4">
 <h4>Problem 2 - Fit models with hidden layers to MNIST</h4>
@@ -1704,7 +1704,7 @@ image(ascent, col = gray.colors(256), axes = F)</code></pre>
 </div>
 <div id="problem-4---fit-convolutional-neural-networks-to-cifar" class="section level4">
 <h4>Problem 4 - Fit convolutional neural networks to CIFAR</h4>
-<p>In this problem you will work with the CIFAR10 data, a dataset with 28x28 RGB color images from 10 labelled classes. The following code loads the data, scales it and plots one of the images.</p>
+<p>In this problem you will work with the CIFAR10 data, a dataset with 28x28 RGB color images from 10 labeled classes. The following code loads the data, scales it and plots one of the images.</p>
 <pre class="r"><code># See ?dataset_cifar10 for more info
 cifar10 &lt;- dataset_cifar10()
 classes = c(&#39;plane&#39;, &#39;car&#39;, &#39;bird&#39;, &#39;cat&#39;, &#39;deer&#39;, &#39;dog&#39;, &#39;frog&#39;, &#39;horse&#39;, &#39;ship&#39;, &#39;truck&#39;)
