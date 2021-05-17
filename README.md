@@ -94,8 +94,8 @@ Code: [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R) \
 Extras: [Filter spreadsheet](/Code/Filters.xlsx)
 
 **Lecture 8 - Gaussian process regression and classification**\
-Reading: MLES 9 |  [Slides](TBA) \
-Code:  
+Reading: MLES 9 |  [Slides](/Slides/ML_L8.pdf) \
+Extras: [GP visualization](http://smlbook.org/GP/index.html) 
 
 **Lecture 9 - Clustering and mixture models for unsupervised learning**\
 Reading: MLES 10.1-10.3 |  [Slides](TBA) \
