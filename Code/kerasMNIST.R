@@ -1,7 +1,7 @@
 # Using keras to fit a neural network to the MNIST data
 # Based on the keras blog post https://tensorflow.rstudio.com/guide/keras/
 
-library(keras)
+library(keras) # GPU CPU
 
 # Load the MNIST data
 mnist <- dataset_mnist()  
@@ -14,7 +14,7 @@ dim(x_train)    # 60000-by-28-by-28 3D array with 60000 training images (28-by-2
 length(y_train) # 60000 element vector with training labels
 
 # Plot a digit - a nine
-image(x_train[5,,], col = gray.colors(256, start = 1, end = 0))
+image(rot90(x_train[5,,],-1), col = gray.colors(256, start = 1, end = 0))
 x_train[5,,] # Looking at the data for a specific image
 y_train[5]
 
@@ -67,4 +67,4 @@ yPreds = apply(yProbs, 1, function(x) which.max(x)-1)
 
 # Plot the predictive distribution for first test case
 barplot(names.arg = 0:9, yProbs[1,], col = "blue")
-y_test[1,] # one-hot encoding for a seven. Right decision from the model!
+y_test[1,] # one-hot encoding for a seven. Right decision from the model!´

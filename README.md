@@ -90,7 +90,8 @@ Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on lea
 
 **Lecture 7 - Image data and convolutional neural networks**\
 Reading: MLES 6.3-6.4 |  [Slides](TBA) \
-Code: [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R)
+Code: [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R) \
+Extras: [Filter spreadsheet](/Code/Filters.xlsx)
 
 **Lecture 8 - Gaussian process regression and classification**\
 Reading: MLES 9 |  [Slides](TBA) \
@@ -135,7 +136,7 @@ Lab 1b - Regularized classification: [R notebook](/Labs/Lab1b.Rmd) | [pdf versio
 Submission: Athena.
 
 **Computer Lab 2** - Neural Networks.\
-Lab: [Lab 2]() \
+Lab 2 - Deep Learning and Gaussian Processes: [R notebook](/Labs/Lab2.Rmd) | [pdf version](/Labs/Lab2.pdf) | [html version](/Labs/Lab2.html) \
 Submission: Athena.
 
 **Computer Lab 3** - Unsupervised and semisupervised learning.\
