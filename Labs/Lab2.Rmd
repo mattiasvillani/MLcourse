@@ -62,9 +62,9 @@ Use the cross entropy loss, the `rmsprop` optimizer, 30 epochs, batchsize 128, a
 performance using accuracy on 20% of the data used for validation in the fitting. 
 Is the model underfitting or overfitting?
 
-Make predictions on the test data and use the `MLeval` package to compute the confusion 
-matrix and the accuracy on the test data. Which pair of digits does the model most often 
-confuse with each other in the prediction?
+Make predictions on the test data and compute the test accuracy. Use the `MLeval` package 
+to compute the confusion matrix for the test data. 
+Which digits is most frequently wrongly predicted to be a 2?
 
 
 #### Problem 2 - Fit models with hidden layers to MNIST
