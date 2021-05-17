@@ -89,7 +89,7 @@ Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) \
 Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on learning a neural network](https://youtu.be/IHZwWFHWa-w)
 
 **Lecture 7 - Image data and convolutional neural networks**\
-Reading: MLES 6.3-6.4 |  [Slides](TBA) \
+Reading: MLES 6.3-6.4 |  [Slides](/Slides/ML_L7.pdf) \
 Code: [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R) \
 Extras: [Filter spreadsheet](/Code/Filters.xlsx)
 

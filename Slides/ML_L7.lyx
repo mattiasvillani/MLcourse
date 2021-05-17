@@ -242,7 +242,7 @@ Lecture overview
 
 \series bold
 \color blue
-This
+Image data
 \series default
 \color inherit
 
@@ -256,7 +256,21 @@ This
 
 \series bold
 \color blue
-That
+Filters and convolutions
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Convolutional neural networks
 \series default
 \color inherit
 
@@ -282,7 +296,7 @@ status open
 
 \series bold
 \color orange
-Tree ensemble
+Image are 2D-grid structured data
 \end_layout
 
 \end_inset
@@ -292,7 +306,81 @@ Tree ensemble
 
 \begin_deeper
 \begin_layout Itemize
-ggg
+
+\series bold
+\color blue
+Image data
+\series default
+\color inherit
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+are structured.
+ Pixels on a 2D grid.
+\end_layout
+
+\begin_layout Itemize
+nearby pixels tend to be correlated.
+ 
+\end_layout
+
+\begin_layout Itemize
+lines, corners, shapes.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/DataRepresentationGrid.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+3D data
+\series default
+\color inherit
+: activity in brain 
+\series bold
+\color blue
+voxels
+\series default
+\color inherit
+ in neuroscience.
+ 2D video.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+4D data
+\series default
+\color inherit
+: activity in brain voxels over time.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/fMRI3d.png
+	lyxscale 30
+	scale 18
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -304,6 +392,1636 @@ ggg
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Image data - pixels
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Original
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Twice less pixels
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot.jpg
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot4pixel.jpg
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 times less
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16 times less
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot8pixel.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot16pixel.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+RGB data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Red-Green-Blue triples.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(r,g,b)$
+\end_inset
+
+ where 
+\begin_inset Formula $r,g,b\in\{0,1,\ldots,255\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/rgb.png
+	lyxscale 25
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Red pixel (217,7,0)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Yellow pixel (219,222,4)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Gray pixel (135,137,144)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot16pixelred.jpg
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot16pixelyellow.jpg
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/parrot16pixelgray.jpg
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Grayscale: 
+\begin_inset Formula $(r,g,b)$
+\end_inset
+
+ where 
+\begin_inset Formula $r=g=b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Other (better) color spaces exist.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Convolution in 1D
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Convolutional networks
+\series default
+\color inherit
+: uses convolution instead of general matrix multiplication in at least
+ one of the layers.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Discrete convolution 
+\series default
+\color inherit
+for 1-dimensional data (e.g.
+ time)
+\begin_inset Formula 
+\[
+z_{t}=\sum_{\tau=-\infty}^{\infty}x_{\tau}w_{t-\tau}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: 3-point (weighted) 
+\series bold
+\color blue
+moving average
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+z_{t}=\frac{1}{4}x_{t-1}+\frac{1}{2}x_{t}+\frac{1}{4}x_{t+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Convolutions are often 
+\series bold
+\color blue
+sparse linear transformations
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+z_{2}\\
+z_{3}\\
+\\
+\\
+z_{T}
+\end{array}\right)=\left(\begin{array}{ccccccc}
+\frac{1}{4} & \frac{1}{2} & \frac{1}{4} & 0 & 0 & \cdots & 0\\
+0 & \frac{1}{4} & \frac{1}{2} & \frac{1}{4} & 0 & \cdots & 0\\
+\vdots &  &  &  &  &  & 0\\
+0 & 0 & 0 & \cdots & \frac{1}{4} & \frac{1}{2} & \frac{1}{4}
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+\\
+\\
+x_{T-1}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Convolution in 2D
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+2D-convolution 
+\series default
+\color inherit
+(input 
+\begin_inset Formula $x$
+\end_inset
+
+ has been 
+\series bold
+\color blue
+zero-padded
+\series default
+\color inherit
+):
+\begin_inset Formula 
+\[
+z_{ij}=\sum_{k=1}^{F}\sum_{l=1}^{F}x_{i+k-1,j+l-1}W_{kl}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+ero-padding 
+\series default
+\color inherit
+to handle edges
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/zeropadding.png
+	lyxscale 30
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Simple 
+\series bold
+\color blue
+blur filter
+\series default
+\size footnotesize
+\color inherit
+
+\begin_inset Formula 
+\[
+W=\left(\begin{array}{ccc}
+0.050 & 0.125 & 0.050\\
+0.125 & 0.300 & 0.125\\
+0.050 & 0.125 & 0.050
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Gaussian blur
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Edge detecting filters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+2D-convolution
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+z_{ij}=\sum_{k=1}^{F}\sum_{l=1}^{F}x_{i+k-1,j+l-1}W_{kl}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Sobel filter
+\series default
+\color inherit
+ to detect 
+\series bold
+\color blue
+vertical edge
+\series default
+\size footnotesize
+\color inherit
+
+\begin_inset Formula 
+\[
+W=\left(\begin{array}{ccc}
+1 & 0 & -1\\
+2 & 0 & -2\\
+1 & 0 & -1
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Sobel filter
+\series default
+\color inherit
+ to detect 
+\series bold
+\color blue
+horizontal edge
+\series default
+\size footnotesize
+\color inherit
+
+\begin_inset Formula 
+\[
+W=\left(\begin{array}{ccc}
+1 & 2 & 1\\
+0 & 0 & 0\\
+-1 & -2 & -1
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SobelBikeOrig.jpg
+	lyxscale 25
+	scale 13
+
+\end_inset
+
+
+\begin_inset Formula $\quad$
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/SobelXBike.jpg.jpg
+	lyxscale 25
+	scale 13
+
+\end_inset
+
+
+\begin_inset Formula $\quad$
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/SobelYBike.jpg.jpg
+	lyxscale 25
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Edge detecting filters - vertical
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SobelXsheets.png
+	lyxscale 25
+	scale 11
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Edge detecting filters - horizontal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SobelYsheets.png
+	lyxscale 25
+	scale 11
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Convolutional neural networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Convolutional neural networks
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+CNN
+\series default
+\color inherit
+):
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Keeps the 2D
+\series default
+\color inherit
+ structure of images.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Uses 
+\series bold
+\color blue
+convolutions
+\series default
+\color inherit
+ (filters) in middle layers.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Sparse weights
+\series default
+\color inherit
+: hidden units depend only on some inputs.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Parameter sharing
+\series default
+\color inherit
+: same filter coefficients over whole grid.
+ 
+\series bold
+\color blue
+Equivariant to translations
+\series default
+\color inherit
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Filter coefficients are learned
+\series default
+\color inherit
+ by SGD like any weights.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/convNet.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Multiple channels and tensor weights
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CNNs use
+\series bold
+\color blue
+ multiple filters
+\series default
+\color inherit
+ to capture different shapes.
+ 
+\begin_inset Newline newline
+\end_inset
+
+E.g.
+ horizontal and vertical edge detectors may be learned.
+\end_layout
+
+\begin_layout Itemize
+Each filter gives a 
+\series bold
+\color blue
+channel
+\series default
+\color inherit
+.
+ Weights as 3D-
+\series bold
+\color blue
+tensors
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Also inputs can have multiple channels, e.g.
+ RGB images.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Fully connected
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Multiple channel CNN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Dual multiple channel CNN
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/TwoLayerNN.png
+	lyxscale 30
+	scale 7
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/MultipleChannels.png
+	lyxscale 30
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/MultipleChannels2.png
+	lyxscale 30
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $W_{i,j}^{(\ell)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $W_{i,j,k}^{(\ell)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $W_{i,j,k,l}^{(\ell)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k=1,\ldots,4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k=1,\ldots,4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l=1,\ldots,6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Stride
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Downsampling
+\series default
+\color inherit
+ of images to reduce image size.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stride
+\series default
+\color inherit
+ of size 
+\begin_inset Formula $k$
+\end_inset
+
+: Keep only every 
+\begin_inset Formula $k$
+\end_inset
+
+th filter output.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/stride.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Pooling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Average pooling
+\series default
+\color inherit
+: keep only average of a region.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Max pooling
+\series default
+\color inherit
+: keep only max of a region.
+\end_layout
+
+\begin_layout Itemize
+Alternative to downsampling by stride.
+\end_layout
+
+\begin_layout Itemize
+Pooling gives 
+\series bold
+\color blue
+invariance to small translations
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Pooling is applied as a new layer without parameters.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/pooling.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Deep convolutional neural networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/deepConvNet.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Recall: dense network learns features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/MNIST3blue1brown2.png
+	lyxscale 20
+	scale 12
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny From video by 3{
+\backslash
+color{blue}Blue}1{
+\backslash
+color{brown}Brown}: 
+\backslash
+url{https://youtu.be/aircAruvnKk}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Convolutional neural networks learns features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/deepNetworkImage.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Goodfellow et al (2016).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Deeper is better
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/deeperisbetter.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Goodfellow et al (2016).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Regularization in deep learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Early stopping
+\series default
+\color inherit
+ - monitor test performance and stop optimization when test performance
+ deteriorates.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+L1/L2 regularization
+\series default
+\color inherit
+ of network weights.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Dropout
+\series default
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+remove hidden units with probability 
+\begin_inset Formula $r$
+\end_inset
+
+ from a layer at each mini-batch step during optimization.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Approximates bagging of networks or Bayesian variable selection.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/dropout.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
