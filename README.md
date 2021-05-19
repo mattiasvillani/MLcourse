@@ -86,12 +86,12 @@ Reading: MLES 5 |  [Slides](/Slides/ML_L5.pdf)
 **Lecture 6 - Neural networks and Deep learning**\
 Reading: MLES 6.1-6.2 |  [Slides](/Slides/ML_L6.pdf) \
 Code: [Neural net MNIST in keras](/Code/kerasMNIST.R) \
-Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on learning a neural network](https://youtu.be/IHZwWFHWa-w)
+Extras: [Video on Neural networks](https://youtu.be/aircAruvnKk) | [Video on learning a neural network](https://youtu.be/IHZwWFHWa-w) | [keras cheat sheet](/Misc/kerasCheatSheet.pdf)
 
 **Lecture 7 - Image data and convolutional neural networks**\
 Reading: MLES 6.3-6.4 |  [Slides](/Slides/ML_L7.pdf) \
 Code: [ConvNet MNIST in keras](/Code/kerasMNISTConvNet.R) \
-Extras: [Filter spreadsheet](/Code/Filters.xlsx)
+Extras: [Filter spreadsheet](/Code/Filters.xlsx) 
 
 **Lecture 8 - Gaussian process regression and classification**\
 Reading: MLES 9 |  [Slides](/Slides/ML_L8.pdf) \

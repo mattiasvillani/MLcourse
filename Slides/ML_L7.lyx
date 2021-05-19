@@ -886,7 +886,7 @@ z_{ij}=\sum_{k=1}^{F}\sum_{l=1}^{F}x_{i+k-1,j+l-1}W_{kl}
 
 \series bold
 \color blue
-ero-padding 
+Zero-padding 
 \series default
 \color inherit
 to handle edges
@@ -1845,6 +1845,58 @@ Convolutional neural networks learns features
 	filename Images/deepNetworkImage.png
 	lyxscale 30
 	scale 15
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Goodfellow et al (2016).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Feature learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/featurelearning.png
+	lyxscale 30
+	scale 12
 
 \end_inset
 

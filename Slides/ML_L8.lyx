@@ -381,6 +381,9 @@ unknown
 \series bold
 \color blue
 Posterior distribution
+\series default
+\color black
+
 \begin_inset Formula 
 \[
 p(\boldsymbol{\theta}\vert x_{1},\ldots,x_{n})\propto p(x_{1},\ldots,x_{n}\vert\boldsymbol{\theta})p(\boldsymbol{\theta})
@@ -1123,7 +1126,7 @@ Non-parametric regression
 Non-parametric regression
 \series default
 \color inherit
-: avoid a parametric form for 
+: avoid parametric form for 
 \begin_inset Formula $f(\cdot)$
 \end_inset
 
@@ -1365,7 +1368,13 @@ Gaussian process and its kernel
 
 \begin_deeper
 \begin_layout Itemize
-A GP implies:
+A 
+\series bold
+\color blue
+Gaussian Process
+\series default
+\color inherit
+ implies:
 \begin_inset Formula 
 \[
 \left(\begin{array}{c}
