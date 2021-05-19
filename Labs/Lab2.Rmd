@@ -139,6 +139,7 @@ rgbimage <- rgb(x_train[image_no,,,1], x_train[image_no,,,2], x_train[image_no,,
 dim(rgbimage) <- dim(x_train[image_no,,,1])
 y_label_train[image_no]
 library(grid)
+grid.newpage()
 grid.raster(rgbimage, interpolate=FALSE)
 ```
 
