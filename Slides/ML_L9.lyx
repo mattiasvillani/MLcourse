@@ -1212,11 +1212,19 @@ Fish length - Mixture of normals
 \begin_inset Graphics
 	filename ../../IntroToML/Introduction/LEctures/FishMoN.png
 	lyxscale 30
-	scale 25
+	scale 23
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+See code 
+\family typewriter
+GMM_EM.R
+\family default
+ on web page.
 \end_layout
 
 \end_deeper

@@ -98,7 +98,8 @@ Reading: MLES 9 |  [Slides](/Slides/ML_L8.pdf) \
 Extras: [GP visualization](http://smlbook.org/GP/index.html) 
 
 **Lecture 9 - Unsupervised learning - mixture models and clustering**\
-Reading: MLES 10.1-10.3 |  [Slides](/Slides/ML_L9.pdf) \ 
+Reading: MLES 10.1-10.3 |  [Slides](/Slides/ML_L9.pdf) \
+Code: [EM for Gaussian mixtures](/Code/GMM_EM.R)
 
 **Lecture 10 - Textual data and topic models**\
 Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) | [Topic models intro](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) | [Slides](TBA) \
