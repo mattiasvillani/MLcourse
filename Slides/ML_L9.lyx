@@ -158,7 +158,7 @@ Machine Learning
 \begin_layout Subtitle
 
 \color orange
-Lecture 9 - Clustering and mixture models for unsupervised learning
+Lecture 9 - Unsupervised learning - mixture models and clustering
 \end_layout
 
 \begin_layout Author
@@ -242,7 +242,7 @@ Lecture overview
 
 \series bold
 \color blue
-This
+Supervised Mixture-of-Normals
 \series default
 \color inherit
 
@@ -256,7 +256,7 @@ This
 
 \series bold
 \color blue
-That
+Unsupervised Mixture-of-Normals
 \series default
 \color inherit
 
@@ -266,9 +266,16 @@ That
 
 \end_layout
 
+\begin_layout Itemize
+
+\series bold
+\color blue
+k-means clustering
+\end_layout
+
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+\begin_inset Separator parbreak
 \end_inset
 
 
@@ -282,7 +289,1095 @@ status open
 
 \series bold
 \color orange
-Tree ensemble
+Multivariate normal distribution
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{\mathbf{x}\in\mathbb{R}}^{p}$
+\end_inset
+
+ is a 
+\series bold
+\color blue
+multivariate normal
+\series default
+\color inherit
+, 
+\begin_inset Formula $\mathbf{x}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma})$
+\end_inset
+
+, with 
+\series bold
+\color blue
+density
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(\mathbf{x})=\left|2\pi\boldsymbol{\Sigma}\right|^{-1/2}\exp\left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top}\boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Mean
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+covariance
+\series default
+\color inherit
+ matrix
+\begin_inset Formula 
+\[
+\mathbb{E}(\boldsymbol{x})=\boldsymbol{\mu}\quad\text{ and }\quad\mathrm{Cov}(\boldsymbol{x})=\boldsymbol{\Sigma}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/MultiNormal1.pdf
+	scale 18
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/MultiNormal2.pdf
+	scale 18
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/MultiNormal3.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Multivariate normal distribution - properties
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{\mathbf{x}\in\mathbb{R}}^{p}$
+\end_inset
+
+ is 
+\series bold
+\color blue
+multivariate normal
+\series default
+\color inherit
+, 
+\begin_inset Formula $\mathbf{x}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma})$
+\end_inset
+
+
+\series bold
+\color blue
+ 
+\series default
+\color inherit
+with
+\begin_inset Formula 
+\[
+\mathbb{E}(\boldsymbol{x})=\boldsymbol{\mu}\text{ and }\mathrm{Cov}(\boldsymbol{x})=\boldsymbol{\Sigma}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Decompose 
+\begin_inset Formula 
+\[
+\mathbf{x}=\left(\begin{array}{c}
+\boldsymbol{x}_{1}\\
+\boldsymbol{x}_{2}
+\end{array}\right),\boldsymbol{\mu}=\left(\begin{array}{c}
+\boldsymbol{\mu}_{1}\\
+\boldsymbol{\mu}_{2}
+\end{array}\right)\text{ and }\boldsymbol{\Sigma}=\left(\begin{array}{cc}
+\boldsymbol{\Sigma}_{11} & \boldsymbol{\Sigma}_{12}\\
+\boldsymbol{\Sigma}_{21} & \boldsymbol{\Sigma}_{22}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Marginals
+\series default
+\color inherit
+ are normal 
+\begin_inset Formula 
+\[
+\mathbf{x}_{1}\sim\mathcal{N}(\boldsymbol{\mu}_{1},\boldsymbol{\Sigma}_{11})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Conditionals
+\series default
+\color inherit
+ are normal 
+\begin_inset Formula 
+\[
+\mathbf{x}_{1}\vert\boldsymbol{x}_{2}\sim\mathcal{N}(\tilde{\boldsymbol{\mu}}_{1},\tilde{\boldsymbol{\Sigma}}_{1})
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\begin{align*}
+\tilde{\boldsymbol{\mu}}_{1} & =\boldsymbol{\mu}_{1}+\boldsymbol{\Sigma}_{12}\boldsymbol{\Sigma}_{22}^{-1}(\boldsymbol{x}_{2}-\boldsymbol{\mu}_{2})\\
+\tilde{\boldsymbol{\Sigma}}_{1} & =\boldsymbol{\Sigma}_{11}-\boldsymbol{\Sigma}_{12}\boldsymbol{\Sigma}_{22}^{-1}\boldsymbol{\Sigma}_{21}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Discriminative vs Generative models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Discriminative models
+\series default
+\color inherit
+: direct modeling of 
+\begin_inset Formula $p(y\vert\mathbf{x})$
+\end_inset
+
+.
+ No model for the features 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Logistic regression
+\end_layout
+
+\begin_layout Itemize
+Regression trees and ensembles
+\end_layout
+
+\begin_layout Itemize
+Deep neural networks
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Generative models
+\series default
+\color inherit
+: 
+\emph on
+joint
+\emph default
+ distribution of labels and features
+\begin_inset Formula 
+\[
+p(y,\mathbf{x})=p(\mathbf{x}\vert y)p(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Discriminant analysis
+\end_layout
+
+\begin_layout Itemize
+Naive Bayes
+\end_layout
+
+\begin_layout Itemize
+Mixture models
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Generative models require more effort: 
+\series bold
+\color blue
+Need also a model for 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+
+\series default
+\color inherit
+, and features may be high-dim.
+\end_layout
+
+\begin_layout Itemize
+Generative models give a 
+\series bold
+\color blue
+better understanding
+\series default
+\color inherit
+ of the mechanisms.
+ Can be extended to 
+\series bold
+\color blue
+unsupervised
+\series default
+\color inherit
+ (all labels missing) and 
+\series bold
+\color blue
+semi-supervised
+\series default
+\color inherit
+ (some labels missing).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Gaussian mixture model - supervised case
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\mathcal{N}(\text{x}|\boldsymbol{\mu},\boldsymbol{\Sigma})$
+\end_inset
+
+ denote the density function of 
+\begin_inset Formula $\mathbf{x}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Joint model for label 
+\begin_inset Formula $y\in\{1,\ldots,M\}$
+\end_inset
+
+ and features 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{p}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(y,\mathbf{x})=p(\mathbf{x}\vert y)p(y)
+\]
+
+\end_inset
+
+where the 
+\series bold
+\color blue
+class-conditional densities
+\series default
+\color inherit
+ are normal:
+\begin_inset Formula 
+\[
+p(\mathbf{x}\vert y)=\mathcal{N}(\text{x}|\boldsymbol{\mu}_{y},\boldsymbol{\Sigma}_{y})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Known labels: 
+\series bold
+\color blue
+MLE for each class separately
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\hat{\boldsymbol{\mu}}_{m} & =\frac{1}{n_{m}}\sum_{i:y_{i}=m}\boldsymbol{x}_{i}\\
+\hat{\boldsymbol{\Sigma}}_{m} & =\frac{1}{n_{m}}\sum_{i:y_{i}=m}(\boldsymbol{x}_{i}-\hat{\boldsymbol{\mu}}_{m})(\boldsymbol{x}_{i}-\hat{\boldsymbol{\mu}}_{m})^{\top}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+MLE for discrete labels
+\series default
+\color inherit
+ 
+\begin_inset Formula $p(y=m)=p_{m}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\hat{p}_{m}=\frac{n_{m}}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Discriminant analysis
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Classification probability
+\series default
+\color inherit
+ by Bayes' theorem
+\size footnotesize
+
+\begin_inset Formula 
+\[
+p(y\vert\mathbf{x})=\frac{p(y,\mathbf{x})}{p(\mathbf{x})}=\frac{p(\mathbf{x}\vert y)p(y)}{p(\mathbf{x})}\propto p(\mathbf{x}\vert y)p(y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Quadratic discriminant analysis
+\series default
+\size footnotesize
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\arg\underset{m}{\max} & \left(\log\hat{p}(\mathbf{x}_{\star}\vert y=m)+\log\hat{p}(y=m)\right)\\
+= & \arg\underset{m}{\max}\left(\log\mathcal{N}(\mathbf{x}_{\star}|\hat{\boldsymbol{\mu}}_{m},\hat{\boldsymbol{\Sigma}}_{m})+\log\hat{p}_{m}\right)\\
+= & \arg\underset{m}{\max}\left(-\frac{1}{2}\log\left|\hat{\boldsymbol{\Sigma}}_{m}\right|-\frac{1}{2}(\mathbf{x}_{\star}-\hat{\boldsymbol{\mu}}_{m})^{\top}\hat{\boldsymbol{\Sigma}}_{m}^{-1}(\mathbf{x}_{\star}-\hat{\boldsymbol{\mu}}_{m})+\log\hat{p}_{m}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Linear discriminant analysis
+\series default
+\color inherit
+ if we assume 
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\boldsymbol{\Sigma}_{1}=\boldsymbol{\Sigma}_{2}=\ldots=\boldsymbol{\Sigma}_{M}=\boldsymbol{\Sigma}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Discriminant analysis
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SongClassficationDiscrAnalysis.png
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Gaussian mixture model - unsupervised case
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Unsupervised
+\series default
+\color inherit
+: no labels.
+ 
+\end_layout
+
+\begin_layout Itemize
+Don't know from which distribution 
+\begin_inset Formula $\mathcal{N}(\boldsymbol{x}|\boldsymbol{\mu}_{m},\boldsymbol{\Sigma}_{m})$
+\end_inset
+
+ each observation 
+\begin_inset Formula $\boldsymbol{x}_{i}$
+\end_inset
+
+ comes from.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Two-component univariate mixture of normals
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(x)=\pi\cdot\mathcal{N}(x|\mu_{1},\sigma_{1}^{2})+(1-\pi)\cdot\mathcal{N}(x|\mu_{2},\sigma_{2}^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Simulate
+\series default
+\color inherit
+ from a two-component mixture of normals:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simulate 
+\begin_inset Formula $I\in\{1,2\}$
+\end_inset
+
+, with 
+\begin_inset Formula $\mathrm{Pr}(I=1)=\pi$
+\end_inset
+
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $I=1$
+\end_inset
+
+, simulate 
+\begin_inset Formula $x$
+\end_inset
+
+ from 
+\begin_inset Formula $N(\mu_{1},\sigma_{1}^{2})$
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $I=2$
+\end_inset
+
+, simulate 
+\begin_inset Formula $x$
+\end_inset
+
+ from 
+\begin_inset Formula $N(\mu_{2},\sigma_{2}^{2}).$
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+\begin_inset Formula $M$
+\end_inset
+
+-component mixture of multivariate normals
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(\boldsymbol{x})=\sum_{m=1}^{M}\pi_{m}\mathcal{N}(\boldsymbol{x}\vert\boldsymbol{\mu}_{m},\boldsymbol{\Sigma}_{m}),\quad\sum\nolimits _{m=1}^{M}\pi_{m}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Illustration of mixture distributions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/MixtureOfNormals.eps
+	scale 32
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Fish length - Histogram density estimates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../IntroToML/Introduction/LEctures/FishHistDensEst.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Fish length - Kernel density estimates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../IntroToML/Introduction/LEctures/FishKernelDensEst.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Fish length - Mixture of normals
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../IntroToML/Introduction/LEctures/FishMoN.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+EM algorithms for unsupervised Gaussian mixtures
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GMM - the likelihood is a messy product of sums
+\size footnotesize
+
+\begin_inset Formula 
+\[
+p(\boldsymbol{x}_{1},...,\boldsymbol{x}_{n}\vert\boldsymbol{\mu}_{1:M},\boldsymbol{\Sigma}_{1:M},\pi_{1:M})=\prod_{i=1}^{n}\sum_{m=1}^{M}\pi_{m}\mathcal{N}(\boldsymbol{x}_{i}\vert\boldsymbol{\mu}_{m},\boldsymbol{\Sigma}_{m}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Complete data likelihood
+\series default
+\color inherit
+:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+p(\boldsymbol{x}_{1},...,\boldsymbol{x}_{n},y_{1},\ldots,y_{n}\vert\boldsymbol{\mu}_{1:M},\boldsymbol{\Sigma}_{1:M},\pi_{1:M})=\prod_{i=1}^{n}\pi_{y_{i}}\mathcal{N}(\boldsymbol{x}_{i}\vert\boldsymbol{\mu}_{y_{i}},\boldsymbol{\Sigma}_{y_{i}}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\boldsymbol{\theta}=(\boldsymbol{\mu}_{1:M},\boldsymbol{\Sigma}_{1:M},\pi_{1:M})$
+\end_inset
+
+ be all model parameters.
+\end_layout
+
+\begin_layout Itemize
+Iterative
+\series bold
+\color blue
+ EM-algorithm
+\series default
+\color inherit
+ for MLE.
+ Given previous estimate 
+\begin_inset Formula $\hat{\boldsymbol{\theta}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+E-step
+\series default
+\color inherit
+: 
+\begin_inset Formula $\text{Compute }Q(\boldsymbol{\theta})\equiv\mathbb{E}_{\boldsymbol{y}}\left(\log p(\boldsymbol{X},\boldsymbol{y}\vert\boldsymbol{\theta})\vert\boldsymbol{X},\hat{\boldsymbol{\theta}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+M-step
+\series default
+\color inherit
+: 
+\begin_inset Formula $\text{Update }\hat{\boldsymbol{\theta}}\leftarrow\arg\underset{\boldsymbol{\theta}}{\max}\;Q(\boldsymbol{\theta})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+expected log-likelihood
+\series default
+\color inherit
+ is
+\size footnotesize
+
+\begin_inset Formula 
+\[
+Q(\boldsymbol{\theta})=\sum_{i=1}^{n}\sum_{m=1}^{M}w_{i}(m)\left[\log\mathcal{N}(\boldsymbol{x}_{i}\vert\boldsymbol{\mu}_{m},\boldsymbol{\Sigma}_{m})+\log\pi_{m}\right]
+\]
+
+\end_inset
+
+
+\size default
+where 
+\begin_inset Formula $w_{i}(m)\equiv p\left(y_{i}=m\vert\hat{\boldsymbol{\theta}},\boldsymbol{x}_{i}\right).$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+EM-algorithm for mixture of Gaussians
 \end_layout
 
 \end_inset
@@ -292,18 +1387,645 @@ Tree ensemble
 
 \begin_deeper
 \begin_layout Itemize
-ggg
+
+\size footnotesize
+(
+\series bold
+\color blue
+E-step
+\series default
+\color inherit
+) Compute probabilities for the latent 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+w_{i}(m)=\frac{\pi_{m}\mathcal{N}(\boldsymbol{x}_{i}\vert\boldsymbol{\mu}_{m},\boldsymbol{\Sigma}_{m})}{\sum_{j=1}^{M}\pi_{j}\mathcal{N}(\boldsymbol{x}_{i}\vert\boldsymbol{\mu}_{j},\boldsymbol{\Sigma}_{j})}\quad\text{ and }\quad\hat{n}_{m}=\sum_{i=1}^{n}w_{i}(m)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size footnotesize
+(
+\series bold
+\color blue
+M-step
+\series default
+\color inherit
+) Given 
+\begin_inset Formula $w_{i}(m)$
+\end_inset
+
+, compute ML estimates by maximizing 
+\begin_inset Formula $Q(\boldsymbol{\theta})$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\hat{\pi}_{m} & =\frac{\hat{n}_{m}}{n}\\
+\hat{\boldsymbol{\mu}}_{m} & =\frac{1}{\hat{n}_{m}}\sum_{i=1}^{n}w_{i}(m)\boldsymbol{x}_{i}\\
+\hat{\boldsymbol{\Sigma}}_{m} & =\frac{1}{\hat{n}_{m}}\sum_{i=1}^{n}w_{i}(m)(\boldsymbol{x}_{i}-\hat{\boldsymbol{\mu}}_{m})(\boldsymbol{x}_{i}-\hat{\boldsymbol{\mu}}_{m})^{\top}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size footnotesize
+Iterate until log-likelihood 
+\begin_inset Formula 
+\[
+\sum_{i=1}^{N}\log\left\{ \sum_{m=1}^{M}\pi_{m}\mathcal{N}(\boldsymbol{x}_{i}\vert\boldsymbol{\mu}_{m},\boldsymbol{\Sigma}_{m})\right\} 
+\]
+
+\end_inset
+
+satisfies some stopping rule.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+\begin_inset Separator parbreak
 \end_inset
 
 
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Mixture of bivariate Gaussians for old Faithful
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/EMMoNOldFaithful.jpeg
+	lyxscale 10
+	scale 8
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Bishop (2011).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+EM-algorithm for mixture of Gaussians
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Log-likelihood is 
+\series bold
+\color blue
+guaranteed to not decrease
+\series default
+\color inherit
+ at any iteration
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+EM is typically 
+\series bold
+\color blue
+slow
+\series default
+\color inherit
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Switch to Newton-Raphson when closer to the maximum.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+EM solution often depends on the 
+\series bold
+\color blue
+initial values
+\series default
+\color inherit
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Restart with different initial values and pick the best solution.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Label-switching
+\series default
+\color inherit
+ for mixtures.
+ There are actually 
+\begin_inset Formula $M!$
+\end_inset
+
+ maxima.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+EM tends to find a finite maximum even though the 
+\series bold
+\color blue
+likelihood is unbounded
+\series default
+\color inherit
+.
+ Singularities.
+ Likelihood becomes arbitrarily large if mth component is 
+\begin_inset Formula $\mathcal{N}(\boldsymbol{x}_{j},\boldsymbol{\Sigma}_{m})$
+\end_inset
+
+ with 
+\begin_inset Formula $\boldsymbol{\Sigma}_{m}\rightarrow\boldsymbol{0}$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+(pssst: use a Bayesian prior!)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+k-Means clustering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Data in 
+\begin_inset Formula $\mathbb{R}^{p}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathbf{x}_{1},...,\mathbf{x}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Aim: 
+\series bold
+\color blue
+partition
+\color inherit
+ 
+\series default
+the data into
+\series bold
+ 
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\color blue
+clusters
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Each observation 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ is represented by a 
+\series bold
+\color blue
+centroid
+\series default
+\color inherit
+ 
+\begin_inset Formula $\boldsymbol{\mu}_{m}\in\mathbb{R}^{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Let responsibility 
+\begin_inset Formula $r_{im}=1$
+\end_inset
+
+ if 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ belongs to 
+\begin_inset Formula $\boldsymbol{\mu}_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+k-means clustering
+\series default
+\color inherit
+ minimizes
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\sum_{m=1}^{M}r_{im}\left\Vert \mathbf{x}_{i}-\boldsymbol{\mu}_{m}\right\Vert ^{2}
+\]
+
+\end_inset
+
+with respect to the 
+\begin_inset Formula $r_{im}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\boldsymbol{\mu}_{1},...,\boldsymbol{\mu}_{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Iterative algorithm: initialize 
+\begin_inset Formula $\boldsymbol{\mu}_{1},...,\boldsymbol{\mu}_{M}$
+\end_inset
+
+, then:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Allocate each observations to nearest centroid (
+\begin_inset Formula $r_{im}=1$
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+Recompute each centroid as mean of its allocated observations.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+k-Means clustering of old faithful data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/kMeansOldFaithful.jpeg
+	lyxscale 10
+	scale 6
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Bishop (2011).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Clusterings songs by k-means
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/SongClassifyKMeans.png
+	lyxscale 30
+	scale 25
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al.
+ (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Selecting the number of clusters - elbow
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/kmeansElbow.png
+	lyxscale 25
+	scale 20
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al.
+ (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Image compression by k-means
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../ML4Industry/Slides/images/kMeansImageCompress.jpeg
+	lyxscale 10
+	scale 8
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Bishop (2011).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
