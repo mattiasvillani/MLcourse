@@ -102,8 +102,7 @@ Reading: MLES 10.1-10.3 |  [Slides](/Slides/ML_L9.pdf) \
 Code: [EM for Gaussian mixtures](/Code/GMM_EM.R)
 
 **Lecture 10 - Textual data and topic models**\
-Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) | [Topic models intro](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) | [Slides](TBA) \
-Code: 
+Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) | [Topic models intro](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) | [Slides](/Slides/ML_L10.pdf) \ 
 
 **Lecture 11 - Semi-supervised learning**\
 Reading: MLES 10.1 |  [Slides](TBA) \
