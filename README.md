@@ -106,11 +106,10 @@ Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) |
 
 **Lecture 11 - Semi-supervised learning**\
 Reading: MLES 10.1 |  [Slides](TBA) \
-Code: 
 
 **Lecture 12 - Active learning**\
 Reading: [Settles (2010)](http://burrsettles.com/pub/settles.activelearning.pdf), especially Sections 1, 2, 3.1, 3.5, 3.6, 7.1 |  [Slides](TBA) \
-Code: 
+Code: [Active learning - illustrating example](/Code/active_learning_UD.R)
 
 ---
 ## Computer labs
