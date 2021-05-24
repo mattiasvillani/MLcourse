@@ -158,7 +158,7 @@ Machine Learning
 \begin_layout Subtitle
 
 \color orange
-Lecture 9 - Unsupervised learning - mixture models and clustering
+Lecture 9 - Unsupervised learning, mixture models and clustering
 \end_layout
 
 \begin_layout Author
@@ -467,7 +467,7 @@ Decompose
 
 \series bold
 \color blue
-Marginals
+Marginal distributions
 \series default
 \color inherit
  are normal 
@@ -485,7 +485,7 @@ Marginals
 
 \series bold
 \color blue
-Conditionals
+Conditional distributions
 \series default
 \color inherit
  are normal 
@@ -548,12 +548,12 @@ Discriminative vs Generative models
 Discriminative models
 \series default
 \color inherit
-: direct modeling of 
+: modeling of 
 \begin_inset Formula $p(y\vert\mathbf{x})$
 \end_inset
 
 .
- No model for the features 
+ No model for 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
@@ -602,37 +602,53 @@ Discriminant analysis
 \end_layout
 
 \begin_layout Itemize
-Naive Bayes
-\end_layout
-
-\begin_layout Itemize
 Mixture models
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Generative models require more effort: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
 \series bold
 \color blue
-Need also a model for 
+need also a model for 
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
 
-\series default
-\color inherit
-, and features may be high-dim.
 \end_layout
 
 \begin_layout Itemize
-Generative models give a 
+features may be high-dimensional.
+ Hard!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Generative models
+\series bold
+\color blue
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
 \series bold
 \color blue
 better understanding
 \series default
 \color inherit
  of the mechanisms.
- Can be extended to 
+ 
+\end_layout
+
+\begin_layout Itemize
+can be extended to 
 \series bold
 \color blue
 unsupervised
@@ -647,6 +663,7 @@ semi-supervised
  (some labels missing).
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -816,10 +833,17 @@ p(y\vert\mathbf{x})=\frac{p(y,\mathbf{x})}{p(\mathbf{x})}=\frac{p(\mathbf{x}\ver
 
 \series bold
 \color blue
-Quadratic discriminant analysis
+Quadratic discriminant analysis 
 \series default
-\size footnotesize
 \color inherit
+(
+\series bold
+\color blue
+QDA
+\series default
+\color inherit
+)
+\size footnotesize
 
 \begin_inset Formula 
 \begin{align*}
@@ -834,13 +858,27 @@ Quadratic discriminant analysis
 \end_layout
 
 \begin_layout Itemize
+So QDA has a quadratic decision boundary.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 
 \series bold
 \color blue
 Linear discriminant analysis
 \series default
 \color inherit
- if we assume 
+ (
+\series bold
+\color blue
+LDA
+\series default
+\color inherit
+) if we assume 
 \size footnotesize
 
 \begin_inset Formula 
@@ -980,11 +1018,11 @@ Simulate
 \begin_deeper
 \begin_layout Itemize
 Simulate 
-\begin_inset Formula $I\in\{1,2\}$
+\begin_inset Formula $y_{i}\in\{1,2\}$
 \end_inset
 
 , with 
-\begin_inset Formula $\mathrm{Pr}(I=1)=\pi$
+\begin_inset Formula $\mathrm{Pr}(y_{i}=1)=\pi$
 \end_inset
 
 .
@@ -996,7 +1034,7 @@ Simulate
 
 \begin_layout Itemize
 If 
-\begin_inset Formula $I=1$
+\begin_inset Formula $y_{i}=1$
 \end_inset
 
 , simulate 
@@ -1016,7 +1054,7 @@ If
 
 \begin_layout Itemize
 If 
-\begin_inset Formula $I=2$
+\begin_inset Formula $y_{i}=2$
 \end_inset
 
 , simulate 
@@ -1385,7 +1423,7 @@ status open
 
 \series bold
 \color orange
-EM-algorithm for mixture of Gaussians
+EM-algorithm for a Gaussian mixture model
 \end_layout
 
 \end_inset
@@ -1482,7 +1520,7 @@ status open
 
 \series bold
 \color orange
-Mixture of bivariate Gaussians for old Faithful
+Gaussian mixture model for old Faithful data
 \end_layout
 
 \end_inset
@@ -1538,7 +1576,7 @@ status open
 
 \series bold
 \color orange
-EM-algorithm for mixture of Gaussians
+EM-algorithm for a Gaussian mixture model
 \end_layout
 
 \end_inset
