@@ -108,7 +108,7 @@ Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) |
 Reading: MLES 10.1 |  [Slides](/Slides/MachineLearning11.pdf) 
 
 **Lecture 12 - Active learning**\
-Reading: [Settles (2010)](http://burrsettles.com/pub/settles.activelearning.pdf), especially Sections 1, 2, 3.1, 3.5, 3.6, 7.1 |  [Slides](TBA) \
+Reading: [Settles (2010)](http://burrsettles.com/pub/settles.activelearning.pdf), especially Sections 1, 2, 3.1, 3.5, 3.6, 7.1 |  [Slides](/Slides/MachineLearning12.pdf) \
 Code: [Active learning - illustrating example](/Code/active_learning_UD.r)
 
 ---
