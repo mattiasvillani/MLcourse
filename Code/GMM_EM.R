@@ -4,13 +4,13 @@
 # Author: Mattias Villani, http://mattiasvillani.com
 #####################################################
 
-mixtureEM <- function(data, K, initMu, initSigma, initPi, tol){
+mixtureEM <- function(data, M, initMu, initSigma, initPi, tol){
   
   # Preliminaries
   count <- 0
-  nTotal <- length(data)
-  N <- rep(0,K)
-  gamma = matrix(0,nTotal,K)
+  n <- length(data)
+  nHat <- rep(0,M)
+  W = matrix(0,n,M)  # n x m matrix with weights for all observations and all components.
   Mu = initMu
   Sigma = initSigma
   Pi = initPi
@@ -19,74 +19,52 @@ mixtureEM <- function(data, K, initMu, initSigma, initPi, tol){
   LogLDiff <- 10^10
   while (LogLDiff > tol){
     count <- count + 1
+    
     # E-step
     
-    for (k in 1:K){
-      gamma[,k] = Pi[k]*dnorm(data, mean=Mu[k], sd = sqrt(Sigma[k]))
+    for (m in 1:M){
+      W[,m] = Pi[m]*dnorm(data, mean=Mu[m], sd = Sigma[m])
     }
-    sumGamma <- rowSums(gamma)
-    for (k in 1:K){
-      gamma[,k] = gamma[,k]/sumGamma
+    sum_w <- rowSums(W)
+    for (m in 1:M){
+      W[,m] = W[,m]/sum_w
     }
     
     # M-step
-    for (k in 1:K){
-      N[k] <- sum(gamma[,k])
-      Mu[k] = (1/N[k])*sum(gamma[,k]*data)
-      Sigma[k] = sqrt((1/N[k])*sum(gamma[,k]*(data-Mu[k])^2))
-      Pi[k] = N[k]/nTotal
+    for (m in 1:M){
+      nHat[m] <- sum(W[,m])
+      Mu[m] = (1/nHat[m])*sum(W[,m]*data)
+      Sigma[m] = sqrt((1/nHat[m])*sum(W[,m]*(data-Mu[m])^2))
+      Pi[m] = nHat[m]/n
     }
     
-    # Log-Likelihood computation
-    for (k in 1:K){
-      gamma[,k] = Pi[k]*dnorm(data, mean=Mu[k], sd = sqrt(Sigma[k]))
+    # Log-Likelihood computation - to check convergence
+    for (m in 1:M){
+      W[,m] = Pi[m]*dnorm(data, mean=Mu[m], sd = Sigma[m])
     }
-    LogL = sum(log(rowSums(gamma)))
-    print(c(LogL,LogLOld))
+    LogL = sum(log(rowSums(W)))
     LogLDiff = abs(LogL - LogLOld)
     LogLOld = LogL
     
   }
-  return(list(Mu = Mu,Sigma = Sigma, Pi = Pi, LogL = LogL, nIter = count))
+  return(list(Mu = Mu, Sigma = Sigma, Pi = Pi, LogL = LogL, nIter = count))
 }
-
-# Generate some data for testing
-data <- c(rnorm(50,1,1), rnorm(50,5,0.5))
-initMu = c(-1,1)
-initSigma = c(1,1)
-initPi = c(0.5,0.5)
-
-# Run the EM
-K <- 2
-EMfit <- mixtureEM(data, K, initMu, initSigma, initPi, tol = 0.0000001)
-EMfit
-
-# Plot the histogram and density fit
-dataGrid <- seq(min(data)-0.2*IQR(data),max(data)+0.2*IQR(data), length = 1000)
-densEst <- rep(0,length(dataGrid))
-for (k in 1:K){
-  densEst <- densEst + EMfit$Pi[k]*dnorm(dataGrid, mean=EMfit$Mu[k], sd = sqrt(EMfit$Sigma[k]))
-}
-hist(data, 30, freq = FALSE, xlim = c(min(data)-0.2*IQR(data),max(data)+0.2*IQR(data)))
-lines(dataGrid,densEst, col="red", lwd = 2)
-
 
 # Analyze the fish data
 fish <- read.table('https://github.com/mattiasvillani/MLcourse/raw/main/Data/Fish.dat')
 data <- as.matrix(fish)
 
-# Run the EM
-# Plot the histogram and density fit
+# Run the EM and plot the histogram and density fit over a suitable grid
 dataGrid <- seq(min(data)-0.2*IQR(data),max(data)+0.2*IQR(data), length = 1000)
 par(mfrow = c(2,2))
-for (K in 1:4){
+for (M in 1:4){
   densEst <- rep(0,length(dataGrid))
-  initMu <- quantile(data,seq(1/(K+1),1-1/(K+1), length=K)) + 10*rnorm(K)
-  EMfit <- mixtureEM(data, K, initMu = initMu, initSigma  = rep(sd(data),K), initPi = rep(1/K,K), tol = 0.0000001)
-  for (k in 1:K){
-    densEst <- densEst + EMfit$Pi[k]*dnorm(dataGrid, mean=EMfit$Mu[k], sd = sqrt(EMfit$Sigma[k]))
+  initMu <- quantile(data,seq(1/(M+1),1-1/(M+1), length=M)) + 10*rnorm(M)
+  EMfit <- mixtureEM(data, M, initMu = initMu, initSigma  = rep(sd(data),M), initPi = rep(1/M,M), tol = 1e-7)
+  for (m in 1:M){
+    densEst <- densEst + EMfit$Pi[m]*dnorm(dataGrid, mean=EMfit$Mu[m], sd = EMfit$Sigma[m])
   }
-  hist(data, 30, freq = FALSE, ylim = c(0,0.15), xlim = c(min(data)-0.2*IQR(data),max(data)+0.2*IQR(data)))
+  hist(data, 40, freq = FALSE, ylim = c(0,0.08), xlim = c(min(data)-0.2*IQR(data),max(data)+0.2*IQR(data)))
   lines(dataGrid,densEst, col="red", lwd = 2)
 }
 

@@ -99,7 +99,7 @@ Extras: [GP visualization](http://smlbook.org/GP/index.html)
 
 **Lecture 9 - Unsupervised learning - mixture models and clustering**\
 Reading: MLES 10.1-10.3 |  [Slides](/Slides/ML_L9.pdf) \
-Code: [EM for Gaussian mixtures](/Code/GMM_EM.R)
+Code: [EM for univariate Gaussian mixtures](/Code/GMM_EM.R) | [EM for multivariate Gaussian mixtures](/Code/GMM_EM_Multi.R)
 
 **Lecture 10 - Textual data and topic models**\
 Reading: [Multinomial-Dirichlet analysis](Literature/MultinomialDirichlet.pdf) | [Topic models intro](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) | [Slides](/Slides/ML_L10.pdf)
@@ -137,8 +137,8 @@ Submission: Athena.
 Lab 2 - Deep Learning and Gaussian Processes: [R notebook](/Labs/Lab2.Rmd) | [pdf version](/Labs/Lab2.pdf) | [html version](/Labs/Lab2.html) \
 Submission: Athena.
 
-**Computer Lab 3** - Unsupervised and semisupervised learning.\
-Lab: [Lab 3]() \
+**Computer Lab 3** - Unsupervised, semisupervised and active learning.\
+Lab 3: [R notebook](/Labs/Lab3.Rmd) | [pdf version](/Labs/Lab3.pdf) | [html version](/Labs/Lab3.html) \
 Submission: Athena.
 
 ### Lab assistant: [Karl Sigfrid](https://www.su.se/english/profiles/kasi3175-1.513541)
