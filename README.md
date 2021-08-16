@@ -122,7 +122,7 @@ Code: [Active learning - illustrating example](/Code/active_learning_UD.r)
 
 * Each lab report should be submitted as a PDF along with the .R file with code. Submission is done through Athena.
 
-* There is four hours of computer lab time allocated to each lab. The idea is that you: 
+* There are four hours of computer time allocated to each lab. The idea is that you: 
   * should start working on the lab before the computer session
   * so that you are in a position to ask questions at the session
   * and then finish up the report after the lab session.
