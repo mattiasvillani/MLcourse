@@ -49,7 +49,7 @@ The formal course description document with all the details about grading etc is
 
 The course will use the following book as the main course literature:
 
-* **Machine Learning - a first course for engineers and scientists** (MLES) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf). The previous title of the book was 'Supervised Machine Learning'.
+* **Machine Learning - a first course for engineers and scientists** (MLES) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. A free PDF version is available [here](http://smlbook.org/book/sml-book-draft-latest.pdf). The previous title of the book was 'Supervised Machine Learning'.
 * Additional course material linked from this page, such as articles and tutorials.
 --- 
 
