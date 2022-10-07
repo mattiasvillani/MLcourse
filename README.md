@@ -49,7 +49,7 @@ The formal course description document with all the details about grading etc is
 
 The course will use the following book as the main course literature:
 
-* **Machine Learning - a first course for engineers and scientists** (MLES) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. Draft version available [here](http://smlbook.org/book/sml-book-draft-latest.pdf). The previous title of the book was 'Supervised Machine Learning'.
+* **Machine Learning - a first course for engineers and scientists** (MLES) by Lindholm et al. (2021). Forthcoming at Cambridge University Press. A free PDF version is available [here](http://smlbook.org/book/sml-book-draft-latest.pdf). The previous title of the book was 'Supervised Machine Learning'.
 * Additional course material linked from this page, such as articles and tutorials.
 --- 
 
@@ -58,7 +58,7 @@ The course will use the following book as the main course literature:
 The course schedule on TimeEdit is here: [Schedule](https://cloud.timeedit.net/su/web/stud1/s.html?i=x7QeQ39x4nnyknbcQanQ6clvl1Z2ZZ0c02ndhcn_seXlYy603w575wgZuQnY).
 
 ---
-## Lectures (preliminary)
+## Lectures
 
 
 Material under **Extra** are extra material that will help you understand the course content. \
@@ -122,19 +122,19 @@ Code: [Active learning - illustrating example](/Code/active_learning_UD.r)
 
 * Each lab report should be submitted as a PDF along with the .R file with code. Submission is done through Athena.
 
-* There is four hours of computer lab time allocated to each lab. The idea is that you: 
+* There are four hours of computer time allocated to each lab. The idea is that you: 
   * should start working on the lab before the computer session
   * so that you are in a position to ask questions at the session
   * and then finish up the report after the lab session.
 
 
 **Computer Lab 1** - Regularized nonlinear regression and classification.\
-Lab 1a - Regularized regression: [R notebook](/Labs/Lab1a.Rmd) | [pdf version](/Labs/Lab1a.pdf) | [html version](/Labs/Lab1a.html) \
-Lab 1b - Regularized classification: [R notebook](/Labs/Lab1b.Rmd) | [pdf version](/Labs/Lab1b.pdf) | [html version](/Labs/Lab1b.html) \
+Lab 1a: Regularized regression: [R notebook](/Labs/Lab1a.Rmd) | [pdf version](/Labs/Lab1a.pdf) | [html version](/Labs/Lab1a.html) \
+Lab 1b: Regularized classification: [R notebook](/Labs/Lab1b.Rmd) | [pdf version](/Labs/Lab1b.pdf) | [html version](/Labs/Lab1b.html) \
 Submission: Athena.
 
-**Computer Lab 2** - Neural Networks.\
-Lab 2 - Deep Learning and Gaussian Processes: [R notebook](/Labs/Lab2.Rmd) | [pdf version](/Labs/Lab2.pdf) | [html version](/Labs/Lab2.html) \
+**Computer Lab 2** - Neural Networks and Gaussian Processes.\
+Lab 2: [R notebook](/Labs/Lab2.Rmd) | [pdf version](/Labs/Lab2.pdf) | [html version](/Labs/Lab2.html) \
 Submission: Athena.
 
 **Computer Lab 3** - Unsupervised, semisupervised and active learning.\
