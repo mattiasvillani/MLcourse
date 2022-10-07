@@ -1081,7 +1081,7 @@ A prior on
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/PolynomialPrior.png
+	filename Images/PolynomialPrior.png
 	lyxscale 30
 	scale 50
 
@@ -1154,7 +1154,7 @@ an unknown parameter for every
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/OneParameterAtEveryPoint.png
+	filename Images/OneParameterAtEveryPoint.png
 	lyxscale 20
 	scale 30
 
@@ -1778,7 +1778,7 @@ Simulating a GP
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/SimulateGP.png
+	filename Images/SimulateGP.png
 	lyxscale 20
 	scale 53
 
@@ -1823,7 +1823,7 @@ The length scale
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/RealizationsSEandMatern.png
+	filename Images/RealizationsSEandMatern.png
 	lyxscale 20
 	scale 50
 
@@ -1868,7 +1868,7 @@ The scale factor
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/RealizationsSEandMaternSigmaF.png
+	filename Images/RealizationsSEandMaternSigmaF.png
 	lyxscale 20
 	scale 50
 
@@ -1914,7 +1914,7 @@ The mean can be
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/RealizationsSEandMaternSineMean.png
+	filename Images/RealizationsSEandMaternSineMean.png
 	lyxscale 20
 	scale 50
 
@@ -2026,14 +2026,14 @@ Simulating from
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll1_0.eps
+	filename Images/ConditionalSimEll1_0.eps
 	scale 30
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll02_0.eps
+	filename Images/ConditionalSimEll02_0.eps
 	scale 30
 
 \end_inset
@@ -2077,14 +2077,14 @@ Simulating from
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll1_1.eps
+	filename Images/ConditionalSimEll1_1.eps
 	scale 30
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll02_1.eps
+	filename Images/ConditionalSimEll02_1.eps
 	scale 30
 
 \end_inset
@@ -2128,14 +2128,14 @@ Simulating from
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll1_2.eps
+	filename Images/ConditionalSimEll1_2.eps
 	scale 30
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll02_2.eps
+	filename Images/ConditionalSimEll02_2.eps
 	scale 30
 
 \end_inset
@@ -2179,14 +2179,14 @@ Simulating from
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll1_3.eps
+	filename Images/ConditionalSimEll1_3.eps
 	scale 30
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/ConditionalSimEll02_3.eps
+	filename Images/ConditionalSimEll02_3.eps
 	scale 30
 
 \end_inset
@@ -2454,7 +2454,7 @@ Example - LIDAR data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARData.png
+	filename Images/LIDARData.png
 	scale 42
 
 \end_inset
@@ -2506,14 +2506,14 @@ GP fit to LIDAR data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/CorrLIDARl05.png
+	filename Images/CorrLIDARl05.png
 	scale 35
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARl05_sf05_sn005.png
+	filename Images/LIDARl05_sf05_sn005.png
 	scale 35
 
 \end_inset
@@ -2565,14 +2565,14 @@ GP fit to LIDAR data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/CorrLIDARl02.png
+	filename Images/CorrLIDARl02.png
 	scale 35
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARl02_sf05_sn005.png
+	filename Images/LIDARl02_sf05_sn005.png
 	scale 35
 
 \end_inset
@@ -2624,14 +2624,14 @@ GP fit to LIDAR data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/CorrLIDARl1.png
+	filename Images/CorrLIDARl1.png
 	scale 35
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARl1_sf05_sn005.png
+	filename Images/LIDARl1_sf05_sn005.png
 	scale 35
 
 \end_inset
@@ -2675,14 +2675,14 @@ Matern32 vs SquaredExp for
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARl02_sf05_sn005.png
+	filename Images/LIDARl02_sf05_sn005.png
 	scale 35
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARSquaredExpl02_sf05_sn005.png
+	filename Images/LIDARSquaredExpl02_sf05_sn005.png
 	scale 35
 
 \end_inset
@@ -2861,7 +2861,7 @@ GP fit LIDAR
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/LIDARopt.png
+	filename Images/LIDARopt.png
 	scale 45
 
 \end_inset
@@ -3043,7 +3043,7 @@ GP Classification on simulated data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../AdvML/GaussianProcess/Slides/Graphics/DataSet3MinHypEP.eps
+	filename Images/DataSet3MinHypEP.eps
 	lyxscale 50
 	scale 40
 

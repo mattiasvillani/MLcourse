@@ -648,7 +648,7 @@ How to become viral on Twitter
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../../Seminars/EmojiTalk/emojiTweetNov13.png
+	filename Images/emojiTweetNov13.png
 	scale 50
 
 \end_inset
@@ -1744,7 +1744,7 @@ Classification
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/TrainingMnist1to6.png
+	filename Images/TrainingMnist1to6.png
 	lyxscale 10
 	scale 13
 
@@ -1756,7 +1756,7 @@ Classification
 
 
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/BikeScatter.pdf
+	filename Images/BikeScatter.pdf
 	lyxscale 40
 	scale 26
 
@@ -2959,7 +2959,7 @@ Regression trees
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/Rectangles.png
+	filename Images/Rectangles.png
 	lyxscale 30
 	scale 24
 
@@ -2967,7 +2967,7 @@ Regression trees
 
 
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/TreeLevels.png
+	filename Images/TreeLevels.png
 	lyxscale 30
 	scale 27
 
@@ -2975,7 +2975,7 @@ Regression trees
 
 
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/Tree.png
+	filename Images/Tree.png
 	lyxscale 30
 	scale 24
 

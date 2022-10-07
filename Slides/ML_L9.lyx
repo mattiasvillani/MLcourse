@@ -1126,7 +1126,7 @@ Illustration of mixture distributions
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/MixtureOfNormals.eps
+	filename Images/MixtureOfNormals.eps
 	scale 32
 
 \end_inset
@@ -1166,7 +1166,7 @@ Fish length - Histogram density estimates
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/FishHistDensEst.png
+	filename Images/FishHistDensEst.png
 	lyxscale 30
 	scale 25
 
@@ -1207,7 +1207,7 @@ Fish length - Kernel density estimates
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/FishKernelDensEst.png
+	filename Images/FishKernelDensEst.png
 	lyxscale 30
 	scale 25
 
@@ -1248,7 +1248,7 @@ Fish length - Mixture of normals
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/FishMoN.png
+	filename Images/FishMoN.png
 	lyxscale 30
 	scale 23
 
@@ -1536,7 +1536,7 @@ Gaussian mixture model for old Faithful data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/EMMoNOldFaithful.jpeg
+	filename Images/EMMoNOldFaithful.jpeg
 	lyxscale 10
 	scale 8
 
@@ -1869,7 +1869,7 @@ k-Means clustering of old faithful data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/kMeansOldFaithful.jpeg
+	filename Images/kMeansOldFaithful.jpeg
 	lyxscale 10
 	scale 6
 
@@ -2039,7 +2039,7 @@ Image compression by k-means
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/kMeansImageCompress.jpeg
+	filename Images/kMeansImageCompress.jpeg
 	lyxscale 10
 	scale 8
 

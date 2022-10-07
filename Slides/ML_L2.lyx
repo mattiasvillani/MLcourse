@@ -1331,7 +1331,7 @@ Lasso regression - bike sharing data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/LassoPathBikeData.pdf
+	filename Images/LassoPathBikeData.pdf
 	lyxscale 50
 	scale 45
 
@@ -1544,7 +1544,7 @@ Lasso
 \size default
 
 \begin_inset Graphics
-	filename ../../BayesLearning/Slides/Images/laplacedist.png
+	filename Images/laplacedist.png
 	lyxscale 60
 	scale 12
 
@@ -1982,7 +1982,7 @@ linear classifier
 \begin_layout Quotation
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/LogRegClassification.png
+	filename Images/LogRegClassification.png
 	lyxscale 40
 	scale 17
 
@@ -2188,7 +2188,7 @@ Substantially improved predictive performance with splines.
 \begin_layout Quotation
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/EBITDATA.eps
+	filename Images/EBITDATA.eps
 	lyxscale 30
 	scale 25
 
@@ -2220,7 +2220,7 @@ Substantially improved predictive performance with splines.
 
 
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/TLTA.eps
+	filename Images/TLTA.eps
 	lyxscale 30
 	scale 25
 
@@ -2386,7 +2386,7 @@ Classifying handwritten digits
 \begin_layout Quotation
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/Digits.png
+	filename Images/Digits.png
 	lyxscale 30
 	scale 25
 
@@ -2500,7 +2500,7 @@ Multinomial regression
 \begin_layout Quotation
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/Digits.png
+	filename Images/Digits.png
 	lyxscale 30
 	scale 10
 
@@ -2541,7 +2541,7 @@ Classifying handwritten digits
 \begin_layout Quotation
 \align center
 \begin_inset Graphics
-	filename ../../IntroToML/Introduction/LEctures/Digits.png
+	filename Images/Digits.png
 	lyxscale 30
 	scale 7
 
@@ -9023,7 +9023,7 @@ majority vote
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/ClassificationTrees.png
+	filename Images/ClassificationTrees.png
 	lyxscale 30
 	scale 21
 

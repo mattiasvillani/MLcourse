@@ -1267,7 +1267,7 @@ end{tcolorbox}
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/Dir1.jpg
+	filename Images/Dirichlet1.pdf
 	lyxscale 40
 	scale 16
 
@@ -1275,7 +1275,7 @@ end{tcolorbox}
 
 
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/Dir2.jpg
+	filename Images/Dirichlet2.pdf
 	lyxscale 40
 	scale 16
 
@@ -1283,7 +1283,7 @@ end{tcolorbox}
 
 
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/Dir3.jpg
+	filename Images/Dirichlet4.pdf
 	lyxscale 40
 	scale 16
 
@@ -1328,7 +1328,7 @@ Multinomial model with Dirichlet prior
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../BayesLearning/Slides/Images/multinomDir.png
+	filename Images/multinomDir.png
 	scale 35
 
 \end_inset
@@ -2276,7 +2276,7 @@ word distribution
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/MixtureUnigrams.png
+	filename Images/MixtureUnigrams.png
 	lyxscale 20
 	scale 6
 
@@ -5258,7 +5258,7 @@ Example from Science (Blei, review paper)
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../WinterConfHemavan2019/Slides/figs/Blei2012Science.png
+	filename Images/Blei2012Science.png
 	lyxscale 20
 	scale 24
 
@@ -5299,7 +5299,7 @@ Example from Science (Blei, review paper)
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/TopicsScience.png
+	filename Images/TopicsScience.png
 	lyxscale 30
 	scale 60
 
@@ -5340,7 +5340,7 @@ Predicting bug location from bug reports
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/CodeComponents.png
+	filename Images/CodeComponents.png
 	lyxscale 40
 	scale 25
 
@@ -5352,7 +5352,7 @@ Predicting bug location from bug reports
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/bugreport.jpg
+	filename Images/bugreport.jpg
 	lyxscale 30
 	scale 22
 
@@ -5360,7 +5360,7 @@ Predicting bug location from bug reports
 
 
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/arrow.png
+	filename Images/arrow.png
 	lyxscale 10
 	scale 5
 
@@ -5368,7 +5368,7 @@ Predicting bug location from bug reports
 
 
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/ProbComp.jpg
+	filename Images/ProbComp.jpg
 	lyxscale 20
 	scale 8
 
@@ -5650,7 +5650,7 @@ Automatically summarize a bug report by topics.
 \size tiny
 \color black
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/TopWordsEricsson.pdf
+	filename Images/TopWordsEricsson.pdf
 
 \end_inset
 
@@ -5696,7 +5696,7 @@ Topic proportions
 \size tiny
 \color blue
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/Topics.jpg
+	filename Images/Topics.jpg
 	lyxscale 30
 	scale 20
 
@@ -5737,7 +5737,7 @@ Multi-class logistic regression on topics
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ESOBE2017/Slides/Graphics/TopicLoadings.pdf
+	filename Images/TopicLoadings.pdf
 
 \end_inset
 
