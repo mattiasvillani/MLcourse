@@ -465,6 +465,64 @@ status open
 
 \series bold
 \color orange
+Course literature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The main course book is the following book from Cambridge University Press:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/MLESbookcover.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The book is available for free in pdf 
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://smlbook.org/"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
 What is Machine Learning? 
 \series default
 \size footnotesize

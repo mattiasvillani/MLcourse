@@ -532,7 +532,25 @@ Bagging trees
 \begin_inset Graphics
 	filename Images/baggingTrees.png
 	lyxscale 30
-	scale 20
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
 
 \end_inset
 
@@ -1086,6 +1104,24 @@ Boosting for song classification
 	filename Images/adaboostGradBoostSongClassify.png
 	lyxscale 30
 	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
 
 \end_inset
 

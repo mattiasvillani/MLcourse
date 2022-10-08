@@ -1282,6 +1282,24 @@ Filter coefficients are learned
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1579,6 +1597,24 @@ Dual multiple channel CNN
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1750,6 +1786,24 @@ Deep convolutional neural networks
 	filename Images/deepConvNet.png
 	lyxscale 30
 	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
 
 \end_inset
 
@@ -2063,6 +2117,24 @@ Approximates bagging of networks or Bayesian variable selection.
 	filename Images/dropout.png
 	lyxscale 30
 	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
 
 \end_inset
 

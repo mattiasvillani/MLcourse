@@ -931,6 +931,24 @@ Discriminant analysis
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blfootnote{
+\backslash
+tiny Figure from Lindholm et al (2021).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -1984,7 +2002,7 @@ Selecting the number of clusters - elbow
 \begin_inset Graphics
 	filename Images/kmeansElbow.png
 	lyxscale 25
-	scale 20
+	scale 19
 
 \end_inset
 
