@@ -855,7 +855,7 @@ Parameter inference
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	filename Images/HeartEyes.png
 	lyxscale 5
 	scale 1.9
 
@@ -871,7 +871,7 @@ Parameter inference
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Sleeping Emoji.png
+	filename Images/Sleeping Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -898,7 +898,7 @@ Prediction
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Neutral Face Emoji.png
+	filename Images/Neutral Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -914,7 +914,7 @@ Prediction
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	filename Images/HeartEyes.png
 	lyxscale 5
 	scale 1.9
 
@@ -941,7 +941,7 @@ Decision making
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Flushed Face Emoji.png
+	filename Images/Flushed Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -957,7 +957,7 @@ Decision making
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	filename Images/HeartEyes.png
 	lyxscale 5
 	scale 1.9
 
@@ -984,7 +984,7 @@ Interpreting models
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	filename Images/HeartEyes.png
 	lyxscale 5
 	scale 1.9
 
@@ -1000,7 +1000,7 @@ Interpreting models
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Eye Roll Emoji in PNG [Free Download IOS Emojis].png
+	filename Images/Eye Roll Emoji in PNG [Free Download IOS Emojis].png
 	lyxscale 5
 	scale 1.9
 
@@ -1027,7 +1027,7 @@ Interpreting decisions
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Flushed Face Emoji.png
+	filename Images/Flushed Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1043,7 +1043,7 @@ Interpreting decisions
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Blow Kiss Emoji.png
+	filename Images/Blow Kiss Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1070,7 +1070,7 @@ Checking model assumptions
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	filename Images/Sunglasses Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1086,7 +1086,7 @@ Checking model assumptions
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Oops Emoji.png
+	filename Images/Oops Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1113,7 +1113,7 @@ Flexible models and regularization
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Fearful Face Emoji.png
+	filename Images/Fearful Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1129,7 +1129,7 @@ Flexible models and regularization
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	filename Images/HeartEyes.png
 	lyxscale 5
 	scale 1.9
 
@@ -1156,7 +1156,7 @@ Rigorous theory
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/HeartEyes.png
+	filename Images/HeartEyes.png
 	lyxscale 5
 	scale 1.9
 
@@ -1172,7 +1172,7 @@ Rigorous theory
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Tongue Out Emoji with Winking Eye.png
+	filename Images/Tongue Out Emoji with Winking Eye.png
 	lyxscale 5
 	scale 1.9
 
@@ -1199,7 +1199,7 @@ Causality
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Neutral Face Emoji.png
+	filename Images/Neutral Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1215,7 +1215,7 @@ Causality
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Neutral Face Emoji.png
+	filename Images/Neutral Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1242,7 +1242,7 @@ Programming
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Disappointed but Relieved Face Emoji.png
+	filename Images/Disappointed but Relieved Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1258,7 +1258,7 @@ Programming
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	filename Images/Sunglasses Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1285,7 +1285,7 @@ Scalability, big data
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/OMG Face Emoji.png
+	filename Images/OMG Face Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1301,7 +1301,7 @@ Scalability, big data
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	filename Images/Sunglasses Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1328,7 +1328,7 @@ Real-time/Online
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Oops Emoji.png
+	filename Images/Oops Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1344,7 +1344,7 @@ Real-time/Online
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Cowboy Emoji [Download IOS Emojis].png
+	filename Images/Cowboy Emoji [Download IOS Emojis].png
 	lyxscale 5
 	scale 1.9
 
@@ -1371,7 +1371,7 @@ Data collection and experimental design
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Sunglasses Emoji.png
+	filename Images/Sunglasses Emoji.png
 	lyxscale 5
 	scale 1.9
 
@@ -1387,7 +1387,7 @@ Data collection and experimental design
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/mv/Dropbox/IconsAndLogos/Oops Emoji.png
+	filename Images/Oops Emoji.png
 	lyxscale 5
 	scale 1.9
 
