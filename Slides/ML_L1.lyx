@@ -1603,19 +1603,20 @@ Supervised machine learning workflow
 
 \end_layout
 
-\begin_layout Frame
-
-\end_layout
-
 \begin_deeper
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "/home/mv/Dropbox/Teaching/MLcourse/MLES/sml-course-book-master/tex-figures/intro/sml-process.tex"
+\align center
+\begin_inset Graphics
+	filename Images/smlworkflow.png
+	lyxscale 40
+	scale 14
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 

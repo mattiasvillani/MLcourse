@@ -1,0 +1,32 @@
+\tikzstyle{connector} = [thick,->]
+\tikzstyle{block} = [draw,thick,rectangle,minimum height=2.5em,minimum width=2cm]
+
+\tikzstyle{nil} = [inner sep=0pt]
+\begin{tikzpicture}[>=latex',node distance=2.5cm,auto]
+	\node (lefta) [nil] {};
+	% Träningsdata, X
+	\node (s1) at (lefta) {\includegraphics[width=2.5em]{figures/skin1.png}};
+	\node[left of=s1, node distance=1cm,label=above:{Training data}] (s2) {\includegraphics[width=2.5em]{figures/skin2.png}};
+	\node[left of=s2, node distance=1cm] (s3) {\includegraphics[width=2.5em]{figures/skin3.png}};
+	%	\node[left of=s3, node distance=1cm] (s4) {\includegraphics[width=2.5em]{figures/skin2.png}};
+	%
+	% Modell, prediktion, algoritm
+	\node[block, right of=t1] (m) {Model};
+	\draw[connector] (s1)--(m);
+	\node[block, below of=m] (a) {$\begin{array}{c} \text{Learning} \\ \text{algorithm}\end{array}$};
+	\draw[connector] (a)--(m);
+	\node[right of=m,node distance=2.75cm,circle,fill,inner sep=1pt,outer sep=0pt] (dot) {};
+	\draw[connector] (dot) node[right,yshift=-1.25cm]{} |-(a);
+	% Label below
+	%{$Y=\begin{cases} 0 \text{ (godartad)} \\ 1 \text{ (elakartad)}\end{cases}$}
+	\node[nil, right of=m, node distance=3.5cm, label=right:{\small\emph{Prediction}}]
+		%$\begin{array}{l} \text{{\tt godartad} eller} \\ \text{{\tt elakartad}?}\end{array}$}]
+	 (righta) {};
+	\draw[connector] (m) node[right,yshift=-1.15cm]{\small$\begin{array}{l} \text{\emph{Update}} \\ \text{\emph{model}}\end{array}$}--(righta);
+	%
+	% Träningsdata Y
+	\node[fill=ggreen] (y1) at (s1 |- a) {};
+	\node[fill=ggreen,left of=y1, node distance=1cm,label=below:{$\{\ty{1}, \ty{2}, \dots, \ty{n}\}$}] (y2) {};
+	\node[fill=rred,left of=y2, node distance=1cm] (y3) {};
+	\draw[connector,shorten <=4pt] (y1)--(a);
+\end{tikzpicture}
