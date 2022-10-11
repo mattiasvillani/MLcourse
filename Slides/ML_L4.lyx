@@ -933,7 +933,7 @@ Bagging learns independently.
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/algoForwardTrees.png
+	filename Images/algoForwardTrees.png
 	lyxscale 40
 	scale 28
 

@@ -411,14 +411,14 @@ linear in
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/polybasis.png
+	filename Images/polybasis.png
 	scale 22
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/poly.png
+	filename Images/poly.png
 	scale 22
 
 \end_inset
@@ -571,14 +571,14 @@ th row of
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/SplineBasis.png
+	filename Images/SplineBasis.png
 	scale 22
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/Spline.png
+	filename Images/Spline.png
 	scale 22
 
 \end_inset
@@ -1556,7 +1556,7 @@ Lasso
 
 
 \begin_inset Graphics
-	filename /home/mv/Dropbox/BayesBook/Figs/laplace.png
+	filename Images/laplace.png
 	lyxscale 50
 	scale 12
 

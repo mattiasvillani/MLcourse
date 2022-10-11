@@ -577,7 +577,7 @@ Deep learning
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/Banknote.jpg
+	filename Images/Banknote.jpg
 	lyxscale 20
 	scale 35
 
@@ -3600,7 +3600,7 @@ set aside clean test data
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/grid_search_cross_validation.png
+	filename Images/grid_search_cross_validation.png
 	lyxscale 30
 	scale 18
 
@@ -4062,7 +4062,7 @@ Bias-Variance trade-off polynomials
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/polyRepeatDataPlusMean.pdf
+	filename Images/polyRepeatDataPlusMean.pdf
 	lyxscale 30
 	scale 29
 
@@ -4099,7 +4099,7 @@ Bias-Variance trade-off polynomials
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/polyRepeatBiasVariance.pdf
+	filename Images/polyRepeatBiasVariance.pdf
 	lyxscale 30
 	scale 23
 
@@ -4349,7 +4349,7 @@ Bias-Variance trade-off classification
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/LogRegkNNClassification.png
+	filename Images/LogRegkNNClassification.png
 	scale 27
 
 \end_inset
@@ -4389,7 +4389,7 @@ Bootstrap sample no 1
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification1.png
+	filename Images/BootLogRegkNNClassification1.png
 	scale 27
 
 \end_inset
@@ -4429,7 +4429,7 @@ Bootstrap sample no 2
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification2.png
+	filename Images/BootLogRegkNNClassification2.png
 	scale 27
 
 \end_inset
@@ -4469,7 +4469,7 @@ Bootstrap sample no 3
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification3.png
+	filename Images/BootLogRegkNNClassification3.png
 	scale 27
 
 \end_inset
@@ -4509,7 +4509,7 @@ Bootstrap sample no 4
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification4.png
+	filename Images/BootLogRegkNNClassification4.png
 	scale 27
 
 \end_inset
@@ -4549,7 +4549,7 @@ Bootstrap sample no 5
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../ML4Industry/Slides/images/BootLogRegkNNClassification5.png
+	filename Images/BootLogRegkNNClassification5.png
 	scale 27
 
 \end_inset
