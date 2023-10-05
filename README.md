@@ -8,6 +8,8 @@
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/doctorIpadSmall.jpg" width="167">
 <img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="178">
 </p>
+---
+> :warning: Note: I am no longer teaching this course, so this material does not necessarily reflect the current curriculum.
 
 ---
 
