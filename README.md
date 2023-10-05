@@ -1,6 +1,7 @@
 <!-- font: frutiger -->
 
-:warning: Note: I am no longer teaching this course, so this material does not necessarily reflect the current curriculum.
+> [!NOTE]  
+> Note: I am no longer teaching this course, so this material does not necessarily reflect the current curriculum.
 
 # Machine Learning (ST5401), 7.5 credits
 <p float="left">
