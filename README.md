@@ -1,7 +1,7 @@
 <!-- font: frutiger -->
 
 > [!NOTE]  
-> Note: I am no longer teaching this course, so this material does not necessarily reflect the current curriculum.
+> Note: I no longer teach this course, so this material may not reflect the current curriculum.
 
 # Machine Learning, 7.5 credits
 
