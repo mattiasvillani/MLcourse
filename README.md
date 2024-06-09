@@ -1,17 +1,11 @@
 <!-- font: frutiger -->
 
-# Machine Learning (ST5401), 7.5 credits
-<p float="left">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/bigData.jpg" width="160">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/girlComputerSmall.jpg" width="150">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/mathSmall.jpg" width="150">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/doctorIpadSmall.jpg" width="167">
-<img src="https://github.com/mattiasvillani/MLcourse/raw/main/Slides/Images/SelfDrivingCarSmall.jpg" width="178">
-</p>
+# Machine Learning, 7.5 credits
 
----
+<img src="Misc/linocut_water.png">
 
-## Introduction and aims
+
+## Introduction and Aims
 
 In this course you will learn how to formulate and organize practical machine learning problems, identify and estimate appropriate machine learning models for prediction and clustering, evaluate and select among different machine learning models and algorithms and implement machine learning models and algorithms in a programming language.
 
